@@ -1,5 +1,5 @@
 {
-  "name": "react-template",
+  "name": "care-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,5 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://youwenliang.github.io/care-website"
+  "homepage": "https://youwenliang.github.io/care-website/"
 }

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/care-website/static/css/main.afb50390.chunk.css",
+    "main.js": "/care-website/static/js/main.0ae8676e.chunk.js",
+    "main.js.map": "/care-website/static/js/main.0ae8676e.chunk.js.map",
+    "runtime-main.js": "/care-website/static/js/runtime-main.8a775214.js",
+    "runtime-main.js.map": "/care-website/static/js/runtime-main.8a775214.js.map",
+    "static/css/2.40c68a69.chunk.css": "/care-website/static/css/2.40c68a69.chunk.css",
+    "static/js/2.6a3331bf.chunk.js": "/care-website/static/js/2.6a3331bf.chunk.js",
+    "static/js/2.6a3331bf.chunk.js.map": "/care-website/static/js/2.6a3331bf.chunk.js.map",
+    "index.html": "/care-website/index.html",
+    "precache-manifest.e9c47839431fbeb520ad7bc3d15aa161.js": "/care-website/precache-manifest.e9c47839431fbeb520ad7bc3d15aa161.js",
+    "service-worker.js": "/care-website/service-worker.js",
+    "static/css/2.40c68a69.chunk.css.map": "/care-website/static/css/2.40c68a69.chunk.css.map",
+    "static/css/main.afb50390.chunk.css.map": "/care-website/static/css/main.afb50390.chunk.css.map",
+    "static/js/2.6a3331bf.chunk.js.LICENSE.txt": "/care-website/static/js/2.6a3331bf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a775214.js",
+    "static/css/2.40c68a69.chunk.css",
+    "static/js/2.6a3331bf.chunk.js",
+    "static/css/main.afb50390.chunk.css",
+    "static/js/main.0ae8676e.chunk.js"
+  ]
+}

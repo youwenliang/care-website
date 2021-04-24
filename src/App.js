@@ -15,29 +15,52 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
+// Images
+
 class App extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount(){
-
+    $('#top').click(function(){
+      $('html, body').animate({
+        scrollTop: 0
+      }, 800);
+    });
   }
   render(){
+    // Cover
+    var coverBG = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      paddingBottom: 0,
+    }
+
+    var startBG = {
+      fontSize: "24px",
+      fontWeight: "500",
+      marginBottom: "-5rem"
+    }
+
     return (
       <main>
         <Header/>
-        <div id="top"></div>
-        <section id="cover" className="pt0">
+        <div id="top" className="br-100"></div>
+        <section id="cover" className="pv0">
           <div className="container">
-            <div className="bg-blue pa4 center">
-              <h2 className="tc">別以為糖尿病只是尿尿比較甜而已<br/>它也會攻擊腎臟和心臟</h2>
-              <h5 className="tc">糖尿病殺手</h5>
-              <div id="start">開始</div>
+            <div className="pa4 center tc bg-blue-2 brBox" style={coverBG}>
+              <h2 className="tc blue-1 lh-copy f3">別以為糖尿病只是尿尿比較甜而已<br/>它也會攻擊腎臟和心臟</h2>
+              <div className="bg-blue-1 br-100 size250 center flex justify-center items-center">
+                <h5 className="tc lh-copy white dib f4 normal">糖尿病殺手<br/>是如何攻擊<br/>腎和心的？<br/>快跟著我一起<br/>去瞧瞧吧！</h5>
+              </div>
+              <div id="start" className="bg-white dib ph4 pv2 black mt4" style={startBG}>開始</div>
             </div>
           </div>
         </section>
 
-        <section id="car">
+        <section id="car" className="bg-white">
           <div className="container">
             <div className="flex flex-column flex-row-l">
               <div className="outline w-100 w-50-l pa3 car">
@@ -66,8 +89,8 @@ class App extends Component {
           </div>
         </section>
 
-        <section id="how">
-          <div className="container bg-blue pa4">
+        <section id="how" className="pv0">
+          <div className="container bg-blue-3 pa4 brBox">
             <h2 className="title">如何影響糖尿病友</h2>
             <div className="center">
               <div className="cf">
@@ -95,8 +118,12 @@ class App extends Component {
           </div>
         </section>
 
-        <section id="cause">
-          <div className="container bg-blue pa4">
+        <div className="divider ma0 pa0">
+          <img className="db center" src="https://fakeimg.pl/400x200/"/>
+        </div>
+
+        <section id="cause" className="pv0">
+          <div className="container bg-blue-3 pa4 brBox">
             <h2 className="title">十大死因</h2>
             <div className="center">
               <div className="cf tc">
@@ -129,8 +156,12 @@ class App extends Component {
           </div>
         </section>
 
-        <section id="knowledge">
-          <div className="container bg-blue pa4">
+        <div className="divider ma0 pa0">
+          <img className="db center" src="https://fakeimg.pl/400x200/"/>
+        </div>
+
+        <section id="knowledge" className="pv0">
+          <div className="container bg-blue-4 pa4 brBox">
             <h2 className="title">知己知彼</h2>
             <div className="center">
               <div className="cf">
@@ -173,8 +204,12 @@ class App extends Component {
           </div>
         </section>
 
-        <section id="factor">
-          <div className="container bg-blue pa4 tc">
+        <div className="divider ma0 pa0">
+          <img className="db center" src="https://fakeimg.pl/400x200/"/>
+        </div>
+
+        <section id="factor" className="pv0">
+          <div className="container bg-blue-3 pa4 tc brBox">
             <h2 className="title">你有這些</h2>
             <h3>如果有以下</h3>
             <div className="flex flex-wrap">
@@ -218,8 +253,12 @@ class App extends Component {
           </div>
         </section>
 
-        <section id="qa">
-          <div className="container bg-blue pa4">
+        <div className="divider ma0 pa0">
+          <img className="db center" src="https://fakeimg.pl/400x200/"/>
+        </div>
+
+        <section id="qa" className="pv0">
+          <div className="container bg-blue-5 pa4 brBox">
             <h2 className="title">常見 Q&A</h2>
             <div className="flex flex-column">
               <div className="outline w-100 pa3 flex justify-between">
@@ -247,15 +286,20 @@ class App extends Component {
           </div>      
         </section>
 
-        <section id="map">
-          <div className="container bg-blue pa4">
+        <div className="divider ma0 pa0">
+          <img className="db center" src="https://fakeimg.pl/400x200/"/>
+        </div>
+
+        <section id="map" className="pt0">
+          <div className="container bg-blue-3 pa4 brBox">
             <h2 className="title">要怎麼找到</h2>
           </div>
         </section>
 
-        <section id="banner">
+        <section id="banner" className="pb0">
           <div className="container">
-            <h3 className="tc">如果有飲食</h3>
+            <h3 className="tc lh-copy f2 pb4">如果有飲食、生活習慣、糖尿病用藥建議等問題<br/>都可以請教您的醫師與照護團隊喔！<br/>讓我們做伙控血糖～</h3>
+            <img className="db center" src="https://fakeimg.pl/1000x300/"/>
           </div>
         </section>
 
