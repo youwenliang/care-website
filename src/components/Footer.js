@@ -21,7 +21,7 @@ class Footer extends Component {
     }
     return (
       <footer className="bg-blue-2 pv5" style={footerBG}>
-        <div className="container">
+        <div className="container ph4">
           <h1 className="white">Reference</h1>
           <ol className="white ma0 ph3">
             <li>aaa</li>

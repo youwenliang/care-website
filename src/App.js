@@ -46,8 +46,11 @@ class App extends Component {
 
     return (
       <main>
+        {/* Header */}
         <Header/>
         <div id="top" className="br-100"></div>
+
+        {/* Cover */}
         <section id="cover" className="pv0">
           <div className="container">
             <div className="pa4 center tc bg-blue-2 brBox" style={coverBG}>
@@ -60,27 +63,28 @@ class App extends Component {
           </div>
         </section>
 
+        {/* Car */}
         <section id="car" className="bg-white">
           <div className="container">
             <div className="flex flex-column flex-row-l">
-              <div className="outline w-100 w-50-l pa3 car">
+              <div className="w-100 w-50-l pa3 car">
                 <label>線索一</label>
                 <h3>糖尿病</h3>
                 <p>內文</p>
               </div>
-              <div className="outline w-100 w-50-l pa3">
+              <div className="w-100 w-50-l pa3">
                 <div className="quote">
                   <h4>萬萬不可以</h4>
                 </div>
               </div>
             </div>
             <div className="flex flex-column-reverse flex-row-l">
-              <div className="outline w-100 w-50-l pa3">
+              <div className="w-100 w-50-l pa3">
                 <div className="quote">
                   <h4>萬萬不可以</h4>
                 </div>
               </div>
-              <div className="outline w-100 w-50-l pa3 car">
+              <div className="w-100 w-50-l pa3 car">
                 <label>線索二</label>
                 <h3>糖尿病</h3>
                 <p>內文</p>
@@ -89,13 +93,14 @@ class App extends Component {
           </div>
         </section>
 
+        {/* How */}
         <section id="how" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox">
-            <h2 className="title">如何影響糖尿病友</h2>
+          <div className="container bg-blue-3 pa4 brBox pb0">
+            <h2 className="title bg-blue-1">如何影響糖尿病友</h2>
             <div className="center">
-              <div className="cf">
+              <div className="cf mh5-l mh2 flex flex-row-l flex-column">
                 <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pa4">
+                  <div className="bg-white pa4 brBox mr4-l h-100">
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <p>文字</p>
                     <div className="cf">
@@ -105,15 +110,16 @@ class App extends Component {
                   </div>
                 </div>
                 <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pa4">
+                  <div className="bg-white pa4 brBox ml4-l">
                     <img className="w-100" src="https://fakeimg.pl/100x150/"/>
                     <p>文字</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="quote">
-              <h4>萬萬不可以</h4>
+            <div className="quote relative">
+              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+              <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">萬萬不可以</h4>
             </div>
           </div>
         </section>
@@ -122,36 +128,38 @@ class App extends Component {
           <img className="db center" src="https://fakeimg.pl/400x200/"/>
         </div>
 
+        {/* Cause */}
         <section id="cause" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox">
-            <h2 className="title">十大死因</h2>
+          <div className="container bg-blue-3 pa4 pb0 brBox">
+            <h2 className="title bg-blue-1">十大死因<sup className="ml2 f3 fw5">3</sup></h2>
             <div className="center">
               <div className="cf tc">
                 <div className="fl w-100 w-third-l pa2">
-                  <div className="bg-white pv4">
+                  <div className="pv4 mh4">
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label>第2名</label>
-                    <p>文字</p>
+                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                    <p className="bg-blue-5 br4 pa3 white">文字</p>
                   </div>
                 </div>
                 <div className="fl w-100 w-third-l pa2">
-                  <div className="bg-white pv4">
+                  <div className="pv4 mh4">
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label>第2名</label>
-                    <p>文字</p>
+                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                    <p className="bg-blue-5 br4 pa3 white">文字</p>
                   </div>
                 </div>
                 <div className="fl w-100 w-third-l pa2">
-                  <div className="bg-white pv4">
+                  <div className="pv4 mh4">
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label>第2名</label>
-                    <p>文字</p>
+                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                    <p className="bg-blue-5 br4 pa3 white">文字</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="quote">
-              <h4>到底是</h4>
+            <div className="quote relative">
+              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+              <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
         </section>
@@ -160,14 +168,15 @@ class App extends Component {
           <img className="db center" src="https://fakeimg.pl/400x200/"/>
         </div>
 
+        {/* Knowledge */}
         <section id="knowledge" className="pv0">
-          <div className="container bg-blue-4 pa4 brBox">
-            <h2 className="title">知己知彼</h2>
+          <div className="container bg-blue-4 pa4 pb0 brBox">
+            <h2 className="title bg-blue-2">知己知彼</h2>
             <div className="center">
-              <div className="cf">
+              <div className="cf mh5-l mh2 flex flex-row-l flex-column">
                 <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pv4">
-                    <h3>高血壓</h3>
+                  <div className="bg-white pa4 brBox mr4-l h-100">
+                    <h3 className="pa3 tc bg-blue-5 br4 white f3 mv0 mh3">高血壓</h3>
                     <p>血壓值</p>
                     <p>超過</p>
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
@@ -181,8 +190,8 @@ class App extends Component {
                   </div>
                 </div>
                 <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pv4">
-                    <h3>高血壓</h3>
+                  <div className="bg-white pa4 brBox ml4-l h-100">
+                    <h3 className="pa3 tc bg-blue-5 br4 white f3 mv0 mh3">蛋白尿</h3>
                     <p>血壓值</p>
                     <p>超過</p>
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
@@ -197,9 +206,12 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <h3>奸詐的殺手們</h3>
-            <div className="quote">
-              <h4>別擔心</h4>
+            <div className="mh5-l mh2 pa2">
+              <h3 className="pa4 tc bg-blue-3 br4 blue-1 f3">奸詐的殺手們</h3>
+            </div>
+            <div className="quote relative">
+              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+              <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
         </section>
@@ -208,47 +220,51 @@ class App extends Component {
           <img className="db center" src="https://fakeimg.pl/400x200/"/>
         </div>
 
+        {/* Factor */}
         <section id="factor" className="pv0">
-          <div className="container bg-blue-3 pa4 tc brBox">
-            <h2 className="title">你有這些</h2>
+          <div className="container bg-blue-3 pa4 pb0 tc brBox">
+            <h2 className="title bg-blue-1">你有這些</h2>
             <h3>如果有以下</h3>
-            <div className="flex flex-wrap">
-              <div className="outline w-25-ns w-50 pa3">
+            <div className="flex flex-wrap mh5-l mh2">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
-              <div className="outline w-25-ns w-50 pa3">
+              <div className="w-25-ns w-50 pa3">
                 <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                 <label>第2名</label>
               </div>
             </div>
-            <h3>如果有以下</h3>
-            <div className="quote">
-              <h4>有其他</h4>
+            <div className="mh5-l mh2 pa2">
+              <h3 className="pa3 tc bg-white br4 black f3">奸詐的殺手們</h3>
+            </div>
+            <div className="quote relative">
+              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+              <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
         </section>
@@ -257,25 +273,26 @@ class App extends Component {
           <img className="db center" src="https://fakeimg.pl/400x200/"/>
         </div>
 
+        {/* QA */}
         <section id="qa" className="pv0">
           <div className="container bg-blue-5 pa4 brBox">
-            <h2 className="title">常見 Q&A</h2>
+            <h2 className="title bg-blue-3">常見 Q&A</h2>
             <div className="flex flex-column">
-              <div className="outline w-100 pa3 flex justify-between">
+              <div className="w-100 pa3 flex justify-between">
                 <div className="ma0 flex items-center">
                   <img className="dib" src="https://fakeimg.pl/100x100/"/>
                   <p className="dib mv0 ml4">問題</p>
                 </div>
                 <img className="dib" src="https://fakeimg.pl/100x100/"/>
               </div>
-              <div className="outline w-100 pa3 flex justify-between">
+              <div className="w-100 pa3 flex justify-between">
                 <div className="ma0 flex items-center">
                   <img className="dib" src="https://fakeimg.pl/100x100/"/>
                   <p className="dib mv0 ml4">問題</p>
                 </div>
                 <img className="dib" src="https://fakeimg.pl/100x100/"/>
               </div>
-              <div className="outline w-100 pa3 flex justify-between">
+              <div className="w-100 pa3 flex justify-between">
                 <div className="ma0 flex items-center">
                   <img className="dib" src="https://fakeimg.pl/100x100/"/>
                   <p className="dib mv0 ml4">問題</p>
@@ -290,12 +307,14 @@ class App extends Component {
           <img className="db center" src="https://fakeimg.pl/400x200/"/>
         </div>
 
-        <section id="map" className="pt0">
+        {/* Map */}
+        <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4 brBox">
-            <h2 className="title">要怎麼找到</h2>
+            <h2 className="title bg-blue-1">要怎麼找到</h2>
           </div>
         </section>
 
+        {/* Banner */}
         <section id="banner" className="pb0">
           <div className="container">
             <h3 className="tc lh-copy f2 pb4">如果有飲食、生活習慣、糖尿病用藥建議等問題<br/>都可以請教您的醫師與照護團隊喔！<br/>讓我們做伙控血糖～</h3>
@@ -303,6 +322,7 @@ class App extends Component {
           </div>
         </section>
 
+        {/* Footer */}
         <Footer/>
       </main>
     )
