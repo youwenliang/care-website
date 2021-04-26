@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
 
@@ -16,15 +17,30 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
 // Images
+ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,.4)';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
+      showModal: false,
+      modal: 0
     }
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
+
+  handleOpenModal (n) {
+    this.setState({ showModal: true , modal: n});
+  }
+  
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
   componentDidMount(){
     $('#top').click(function(){
       $('html, body').animate({
@@ -58,6 +74,24 @@ class App extends Component {
       fontWeight: "500",
       marginBottom: "-5rem"
     } 
+
+    // Modal
+    const customStyles = {
+      content : {
+        borderRadius: '30px',
+        border: '0px',
+        inset: '20px' 
+      }
+    };
+    const customStyles2 = {
+      content : {
+        borderRadius: '30px',
+        border: '0px',
+        width: '50%',
+        height: '300px',  
+      }
+    };
+
 
     return (
       <main>
@@ -302,7 +336,7 @@ class App extends Component {
                       <div className="br3 bg-blue-3 pa2 center dib w-100">
                         <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
                       </div>
-                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(1)}>答案</h3>  
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between">
@@ -311,7 +345,7 @@ class App extends Component {
                       <div className="br3 bg-blue-3 pa2 center dib w-100">
                         <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
                       </div>
-                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(2)}>答案</h3>  
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between">
@@ -320,13 +354,26 @@ class App extends Component {
                       <div className="br3 bg-blue-3 pa2 center dib w-100">
                         <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
                       </div>
-                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(3)}>答案</h3>  
                     </div>
                   </div>
+                  <ReactModal 
+                     style={customStyles}
+                     isOpen={this.state.showModal}
+                     contentLabel="Minimal Modal Example"
+                     onRequestClose={this.handleCloseModal}
+                  >
+                    {this.state.modal}
+                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                  </ReactModal>
                 </div>
                 ) : 
                 (
-                <div className="flex flex-column mh5-l mh2">
+                <div className="flex flex-column mh5-l mh2 relative">
+                  <div className={"modal w-80 brBox absolute h-100 bg-white "+this.state.showModal}>
+                    {this.state.modal}
+                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                  </div>
                   <div className="w-100 pa3 flex justify-between">
                     <div className="ma0 flex items-center w-100">
                       <div className="br3 bg-blue-3 pa2">
@@ -334,7 +381,7 @@ class App extends Component {
                       </div>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden">
+                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(1)}>
                       <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
                     </div>
                   </div>
@@ -345,7 +392,7 @@ class App extends Component {
                       </div>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden">
+                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(2)}>
                       <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
                     </div>
                   </div>
@@ -356,7 +403,7 @@ class App extends Component {
                       </div>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden">
+                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(3)}>
                       <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
                     </div>
                   </div>

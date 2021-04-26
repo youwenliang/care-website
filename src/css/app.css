@@ -160,3 +160,16 @@ h2.title {
   position: relative;
   top: 30px;
 }
+
+/* Modal */
+.ReactModal__Overlay {
+  background-color: rgba(0,0,0,.4);
+}
+
+.modal.true {
+  display: block;
+}
+
+.modal.false {
+  display: none;
+}
