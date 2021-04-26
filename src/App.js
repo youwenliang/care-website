@@ -20,6 +20,10 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
   }
   componentDidMount(){
     $('#top').click(function(){
@@ -27,8 +31,19 @@ class App extends Component {
         scrollTop: 0
       }, 800);
     });
+    window.addEventListener('resize', this.checkMobile);
+    this.checkMobile();
   }
+
+  checkMobile = () => {
+    this.setState({ width: window.innerWidth });
+    this.setState({ height: window.innerHeight });
+  }
+
   render(){
+    const { width, height } = this.state;
+    const isMobile = width <= 959;
+
     // Cover
     var coverBG = {
       backgroundImage: "url(https://fakeimg.pl/800x600/)",
@@ -42,7 +57,7 @@ class App extends Component {
       fontSize: "24px",
       fontWeight: "500",
       marginBottom: "-5rem"
-    }
+    } 
 
     return (
       <main>
@@ -104,8 +119,8 @@ class App extends Component {
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <p>文字</p>
                     <div className="cf">
-                      <div className="fl w-100 w-50-l ph2-l">1. 呼吸困難 <br/> 2. 耐力變差</div>
-                      <div className="fl w-100 w-50-l ph2-l">3. 呼吸困難 <br/> 4. 耐力變差</div>
+                      <div className="fl w-50 ph2-l">1. 呼吸困難 <br/> 2. 耐力變差</div>
+                      <div className="fl w-50 ph2-l">3. 呼吸困難 <br/> 4. 耐力變差</div>
                     </div>
                   </div>
                 </div>
@@ -277,29 +292,77 @@ class App extends Component {
         <section id="qa" className="pv0">
           <div className="container bg-blue-5 pa4 brBox">
             <h2 className="title bg-blue-3">常見 Q&A</h2>
-            <div className="flex flex-column">
-              <div className="w-100 pa3 flex justify-between">
-                <div className="ma0 flex items-center">
-                  <img className="dib" src="https://fakeimg.pl/100x100/"/>
-                  <p className="dib mv0 ml4">問題</p>
+              {
+                (isMobile) ? 
+                (
+                <div className="flex flex-column mh5-l mh2">
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 tc w-100 bg-white br4 pa4">
+                      <p className="db mt0 mr5 w-100 mb3">問題</p>
+                      <div className="br3 bg-blue-3 pa2 center dib w-100">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                    </div>
+                  </div>
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 tc w-100 bg-white br4 pa4">
+                      <p className="db mt0 mr5 w-100 mb3">問題</p>
+                      <div className="br3 bg-blue-3 pa2 center dib w-100">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                    </div>
+                  </div>
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 tc w-100 bg-white br4 pa4">
+                      <p className="db mt0 mr5 w-100 mb3">問題</p>
+                      <div className="br3 bg-blue-3 pa2 center dib w-100">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <h3 className="pa3 tc bg-blue-4 br4 white f4 dib ph4 mt3 mb0 cp">答案</h3>  
+                    </div>
+                  </div>
                 </div>
-                <img className="dib" src="https://fakeimg.pl/100x100/"/>
-              </div>
-              <div className="w-100 pa3 flex justify-between">
-                <div className="ma0 flex items-center">
-                  <img className="dib" src="https://fakeimg.pl/100x100/"/>
-                  <p className="dib mv0 ml4">問題</p>
+                ) : 
+                (
+                <div className="flex flex-column mh5-l mh2">
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 flex items-center w-100">
+                      <div className="br3 bg-blue-3 pa2">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
+                    </div>
+                    <div className="br-100 bg-white pa2 overflow-hidden">
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
+                    </div>
+                  </div>
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 flex items-center w-100">
+                      <div className="br3 bg-blue-3 pa2">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
+                    </div>
+                    <div className="br-100 bg-white pa2 overflow-hidden">
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
+                    </div>
+                  </div>
+                  <div className="w-100 pa3 flex justify-between">
+                    <div className="ma0 flex items-center w-100">
+                      <div className="br3 bg-blue-3 pa2">
+                        <img className="dib ma0" src="https://fakeimg.pl/100x120/"/>
+                      </div>
+                      <p className="dib mv0 mr5 bg-white brRight pa4 w-100">問題</p>
+                    </div>
+                    <div className="br-100 bg-white pa2 overflow-hidden">
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/"/>
+                    </div>
+                  </div>
                 </div>
-                <img className="dib" src="https://fakeimg.pl/100x100/"/>
-              </div>
-              <div className="w-100 pa3 flex justify-between">
-                <div className="ma0 flex items-center">
-                  <img className="dib" src="https://fakeimg.pl/100x100/"/>
-                  <p className="dib mv0 ml4">問題</p>
-                </div>
-                <img className="dib" src="https://fakeimg.pl/100x100/"/>
-              </div>
-            </div>
+                )
+              }
           </div>      
         </section>
 
