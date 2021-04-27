@@ -80,18 +80,23 @@ class App extends Component {
       content : {
         borderRadius: '30px',
         border: '0px',
-        inset: '20px' 
-      }
-    };
-    const customStyles2 = {
-      content : {
-        borderRadius: '30px',
-        border: '0px',
-        width: '50%',
-        height: '300px',  
+        inset: '20px',
+        color: "white",
+        backgroundColor: "#6A7DCB"
       }
     };
 
+    const modalContent = {
+      "title":[
+        "我是糖友1","我是糖友2","我是糖友3"
+      ],
+      "image":[
+        "https://fakeimg.pl/800x200/","https://fakeimg.pl/800x200/","https://fakeimg.pl/800x200/"
+      ],
+      "content":[
+        "糖友可接受1","糖友可接受2","糖友可接受3"
+      ]
+    }
 
     return (
       <main>
@@ -113,33 +118,70 @@ class App extends Component {
         </section>
 
         {/* Car */}
-        <section id="car" className="bg-white">
-          <div className="container">
-            <div className="flex flex-column flex-row-l">
-              <div className="w-100 w-50-l pa3 car">
-                <label>線索一</label>
-                <h3>糖尿病</h3>
-                <p>內文</p>
-              </div>
-              <div className="w-100 w-50-l pa3">
-                <div className="quote">
-                  <h4>萬萬不可以</h4>
+        <section id="car">
+          {
+            (isMobile) ? 
+            (
+              <div className="container">
+                <div className="flex flex-column flex-row-l">
+                  <div className="pa3 car bg-white brBox mb5 mh3">
+                    <label>線索一</label>
+                    <h3>糖尿病</h3>
+                    <p>內文</p>
+                    <div className="pa3 relative">
+                      <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                      <div className="quote absolute top-0">
+                        <h4>萬萬不可以</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-column flex-row-l">
+                  <div className="pa3 car bg-white brBox mh3">
+                    <label>線索一</label>
+                    <h3>糖尿病</h3>
+                    <p>內文</p>
+                    <div className="pa3 relative">
+                      <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                      <div className="quote absolute top-0">
+                        <h4>萬萬不可以</h4>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex flex-column-reverse flex-row-l">
-              <div className="w-100 w-50-l pa3">
-                <div className="quote">
-                  <h4>萬萬不可以</h4>
+            ):
+            (
+              <div className="container">
+                <div className="flex flex-column flex-row-l">
+                  <div className="w-100 w-50-l pa3 car bg-white">
+                    <label>線索一</label>
+                    <h3>糖尿病</h3>
+                    <p>內文</p>
+                  </div>
+                  <div className="w-100 w-50-l pa3 relative">
+                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                    <div className="quote absolute top-0">
+                      <h4>萬萬不可以</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-column-reverse flex-row-l">
+                  <div className="w-100 w-50-l pa3 relative">
+                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                    <div className="quote absolute top-0">
+                      <h4>萬萬不可以</h4>
+                    </div>
+                  </div>
+                  <div className="w-100 w-50-l pa3 car bg-white">
+                    <label>線索二</label>
+                    <h3>糖尿病</h3>
+                    <p>內文</p>
+                  </div>
                 </div>
               </div>
-              <div className="w-100 w-50-l pa3 car">
-                <label>線索二</label>
-                <h3>糖尿病</h3>
-                <p>內文</p>
-              </div>
-            </div>
-          </div>
+            )
+          }
         </section>
 
         {/* How */}
@@ -147,24 +189,53 @@ class App extends Component {
           <div className="container bg-blue-3 pa4 brBox pb0">
             <h2 className="title bg-blue-1">如何影響糖尿病友</h2>
             <div className="center">
-              <div className="cf mh5-l mh2 flex flex-row-l flex-column">
-                <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pa4 brBox mr4-l h-100">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <p>文字</p>
-                    <div className="cf">
-                      <div className="fl w-50 ph2-l">1. 呼吸困難 <br/> 2. 耐力變差</div>
-                      <div className="fl w-50 ph2-l">3. 呼吸困難 <br/> 4. 耐力變差</div>
+              {
+                (isMobile) ? 
+                (
+                  <div className="cf mh5-l mh2 flex flex-row-l flex-column">
+                    <div className="fl w-100 w-50-l pa2">
+                      <div className="bg-white pa4 brBox mr4-l h-100">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                      </div>
+                      <div className="pa4 tc">
+                        <p>文字</p>
+                        <div className="cf">
+                          <div className="fl w-50 ph2-l">1. 呼吸困難 <br/> 2. 耐力變差</div>
+                          <div className="fl w-50 ph2-l">3. 呼吸困難 <br/> 4. 耐力變差</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-50-l pa2">
+                      <div className="bg-white pa4 brBox ml4-l">
+                        <img className="w-100" src="https://fakeimg.pl/100x150/"/>
+                      </div>
+                      <div className="pa4 tc">
+                        <p>文字</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="fl w-100 w-50-l pa2">
-                  <div className="bg-white pa4 brBox ml4-l">
-                    <img className="w-100" src="https://fakeimg.pl/100x150/"/>
-                    <p>文字</p>
+                ):
+                (
+                  <div className="cf mh5-l mh2 flex flex-row-l flex-column">
+                    <div className="fl w-100 w-50-l pa2">
+                      <div className="bg-white pa4 brBox mr4-l h-100">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <p>文字</p>
+                        <div className="cf">
+                          <div className="fl w-50 ph2-l">1. 呼吸困難 <br/> 2. 耐力變差</div>
+                          <div className="fl w-50 ph2-l">3. 呼吸困難 <br/> 4. 耐力變差</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-50-l pa2">
+                      <div className="bg-white pa4 brBox ml4-l">
+                        <img className="w-100" src="https://fakeimg.pl/100x150/"/>
+                        <p>文字</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                )
+              }
             </div>
             <div className="quote relative">
               <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
@@ -182,29 +253,56 @@ class App extends Component {
           <div className="container bg-blue-3 pa4 pb0 brBox">
             <h2 className="title bg-blue-1">十大死因<sup className="ml2 f3 fw5">3</sup></h2>
             <div className="center">
-              <div className="cf tc">
-                <div className="fl w-100 w-third-l pa2">
-                  <div className="pv4 mh4">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
-                    <p className="bg-blue-5 br4 pa3 white">文字</p>
+              {
+                (isMobile) ? 
+                (
+                  <div className="cf tc">
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <p className="bg-blue-5 br4 pa3 white lh-copy">第2名<br/>文字</p>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <p className="bg-blue-5 br4 pa3 white lh-copy">第2名<br/>文字</p>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <p className="bg-blue-5 br4 pa3 white lh-copy">第2名<br/>文字</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="fl w-100 w-third-l pa2">
-                  <div className="pv4 mh4">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
-                    <p className="bg-blue-5 br4 pa3 white">文字</p>
+                ):
+                (
+                  <div className="cf tc">
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                        <p className="bg-blue-5 br4 pa3 white">文字</p>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                        <p className="bg-blue-5 br4 pa3 white">文字</p>
+                      </div>
+                    </div>
+                    <div className="fl w-100 w-third-l pa2">
+                      <div className="pv4 mh4">
+                        <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                        <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
+                        <p className="bg-blue-5 br4 pa3 white">文字</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="fl w-100 w-third-l pa2">
-                  <div className="pv4 mh4">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
-                    <label className="db bg-blue-1 br-100 white size100 center flex justify-center items-center">第2名</label>
-                    <p className="bg-blue-5 br4 pa3 white">文字</p>
-                  </div>
-                </div>
-              </div>
+                )
+              }
             </div>
             <div className="quote relative">
               <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
@@ -231,7 +329,7 @@ class App extends Component {
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <label>第2名</label>
                     <p>超過</p>
-                    <hr/>
+                    <hr className="bw1 blue-4 mv4 db-l dn"/>
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <label>第2名</label>
                     <p>超過</p>
@@ -246,7 +344,7 @@ class App extends Component {
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <label>第2名</label>
                     <p>超過</p>
-                    <hr/>
+                    <hr className="bw1 blue-4 mv4 db-l dn"/>
                     <img className="w-100" src="https://fakeimg.pl/100x100/"/>
                     <label>第2名</label>
                     <p>超過</p>
@@ -256,7 +354,11 @@ class App extends Component {
               </div>
             </div>
             <div className="mh5-l mh2 pa2">
-              <h3 className="pa4 tc bg-blue-3 br4 blue-1 f3">奸詐的殺手們</h3>
+              {
+                (isMobile) ? 
+                (<h3 className="pa4 tc br4 white f3">奸詐的殺手們</h3>):
+                (<h3 className="pa4 tc bg-blue-3 br4 blue-1 f3">奸詐的殺手們</h3>)
+              }
             </div>
             <div className="quote relative">
               <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
@@ -309,7 +411,11 @@ class App extends Component {
               </div>
             </div>
             <div className="mh5-l mh2 pa2">
-              <h3 className="pa3 tc bg-white br4 black f3">奸詐的殺手們</h3>
+              {
+                (isMobile) ? 
+                (<h3 className="pa3 tc br4 blue-1 f3">其他併發</h3>):
+                (<h3 className="pa3 tc bg-white br4 black f3">其他併發</h3>)
+              }
             </div>
             <div className="quote relative">
               <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
@@ -363,16 +469,26 @@ class App extends Component {
                      contentLabel="Minimal Modal Example"
                      onRequestClose={this.handleCloseModal}
                   >
-                    {this.state.modal}
-                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                    <div>
+                      <h3>{modalContent.title[this.state.modal-1]}</h3>
+                      <p>{modalContent.content[this.state.modal-1]}</p>
+                      <img src={modalContent.image[this.state.modal-1]}/>
+                    </div>
+                    <div className="close" onClick={this.handleCloseModal}>x</div>
                   </ReactModal>
                 </div>
                 ) : 
                 (
                 <div className="flex flex-column mh5-l mh2 relative">
-                  <div className={"modal w-80 brBox absolute h-100 bg-white "+this.state.showModal}>
-                    {this.state.modal}
-                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                  <div className={"modal w-80 brBox absolute h-100 bg-white black "+this.state.showModal}>
+                    <div className="pa4">
+                      <h3>{modalContent.title[this.state.modal-1]}</h3>
+                      <div className="bg-blue-3 pa3 br3">
+                        <img src={modalContent.image[this.state.modal-1]}/>
+                      </div>
+                      <p>{modalContent.content[this.state.modal-1]}</p>
+                    </div>
+                    <div className="close" onClick={this.handleCloseModal}>x</div>
                   </div>
                   <div className="w-100 pa3 flex justify-between">
                     <div className="ma0 flex items-center w-100">

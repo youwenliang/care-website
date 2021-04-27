@@ -173,3 +173,17 @@ h2.title {
 .modal.false {
   display: none;
 }
+
+.close {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  background-color: #002E78;
+  border-radius: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  justify-content: center;
+  align-items: center;
+}
