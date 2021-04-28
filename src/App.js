@@ -98,6 +98,55 @@ class App extends Component {
       ]
     }
 
+    // Bgs
+    var bgCar1 = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: '300px',
+    }
+
+    var bgCar2 = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: '300px'
+    }
+
+    var bgWarning = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      height: '300px'
+    }
+
+    var bgBats = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: '300px'
+    }
+
+    var bgNoWorry = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: '300px'
+    }
+
+    var bgAnswer = {
+      backgroundImage: "url(https://fakeimg.pl/800x600/)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: '300px'
+    }
+
     return (
       <main>
         {/* Header */}
@@ -125,7 +174,7 @@ class App extends Component {
               <div className="container">
                 <div className="flex flex-column flex-row-l">
                   <div className="pa3 car bg-white brBox mb5 mh3">
-                    <label>線索一</label>
+                    <label className="br3 bg-blue-1 white pa2">線索一</label>
                     <h3>糖尿病</h3>
                     <p>內文</p>
                     <div className="pa3 relative">
@@ -138,7 +187,7 @@ class App extends Component {
                 </div>
                 <div className="flex flex-column flex-row-l">
                   <div className="pa3 car bg-white brBox mh3">
-                    <label>線索一</label>
+                    <label className="br3 bg-blue-1 white pa2">線索一</label>
                     <h3>糖尿病</h3>
                     <p>內文</p>
                     <div className="pa3 relative">
@@ -155,26 +204,24 @@ class App extends Component {
               <div className="container">
                 <div className="flex flex-column flex-row-l">
                   <div className="w-100 w-50-l pa3 car bg-white">
-                    <label>線索一</label>
+                    <label className="br3 bg-blue-1 white pa2">線索一</label>
                     <h3>糖尿病</h3>
                     <p>內文</p>
                   </div>
-                  <div className="w-100 w-50-l pa3 relative">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                  <div className="w-100 w-50-l pa3 relative ma3 brBox" style={bgCar1}>
                     <div className="quote absolute top-0">
                       <h4>萬萬不可以</h4>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-column-reverse flex-row-l">
-                  <div className="w-100 w-50-l pa3 relative">
-                    <img className="w-100" src="https://fakeimg.pl/100x100/"/>
+                  <div className="w-100 w-50-l pa3 relative ma3 brBox" style={bgCar2}>
                     <div className="quote absolute top-0">
                       <h4>萬萬不可以</h4>
                     </div>
                   </div>
                   <div className="w-100 w-50-l pa3 car bg-white">
-                    <label>線索二</label>
+                    <label className="br3 bg-blue-1 white pa2">線索一</label>
                     <h3>糖尿病</h3>
                     <p>內文</p>
                   </div>
@@ -237,8 +284,7 @@ class App extends Component {
                 )
               }
             </div>
-            <div className="quote relative">
-              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+            <div className="quote relative" style={bgWarning}>
               <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">萬萬不可以</h4>
             </div>
           </div>
@@ -304,8 +350,7 @@ class App extends Component {
                 )
               }
             </div>
-            <div className="quote relative">
-              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+            <div className="quote relative" style={bgBats}>
               <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
@@ -360,8 +405,7 @@ class App extends Component {
                 (<h3 className="pa4 tc bg-blue-3 br4 blue-1 f3">奸詐的殺手們</h3>)
               }
             </div>
-            <div className="quote relative">
-              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+            <div className="quote relative" style={bgNoWorry}>
               <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
@@ -417,8 +461,7 @@ class App extends Component {
                 (<h3 className="pa3 tc bg-white br4 black f3">其他併發</h3>)
               }
             </div>
-            <div className="quote relative">
-              <img className="w-100 db" src="https://fakeimg.pl/400x100/"/>
+            <div className="quote relative" style={bgAnswer}>
               <h4 className="bg-white absolute bottom-0 right-0 flex justify-center items-center ph4 pv3">到底是</h4>
             </div>
           </div>
