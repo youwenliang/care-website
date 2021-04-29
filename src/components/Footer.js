@@ -3,6 +3,11 @@ import $ from 'jquery';
 import bgl from '../images/footerBGL.png';
 import bgr from '../images/footerBGR.png';
 
+import data from '../data/data.js'
+
+// Data
+const cData = data.content;
+const mData = data.map;
 
 class Footer extends Component {
   constructor(props) {
@@ -22,20 +27,20 @@ class Footer extends Component {
     return (
       <footer className="bg-blue-2 pv5" style={footerBG}>
         <div className="container ph4">
-          <h1 className="white">Reference</h1>
+          <h1 className="white">{cData.footer["title"]}</h1>
           <ol className="white ma0 ph3">
-            <li>aaa</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
-            <li>bbb</li>
+            <li>{cData.footer["list"][0]}</li>
+            <li>{cData.footer["list"][1]}</li>
+            <li>{cData.footer["list"][2]}</li>
+            <li>{cData.footer["list"][3]}</li>
+            <li>{cData.footer["list"][4]}</li>
+            <li>{cData.footer["list"][5]}</li>
+            <li>{cData.footer["list"][6]}</li>
+            <li>{cData.footer["list"][7]}</li>
+            <li>{cData.footer["list"][8]}</li>
+            <li>{cData.footer["list"][9]}</li>
+            <li>{cData.footer["list"][10]}</li>
+            <li>{cData.footer["list"][11]}</li>
           </ol>
         </div>
       </footer>

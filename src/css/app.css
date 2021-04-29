@@ -104,6 +104,10 @@ h2.title {
   }
 }
 
+.pre-wrap {
+ white-space: pre-wrap;
+}
+
 
 /* color */
 
