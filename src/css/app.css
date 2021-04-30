@@ -203,6 +203,19 @@ h2.title {
 }
 
 /* Map */
+#changhua-county, #new-taipei-city, #miaoli-county, #hsinchu-city, #chiayi-county, #pingtung-county, #penghu-county {
+  fill: #CBE6E3
+}
+#keelung-city, #taipei-city, #taoyuan-city, #yunlin-county, #hualien-county, #tainan-city {
+  fill: #5DBCB6
+}
+#kaohsiung-city, #taichung-city, #hsinchu-county {
+  fill: #00A198
+}
+#yilan-county, #nantou-county, #taitung-county, #chiayi-city {
+  fill: #009387
+}
+
 .mapContainer {
   height: 750px;
 }

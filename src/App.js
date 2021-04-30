@@ -41,6 +41,13 @@ class App extends Component {
   }
 
   componentDidMount(){
+    // Map
+    $('.svg-map__location').each(function(){
+      if($(this).attr('id').indexOf("city") >=0) {
+        $(this).attr('aria-city', 'true');
+      }
+    })
+
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
