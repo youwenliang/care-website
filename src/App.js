@@ -4,9 +4,13 @@ import Footer from './components/Footer.js';
 import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
-import data from './data/data.js'
+
+import Taiwan from "@svg-maps/taiwan.main";
+import { SVGMap, CheckboxSVGMap, RadioSVGMap} from "react-svg-map";
+import "react-svg-map/lib/index.css";
 
 // Data
+import data from './data/data.js'
 const cData = data.content;
 const mData = data.map;
 
@@ -20,7 +24,8 @@ class App extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
       showModal: false,
-      modal: 0
+      modal: 0,
+      currentMap: null
     }
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -43,16 +48,60 @@ class App extends Component {
     });
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
+
+    var $t = this;
+
+    // Maps
+    $('path').click(function(){
+      if($(this).attr('aria-checked') === "true") {
+        $(this).attr('aria-checked', "false");
+        $(this).attr('aria-before', $t.state.currentMap);
+        $(this).attr('tabindex', "-1");
+        setTimeout(function(){
+          $t.setState({currentMap:null})
+        },300)
+        $('#detailInfo').addClass("o-0");
+        $('#mapInfo').addClass("w-100");
+        $('#mapInfo').removeClass("w-50");
+      } else {
+        if($(this).attr('aria-before')) {
+          $t.setState({currentMap:$(this).attr('aria-before')});
+        }
+        $(this).attr('aria-checked', "true");
+        $(this).attr('tabindex', "0");
+        $t.openMap();
+      }
+    })
   }
 
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
     this.setState({ height: window.innerHeight });
   }
+  openMap = () => {
+    $('#detailInfo').removeClass("o-0");
+    $('#mapInfo').removeClass("w-100");
+    $('#mapInfo').addClass("w-50");
+  }
+
+  resetMap = () => {
+    $('#detailInfo').addClass("o-0");
+    $('#mapInfo').addClass("w-100");
+    $('#mapInfo').removeClass("w-50");
+    var $t = this;
+    var $p = $('path[aria-checked="true"]');
+    $p.attr('aria-checked', "false");
+    $p.attr('aria-before', $t.state.currentMap);
+    $p.attr('tabindex', "-1");
+    setTimeout(function(){
+      $t.setState({currentMap:null})
+    },300)
+  }
 
   render(){
     const { width, height } = this.state;
     const isMobile = width <= 959;
+    var $t = this;
 
     // Cover
     var coverBG = {
@@ -74,9 +123,11 @@ class App extends Component {
       content : {
         borderRadius: '30px',
         border: '0px',
-        inset: '20px',
         color: "white",
-        backgroundColor: "#6A7DCB"
+        backgroundColor: "#6A7DCB",
+        margin: "auto 20px",
+        top: "50%",
+        transform: "translateY(-50%)"
       }
     };
 
@@ -154,12 +205,12 @@ class App extends Component {
         {/* Cover */}
         <section id="cover" className="pv0">
           <div className="container">
-            <div className="pa4 center tc bg-blue-2 brBox" style={coverBG}>
+            <div className="pa4 center tc bg-blue-2 brBox mh3" style={coverBG}>
               <h2 className="tc blue-1 lh-copy f3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["title"]}}></h2>
               <div className="bg-blue-1 br-100 size250 center flex justify-center items-center">
                 <h5 className="tc lh-copy white dib f4 normal pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["content"]}}></h5>
               </div>
-              <div id="start" className="bg-white dib ph4 pv2 black mt4" style={startBG}>開始</div>
+              <div id="start" className="bg-white dib ph4 pv2 black mt4" style={startBG}>{cData.start}</div>
             </div>
           </div>
         </section>
@@ -231,7 +282,7 @@ class App extends Component {
 
         {/* How */}
         <section id="how" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox pb0">
+          <div className="container bg-blue-3 pa4 brBox pb0 mh3">
             <h2 className="title bg-blue-1 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["title"]}}></h2>
             <div className="center">
               {
@@ -294,7 +345,7 @@ class App extends Component {
 
         {/* Cause */}
         <section id="cause" className="pv0">
-          <div className="container bg-blue-3 pa4 pb0 brBox">
+          <div className="container bg-blue-3 pa4 pb0 brBox mh3">
             <h2 className="title bg-blue-1" dangerouslySetInnerHTML={{__html:cData.cause["title"]}}></h2>
             <div className="center">
               {
@@ -360,7 +411,7 @@ class App extends Component {
 
         {/* Knowledge */}
         <section id="knowledge" className="pv0">
-          <div className="container bg-blue-4 pa4 pb0 brBox">
+          <div className="container bg-blue-4 pa4 pb0 brBox mh3">
             <h2 className="title bg-blue-2">{cData.knowledge["title"]}</h2>
             <div className="center">
               <div className="cf mh5-l mh2 flex flex-row-l flex-column">
@@ -407,7 +458,7 @@ class App extends Component {
 
         {/* Factor */}
         <section id="factor" className="pv0">
-          <div className="container bg-blue-3 pa4 pb0 tc brBox">
+          <div className="container bg-blue-3 pa4 pb0 tc brBox mh3">
             <h2 className="title bg-blue-1">{cData.factor["title"]}</h2>
             <h3>{cData.factor["subtitle"]}</h3>
             <div className="flex flex-wrap mh5-l mh2">
@@ -463,7 +514,7 @@ class App extends Component {
 
         {/* QA */}
         <section id="qa" className="pv0">
-          <div className="container bg-blue-5 pa4 brBox">
+          <div className="container bg-blue-5 pa4 brBox mh3">
             <h2 className="title bg-blue-3">{cData.qa["title"]}</h2>
               {
                 (isMobile) ? 
@@ -568,8 +619,32 @@ class App extends Component {
 
         {/* Map */}
         <section id="map" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox">
+          <div className="container bg-blue-3 pa4 brBox mh3">
             <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
+            {
+                (isMobile) ? 
+                (
+                  <div className="bg-white mh2 brBox pa4"></div>
+                ):
+                (
+                  <div className="mapContainer bg-white mh5 brBox cf pa4 relative">
+                    <div id="mapInfo" className="fl w-100 relative h-100">
+                      <RadioSVGMap 
+                        map={Taiwan}
+                        onChange={function(n){
+                          $t.openMap();
+                          $t.setState({currentMap:n.id});
+                          console.log(n.id);
+                        }}
+                      />
+                    </div>
+                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 position absolute pa4">
+                      <p>{this.state.currentMap}</p>
+                      <button onClick={() => {this.resetMap()}}>close</button>
+                    </div>
+                  </div>
+                )
+            }
           </div>
         </section>
 
