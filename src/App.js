@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import Map from './components/Map.js';
 import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
 
-import Taiwan from "@svg-maps/taiwan.main";
-import { SVGMap, CheckboxSVGMap, RadioSVGMap} from "react-svg-map";
-import "react-svg-map/lib/index.css";
-
 // Data
 import data from './data/data.js'
 const cData = data.content;
-const mData = data.map;
 
 // Images
 ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,.4)';
@@ -24,8 +20,7 @@ class App extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
       showModal: false,
-      modal: 0,
-      currentMap: null
+      modal: 0
     }
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -41,13 +36,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // Map
-    $('.svg-map__location').each(function(){
-      if($(this).attr('id').indexOf("city") >=0) {
-        $(this).attr('aria-city', 'true');
-      }
-    })
-
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
@@ -55,54 +43,11 @@ class App extends Component {
     });
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
-
-    var $t = this;
-
-    // Maps
-    $('path').click(function(){
-      if($(this).attr('aria-checked') === "true") {
-        $(this).attr('aria-checked', "false");
-        $(this).attr('aria-before', $t.state.currentMap);
-        $(this).attr('tabindex', "-1");
-        setTimeout(function(){
-          $t.setState({currentMap:null})
-        },300)
-        $('#detailInfo').addClass("o-0");
-        $('#mapInfo').addClass("w-100");
-        $('#mapInfo').removeClass("w-50");
-      } else {
-        if($(this).attr('aria-before')) {
-          $t.setState({currentMap:$(this).attr('aria-before')});
-        }
-        $(this).attr('aria-checked', "true");
-        $(this).attr('tabindex', "0");
-        $t.openMap();
-      }
-    })
   }
 
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
     this.setState({ height: window.innerHeight });
-  }
-  openMap = () => {
-    $('#detailInfo').removeClass("o-0");
-    $('#mapInfo').removeClass("w-100");
-    $('#mapInfo').addClass("w-50");
-  }
-
-  resetMap = () => {
-    $('#detailInfo').addClass("o-0");
-    $('#mapInfo').addClass("w-100");
-    $('#mapInfo').removeClass("w-50");
-    var $t = this;
-    var $p = $('path[aria-checked="true"]');
-    $p.attr('aria-checked', "false");
-    $p.attr('aria-before', $t.state.currentMap);
-    $p.attr('tabindex', "-1");
-    setTimeout(function(){
-      $t.setState({currentMap:null})
-    },300)
   }
 
   render(){
@@ -625,35 +570,7 @@ class App extends Component {
         </div>
 
         {/* Map */}
-        <section id="map" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox mh3">
-            <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
-            {
-                (isMobile) ? 
-                (
-                  <div className="bg-white mh2 brBox pa4"></div>
-                ):
-                (
-                  <div className="mapContainer bg-white mh5 brBox cf pa4 relative">
-                    <div id="mapInfo" className="fl w-100 relative h-100">
-                      <RadioSVGMap 
-                        map={Taiwan}
-                        onChange={function(n){
-                          $t.openMap();
-                          $t.setState({currentMap:n.id});
-                          console.log(n.id);
-                        }}
-                      />
-                    </div>
-                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 position absolute pa4">
-                      <p>{this.state.currentMap}</p>
-                      <button onClick={() => {this.resetMap()}}>close</button>
-                    </div>
-                  </div>
-                )
-            }
-          </div>
-        </section>
+        <Map/>
 
         {/* Banner */}
         <section id="banner" className="pb0">

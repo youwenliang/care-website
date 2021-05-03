@@ -108,10 +108,31 @@ var data = {
 		{
 			"id":1,
 			"name":"診所名稱",
-			"address": "診所地址",
+			"address": "大安區診所地址1",
 			"info": "門診資訊",
 			"schedule": "門診時間",
-			"phone": "門診電話"
+			"phone": "門診電話",
+			"city": "chiayi-county"
+
+		},
+		{
+			"id":3,
+			"name":"診所名稱",
+			"address": "大同區診所地址2",
+			"info": "門診資訊",
+			"schedule": "門診時間",
+			"phone": "門診電話",
+			"city": "chiayi-county"
+
+		},
+		{
+			"id":2,
+			"name":"診所名稱",
+			"address": "大安區診所地址3",
+			"info": "門診資訊",
+			"schedule": "門診時間",
+			"phone": "門診電話",
+			"city": "chiayi-county"
 
 		}
 	]
