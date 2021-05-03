@@ -144,6 +144,7 @@ class Map extends Component {
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4 brBox mh3">
+            <p onClick={() => {this.setState({search:"診所"}, () => {this.openMap()})}}>診所</p>            
             <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
             {
                 (isMobile) ? 
