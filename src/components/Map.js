@@ -36,13 +36,6 @@ class Map extends Component {
   componentDidMount(){
     var $t = this
 
-    for(var k = 0; k < mData.length; k++) {
-      if(!sCity.includes(mData[k]["address"].substring(0,3))) {
-        sCity.push(mData[k]["address"].substring(0,3));
-        $('#sCity').append('<option>'+mData[k]["address"].substring(0,3)+'</option>');
-      }
-    }
-
     // Map
     $('.svg-map__location').each(function(){
       if($(this).attr('id').indexOf("city") >=0) {
@@ -91,6 +84,15 @@ class Map extends Component {
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
     this.setState({ height: window.innerHeight });
+    sCity = [];
+    $('#sCity').empty();
+    $('#sCity').append('<option value="" disabled selected>縣市</option>');
+    for(var k = 0; k < mData.length; k++) {
+      if(!sCity.includes(mData[k]["address"].substring(0,3))) {
+        sCity.push(mData[k]["address"].substring(0,3));
+        $('#sCity').append('<option>'+mData[k]["address"].substring(0,3)+'</option>');
+      }
+    }
   }
   openMap = () => {
     $('#detailInfo').removeClass("o-0");
