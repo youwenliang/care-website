@@ -11,6 +11,7 @@ import data from '../data/data.js'
 const cData = data.content;
 const mData = data.map;
 var dis = [], list = [], allList = [];
+var sCity = [], sDis = [];
 
 class Map extends Component {
   constructor(props) {
@@ -18,15 +19,30 @@ class Map extends Component {
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
+      value: "",
       search: null,
       currentMap: null,
       same: false,
-      allList: []
+      allList: [],
+      sCity: null,
+      sDis: null
     }
+    this.handleSelect1 = this.handleSelect1.bind(this);
+    this.handleSelect2 = this.handleSelect2.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
     var $t = this
+
+    for(var k = 0; k < mData.length; k++) {
+      if(!sCity.includes(mData[k]["address"].substring(0,3))) {
+        sCity.push(mData[k]["address"].substring(0,3));
+        $('#sCity').append('<option>'+mData[k]["address"].substring(0,3)+'</option>');
+      }
+    }
+
     // Map
     $('.svg-map__location').each(function(){
       if($(this).attr('id').indexOf("city") >=0) {
@@ -38,6 +54,7 @@ class Map extends Component {
 
     // Maps
     $('path').click(function(){
+      $t.setState({value: ""})
       if($(this).attr('aria-checked') === "true") {
         $(this).attr('aria-checked', "false");
         $(this).attr('aria-before', $t.state.currentMap);
@@ -91,10 +108,7 @@ class Map extends Component {
     $p.attr('aria-checked', "false");
     $p.attr('aria-before', $t.state.currentMap);
     $p.attr('tabindex', "-1");
-    setTimeout(function(){
-      $t.setState({currentMap:null})
-    },300)
-    $t.setState({same: true});
+    $t.setState({currentMap:null, same: true, value: "", allList: null});
   }
 
   // Clinic Component
@@ -136,20 +150,74 @@ class Map extends Component {
     this.setState({allList:allList});
   }
 
+  handleSelect1(event) {
+    var $t = this;
+    this.setState({value: event.target.value, sCity: event.target.value}, () => {
+      sDis = [];
+      $('#sDis').empty();
+      $('#sDis').append('<option value="" disabled selected>地區</option>');
+      for(var i = 0; i < mData.length; i++) {
+        if(mData[i]["address"].includes($t.state.value)) {
+          console.log(mData[i]);  
+          console.log(this.state.value);
+          if(!sDis.includes(mData[i]["address"].substring(3,6))) {
+            sDis.push(mData[i]["address"].substring(3,6));
+            $('#sDis').append('<option>'+mData[i]["address"].substring(3,6)+'</option>');
+          }
+        }
+      }
+    });
+  }
+
+  handleSelect2(event) {
+    this.setState({sDis:event.target.value}, () => {
+      this.setState({value: this.state.sCity+this.state.sDis});
+    });
+  }
+
+  handleChange(event) {    
+    this.setState({value: event.target.value});
+  }
+  handleSubmit(event) {
+    this.setState({search:this.state.value}, () => {this.resetMap(); this.openMap()});
+    event.preventDefault();
+  }
+
   render(){
     const { width, height } = this.state;
     const isMobile = width <= 959;
     var $t = this;
+    var form = {
+      position: isMobile ? "relative":"absolute",
+      bottom: "0",
+    }
 
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4 brBox mh3">
-            <p onClick={() => {this.setState({search:"診所"}, () => {this.openMap()})}}>診所</p>            
             <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
             {
                 (isMobile) ? 
                 (
-                  <div className="bg-white mh2 brBox pa4"></div>
+                  <div className="relative bg-white mh2 brBox">
+                    <div className="pa4 absolute">
+                      <form className="center" style={form} onSubmit={this.handleSubmit}>
+                        <input type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
+                        <select name="city" id="sCity" onChange={this.handleSelect1}>
+                          <option value="" disabled selected>縣市</option>
+                        </select>
+                        <select name="dis" id="sDis" onChange={this.handleSelect2}>
+                          <option value="" disabled selected>地區</option>
+                        </select>
+                        <input type="submit" value="查詢"/>
+                      </form>                       
+                    </div>
+                    <div id="detailInfo" className="o-0 pa4 relative z1 bg-white brBox">
+                      <p>{this.state.currentMap}</p>
+                      {this.state.allList}
+                      <button onClick={() => {this.resetMap()}}>close</button>
+                    </div>
+                  </div>
                 ):
                 (
                   <div className="mapContainer bg-white mh5 brBox cf pa4 relative">
@@ -162,8 +230,11 @@ class Map extends Component {
                           });
                         }}
                       />
+                      <form className="center" style={form} onSubmit={this.handleSubmit}>
+                        <input type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
+                      </form>                       
                     </div>
-                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 position absolute pa4">
+                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 absolute pa4">
                       <p>{this.state.currentMap}</p>
                       {this.state.allList}
                       <button onClick={() => {this.resetMap()}}>close</button>

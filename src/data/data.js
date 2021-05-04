@@ -113,7 +113,6 @@ var data = {
 			"info": "門診資訊",
 			"schedule": "門診時間",
 			"phone": "門診電話",
-
 		},
 		{
 			"id":2,
@@ -123,7 +122,6 @@ var data = {
 			"info": "門診資訊",
 			"schedule": "門診時間",
 			"phone": "門診電話",
-
 		},
 		{
 			"id":3,
@@ -137,7 +135,8 @@ var data = {
 		{
 			"id":4,
 			"name":"診所名稱",
-			"address": "台南市大安區診所地址4",
+			"city": "tainan-city",
+			"address": "台南市安平區診所地址4",
 			"info": "門診資訊",
 			"schedule": "門診時間",
 			"phone": "門診電話",

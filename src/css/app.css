@@ -237,6 +237,14 @@ h2.title {
   width: 45%;
   transition: all .15s ease-in-out;
 }
+@media only screen and (max-width: 60em) {
+  #detailInfo {
+    right: auto;
+    height: auto;
+    width: 100%;
+    transition: all 0s ease-in-out;
+  }
+}
 
 #detailInfo.o-0 {
   pointer-events: none;
