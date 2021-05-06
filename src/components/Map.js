@@ -5,6 +5,7 @@ import '../App.css';
 import Taiwan from "@svg-maps/taiwan.main";
 import { SVGMap, CheckboxSVGMap, RadioSVGMap} from "react-svg-map";
 import "react-svg-map/lib/index.css";
+import logo3 from '../images/logo3.png';
 
 // Data
 import data from '../data/data.js'
@@ -189,9 +190,34 @@ class Map extends Component {
     const { width, height } = this.state;
     const isMobile = width <= 959;
     var $t = this;
-    var form = {
-      position: isMobile ? "relative":"absolute",
-      bottom: "0",
+    var form = isMobile ? {
+      position: "relative",
+      width: "100%",
+      borderRadius: "16px"
+    }:
+    {
+      position: "absolute",
+      left: "0",
+      right: "0",
+      bottom: "30px",
+      width: "235px",
+      transform: "translateX(80%)",
+      borderRadius: "16px"
+    }
+    var inputBox = {
+      borderRadius: "16px",
+      width: "100%"
+    }
+
+    var input = isMobile ? {
+      borderRadius: "8px",
+      width: "calc(100% - 32px)",
+      left: "32px"
+    }:
+    {
+      borderRadius: "8px",
+      width: "170px",
+      left: "32px"
     }
 
     return (
@@ -201,17 +227,21 @@ class Map extends Component {
             {
                 (isMobile) ? 
                 (
-                  <div className="relative bg-white mh2 brBox">
-                    <div className="pa4 absolute">
-                      <form className="center" style={form} onSubmit={this.handleSubmit}>
-                        <input type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
-                        <select name="city" id="sCity" onChange={this.handleSelect1}>
-                          <option value="" disabled selected>縣市</option>
-                        </select>
-                        <select name="dis" id="sDis" onChange={this.handleSelect2}>
-                          <option value="" disabled selected>地區</option>
-                        </select>
-                        <input type="submit" value="查詢"/>
+                  <div className="relative bg-white mh2 brBox pb6">
+                    <div className="pa4 absolute w-100">
+                      <form id="searchInput" className="center" style={form} onSubmit={this.handleSubmit}>
+                        <div className="bg-blue-3 pa3 mb4" style={inputBox}>
+                          <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
+                        </div>
+                        <div className="center tc">
+                          <select name="city" id="sCity" onChange={this.handleSelect1}>
+                            <option value="" disabled selected>縣市</option>
+                          </select>
+                          <select name="dis" id="sDis" onChange={this.handleSelect2}>
+                            <option value="" disabled selected>地區</option>
+                          </select>
+                          <input className="db tc center mt4" type="submit" value="查詢"/>
+                        </div>
                       </form>                       
                     </div>
                     <div id="detailInfo" className="o-0 pa4 relative z1 bg-white brBox">
@@ -232,8 +262,8 @@ class Map extends Component {
                           });
                         }}
                       />
-                      <form className="center" style={form} onSubmit={this.handleSubmit}>
-                        <input type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
+                      <form id="searchInput" className="center bg-blue-3 pa3" style={form} onSubmit={this.handleSubmit}>
+                        <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                       </form>                       
                     </div>
                     <div id="detailInfo" className="fl brBox bg-blue-3 o-0 absolute pa4">
@@ -241,6 +271,7 @@ class Map extends Component {
                       {this.state.allList}
                       <button onClick={() => {this.resetMap()}}>close</button>
                     </div>
+                    <img className="absolute pn bottom-0 left-0 pa5 transition" src={logo3} width={this.state.currentMap ? "100":"230"} />
                   </div>
                 )
             }

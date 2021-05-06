@@ -49,6 +49,12 @@ section#car {
   padding: 365px 0;
 }
 
+@media only screen and (max-width: 60em) {
+  section#car {
+    padding: 130px 0 60px;
+  }
+}
+
 .container {
 	max-width: 1366px;
 	margin: auto;
@@ -165,11 +171,20 @@ h2.title {
   background-color: #505F9D;
 }
 
+.flex-shrink {
+  flex-shrink: 0;
+}
+
 /* size */
 
 .size250 {
   width: 250px;
   height: 250px;
+}
+
+.size190 {
+  width: 190px;
+  height: 190px;
 }
 
 .size100 {
@@ -231,8 +246,17 @@ h2.title {
   position: relative;
 }
 
-#mapInfo {
+#mapInfo, .transition {
   transition: all .3s ease-in-out;
+}
+
+input {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #detailInfo {
@@ -250,7 +274,7 @@ h2.title {
   }
 }
 
-#detailInfo.o-0 {
+#detailInfo.o-0, .pn {
   pointer-events: none;
 }
 
@@ -287,4 +311,51 @@ h2.title {
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+/* position */
+.l60 {left: 60%;}
+.b10 {bottom: 10%;}
+.r50 {right: 50%;}
+.b30 {bottom: 30%;}
+.b40 {bottom: 40%;}
+.l40 {left: 40%;}
+
+
+@media only screen and (max-width: 60em) {
+  .quote:not(.carQ) h4 {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 110% !important;
+  }
+  .quote.carQ.left h4:before {
+    height: 40px;
+    left: -10px;
+  }
+  .quote.carQ.right h4:before {
+    height: 40px;
+  }
+
+  .quote:not(.carQ) h4:before {
+    content: '';
+    width: 80px;
+    height: 55px;
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -30px !important;
+    transform: rotate(90deg);
+    margin: auto;
+    background-image: url('./images/bubble.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .quote:not(.carQ) .l60 {left: auto;}
+  .quote:not(.carQ) .b10 {bottom: auto;}
+  .quote:not(.carQ) .r50 {right: auto;}
+  .quote:not(.carQ) .b30 {bottom: auto;}
+  .quote:not(.carQ) .b40 {bottom: auto;}
+  .quote:not(.carQ) .l40 {left: auto;}
 }

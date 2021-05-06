@@ -176,8 +176,8 @@ class App extends Component {
       backgroundImage: "url("+man1+")",
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
-      backgroundPosition: "center bottom",
-      height: '300px'
+      backgroundPosition: isMobile ? "center bottom" : "10% bottom",
+      height: isMobile ? '170px':'300px'
     }
 
     var bgBats = {
@@ -185,31 +185,31 @@ class App extends Component {
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       backgroundPosition: "center bottom",
-      height: '300px'
+      height: isMobile ? '170px':'300px'
     }
 
     var bgNoWorry = {
-      backgroundImage: "url("+man4+"), url("+man4c+")",
+      backgroundImage: isMobile ? "url("+man4+")":"url("+man4+"), url("+man4c+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "contain, 250px",
-      backgroundPosition: "left bottom, right top",
-      height: '300px'
+      backgroundPosition: isMobile ? "center bottom" : "10% bottom, right top",
+      height: isMobile ? '170px':'300px'
     }
 
     var bgAnswer = {
       backgroundImage: "url("+man5+")",
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
-      backgroundPosition: "center bottom",
-      height: '360px'
+      backgroundPosition: isMobile ? "center bottom" : "90% bottom",
+      height: isMobile ? '170px':'360px'
     }
 
     var bgBanner = {
       backgroundImage: "url("+man2+"), url("+man3+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "contain, contain",
-      backgroundPosition: "left bottom, right bottom",
-      height: '360px'
+      backgroundPosition: isMobile ? "-21% bottom, 115% bottom" : "left bottom, right bottom",
+      height: isMobile ? '150px':'360px'
     }
 
     return (
@@ -246,8 +246,8 @@ class App extends Component {
                     <p clasasName="pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                     <div className="pa3 relative">
                       <img className="w-100" src={car1}/>
-                      <div className="quote left top-0">
-                        <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                      <div className="quote carQ left top-0">
+                        <h4 className="bg-white brBox absolute l60 b10 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -259,8 +259,8 @@ class App extends Component {
                     <p clasasName="pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
                     <div className="pa3 relative">
                       <img className="w-100" src={car2}/>
-                      <div className="quote right top-0">
-                        <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                      <div className="quote carQ right top-0">
+                        <h4 className="bg-white brBox absolute r50 b30 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -276,15 +276,15 @@ class App extends Component {
                     <p clasasName="pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                   </div>
                   <div className="w-100 w-50-l pa3 relative ma3 brBox" style={bgCar1}>
-                    <div className="quote left top-0">
-                      <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                    <div className="quote carQ left top-0">
+                      <h4 className="bg-white brBox absolute l60 b10 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-column-reverse flex-row-l">
                   <div className="w-100 w-50-l pa3 relative ma3 brBox" style={bgCar2}>
-                    <div className="quote right top-0">
-                      <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                    <div className="quote carQ right top-0">
+                      <h4 className="bg-white brBox absolute r50 b30 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                     </div>
                   </div>
                   <div className="w-100 w-50-l pa3 car bg-white">
@@ -352,13 +352,13 @@ class App extends Component {
               }
             </div>
             <div className="quote left relative mt6" style={bgWarning}>
-              <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></h4>
+              <h4 className="bg-white brBox absolute l60 b40 flex justify-center items-center pa4 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></h4>
             </div>
           </div>
         </section>
 
-        <div className="divider ma0 pa0">
-          <img className="db center" src={bgR} width="450"/>
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Cause */}
@@ -418,13 +418,13 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt6" style={bgBats}>
-              <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap">{cData.cause["quote"]}</h4>
+              <h4 className="bg-white brBox absolute r50 b40 flex justify-center items-center pa4 pre-wrap">{cData.cause["quote"]}</h4>
             </div>
           </div>
         </section>
 
-        <div className="divider ma0 pa0">
-          <img className="db center" src={bgL} width="450"/>
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Knowledge */}
@@ -465,13 +465,13 @@ class App extends Component {
               }
             </div>
             <div className="quote left relative mt6" style={bgNoWorry}>
-              <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap">{cData.knowledge["quote"]}</h4>
+              <h4 className="bg-white brBox absolute b40 l40 flex justify-center items-center pa4 pre-wrap">{cData.knowledge["quote"]}</h4>
             </div>
           </div>
         </section>
 
-        <div className="divider ma0 pa0">
-          <img className="db center" src={bgR} width="450"/>
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Factor */}
@@ -521,13 +521,13 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt6" style={bgAnswer}>
-              <h4 className="bg-white brBox absolute bottom-0 right-0 flex justify-center items-center pa4 pre-wrap" >{cData.factor["quote"]}</h4>
+              <h4 className="bg-white brBox absolute b40 r50 flex justify-center items-center pa4 pre-wrap" >{cData.factor["quote"]}</h4>
             </div>
           </div>
         </section>
 
-        <div className="divider ma0 pa0">
-          <img className="db center" src={bgL} width="450"/>
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* QA */}
@@ -592,31 +592,31 @@ class App extends Component {
                     </div>
                     <div className="close" onClick={this.handleCloseModal}>x</div>
                   </div>
-                  <div className="w-100 pa3 flex justify-between">
+                  <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 w-25" src={qaImg[0]}/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[0]} height="190"/>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][0]}</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(1)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="160"/>
+                    <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(1)}>
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
                     </div>
                   </div>
-                  <div className="w-100 pa3 flex justify-between">
+                  <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 w-25" src={qaImg[1]}/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[1]} height="190"/>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][1]}</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(2)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="160"/>
+                    <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(2)}>
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
                     </div>
                   </div>
-                  <div className="w-100 pa3 flex justify-between">
+                  <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 w-25" src={qaImg[2]}/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[2]} height="190"/>
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][2]}</p>
                     </div>
-                    <div className="br-100 bg-white pa2 overflow-hidden" onClick={() => this.handleOpenModal(3)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="160"/>
+                    <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(3)}>
+                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
                     </div>
                   </div>
                 </div>
@@ -625,8 +625,8 @@ class App extends Component {
           </div>      
         </section>
 
-        <div className="divider ma0 pa0">
-          <img className="db center" src={bgR} width="450"/>
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Map */}
@@ -638,7 +638,7 @@ class App extends Component {
             <h3 className="tc lh-copy f2 pb4 pre-wrap">{cData.banner}</h3>
             <div className="relative" style={bgBanner}>
               <img className="db center o-0" src="https://fakeimg.pl/1000x360/"/>
-              <img className="db center absolute left-0 right-0 bottom-0 pb4" src={logo2} width="280"/>
+              <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} width={isMobile? "100":"280"}/>
             </div>
           </div>
         </section>
