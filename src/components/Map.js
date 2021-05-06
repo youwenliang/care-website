@@ -222,12 +222,12 @@ class Map extends Component {
 
     return (
         <section id="map" className="pv0">
-          <div className="container bg-blue-3 pa4 brBox mh3">
+          <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
             <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
             {
                 (isMobile) ? 
                 (
-                  <div className="relative bg-white mh2 brBox pb6">
+                  <div className="relative bg-white mh2 brBox pb6 mt3">
                     <div className="pa4 absolute w-100">
                       <form id="searchInput" className="center" style={form} onSubmit={this.handleSubmit}>
                         <div className="bg-blue-3 pa3 mb4" style={inputBox}>
@@ -252,7 +252,7 @@ class Map extends Component {
                   </div>
                 ):
                 (
-                  <div className="mapContainer bg-white mh5 brBox cf pa4 relative">
+                  <div className="mapContainer bg-white mh5 brBox cf pa4 relative mb3">
                     <div id="mapInfo" className="fl w-100 relative h-100">
                       <RadioSVGMap 
                         map={Taiwan}
