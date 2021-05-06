@@ -4,6 +4,7 @@ var data = {
 		// Header
 		"header": {
 			"title":"糖尿病",
+			"subtitle":"糖尿病"
 		},
 		"cover": {
 			"title": "糖尿病",

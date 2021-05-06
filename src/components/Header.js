@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import bgl from '../images/headerBGL.png';
 import bgr from '../images/headerBGR.png';
+import logo1 from '../images/logo1.png';
 
 import data from '../data/data.js'
 
@@ -30,11 +31,11 @@ class Header extends Component {
 
     return (
       <header className="center pt4 pb6" style={headerBG}>
-        <h1 className="tc white">{cData.header["title"]}</h1>
+        <h1 className="tc white f1">{cData.header["title"]}</h1>
+        <h2 className="tc white f2">{cData.header["subtitle"]}</h2>
         <div id="logos" className="center w-100 tc">
-          <div className="dib bg-white ma0 pt2 ph2 pb0" style={logoContainer}>
-            <img className="ma2" src="https://fakeimg.pl/120x40/"/>
-            <img className="ma2" src="https://fakeimg.pl/120x40/"/>
+          <div className="dib bg-white ma0 pa0" style={logoContainer}>
+            <img className="ma2" src={logo1} width="200"/>
           </div>
         </div>
       </header>
