@@ -15,11 +15,24 @@ const mData = data.map;
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
   }
   componentDidMount(){
-
+    window.addEventListener('resize', this.checkMobile);
+    this.checkMobile()
   }
+  checkMobile = () => {
+    this.setState({ width: window.innerWidth });
+    this.setState({ height: window.innerHeight });
+  }
+
   render(){
+    const { width, height } = this.state;
+    const isMobile = width <= 959;
+
     var headerBG = {
       height: "565px",
       backgroundColor: "#1C3073",

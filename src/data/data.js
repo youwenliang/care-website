@@ -42,7 +42,7 @@ var data = {
 				"<p class='f24'>蛋白尿同時為心衰竭以及\n腎臟惡化的主要風險因子</p>",
 			],
 			"cardcontent3": [
-				"<p class='f32 fw5'>糖尿病+高血壓<br/>＝心衰竭風險增加2倍<sup>4,5</sup></p>",
+				"<p class='f32 fw5'>糖尿病+高血壓<br/>＝心衰竭風險增加2倍<sup>4,5</sup><br/><br/></p>",
 				"<p class='f32 fw5'>糖尿病+蛋白尿<br/>＝腎臟惡化風險快3倍，可能會洗腎！<sup>6</sup></p>",
 			],
 			"cardcontent4": [

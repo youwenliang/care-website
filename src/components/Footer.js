@@ -12,23 +12,39 @@ const mData = data.map;
 class Footer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      footerH: $('footer').outerHeight()
+    }
   }
   componentDidMount(){
-
+    window.addEventListener('resize', this.checkMobile);
+    this.checkMobile()
   }
+  checkMobile = () => {
+    this.setState({ width: window.innerWidth });
+    this.setState({ height: window.innerHeight });
+    this.setState({ footerH: $('footer').outerHeight()});
+  }
+
   render(){
+    const { width, height } = this.state;
+    const isMobile = width <= 959;
+    var f = this.state.footerH;
+
     var footerBG = {
       backgroundColor: "#1C3073",
       backgroundImage: "url("+bgr+"), url("+bgl+")",
       backgroundRepeat: "no-repeat, no-repeat",
-      backgroundSize: "contain, contain",
-      backgroundPosition: "top right, top left",
+      backgroundSize: "auto "+f+"px, auto "+f+"px",
+      backgroundPosition: isMobile ? "80vw top, -10vw top":"right top, left top",
       fontSize: "12px",
       lineHeight: "22px"
     }
     return (
       <footer className="bg-blue-1 pv5" style={footerBG}>
-        <div className="ph6-l ph2">
+        <div className="ph6-l ph4">
           <h1 className="white">{cData.footer["title"]}</h1>
           <ol className="white ma0 ph3 lh-copy">
             <li>{cData.footer["list"][0]}</li>

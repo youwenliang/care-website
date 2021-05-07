@@ -199,7 +199,7 @@ class App extends Component {
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       backgroundPosition: "center",
-      height: '474px',
+      height: '430px',
     }
 
     var bgCar4 = {
@@ -207,7 +207,7 @@ class App extends Component {
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       backgroundPosition: "center",
-      height: '474px'
+      height: '500px'
     }
 
     var bgWarning = {
@@ -246,8 +246,14 @@ class App extends Component {
       backgroundImage: "url("+man2+"), url("+man3+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "contain, contain",
-      backgroundPosition: isMobile ?  "calc(50% - 160px) bottom, calc(50% + 160px) bottom" : "calc(50% - 400px) bottom, calc(50% + 400px) bottom",
-      height: isMobile ? '150px':'360px'
+      backgroundPosition: isMobile ?  "calc(50% - 32vw) bottom, calc(50% + 32vw) bottom" : "calc(50% - 400px) bottom, calc(50% + 400px) bottom",
+      height: isMobile ? '25vw':'360px',
+      minHeight: '150px'
+    }
+
+    var logo2style = {
+      width: isMobile? "17vw":"280px",
+      minWidth: "100px"
     }
 
     var candies = [
@@ -321,7 +327,7 @@ class App extends Component {
                     <div className="pa3 relative">
                       <img className="w-100" src={car1}/>
                       <div className="quote carQ left top-0">
-                        <h4 className="bg-white brL absolute l60 b10 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                        <h4 className="bg-white brL absolute l60 bottom-0 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -334,7 +340,7 @@ class App extends Component {
                     <div className="pa3 relative">
                       <img className="w-100" src={car2}/>
                       <div className="quote carQ right top-0">
-                        <h4 className="bg-white brL absolute r50 b30 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                        <h4 className="bg-white brL absolute r50 b20 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -346,10 +352,10 @@ class App extends Component {
                 <div className="flex flex-column flex-row-l">
                   <div className="flex-shrink w-100 w-50-l pl3 pr6 pv4 car" style={bgCar3}>
                     <label className="f24 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][0]}}></label>
-                    <h3 className="pre-wrap f42 mv3" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
-                    <p className="pre-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
+                    <h3 className="pre-wrap f40 mv3" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
+                    <p className="lh-copy pre-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                   </div>
-                  <div className="w-100 w-50-l pa3 relative ma4 brBox" style={bgCar1}>
+                  <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar1}>
                     <div className="quote carQ left top-0">
                       <h4 className="bg-white fw5 f24 brL absolute l60 bottom-0 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                     </div>
@@ -357,15 +363,15 @@ class App extends Component {
                 </div>
                 <div className="h5 db-l dn"></div>
                 <div className="flex flex-column-reverse flex-row-l">
-                  <div className="w-100 w-50-l pa3 relative ma4 brBox" style={bgCar2}>
+                  <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar2}>
                     <div className="quote carQ right top-0">
-                      <h4 className="bg-white fw5 f24 brL absolute r50 b30 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                      <h4 className="bg-white fw5 f24 brL absolute r50 b20 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                     </div>
                   </div>
                   <div className="flex-shrink w-100 w-60-l pr3 pl6 pv4 car" style={bgCar4}>
                     <label className="f24 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][1]}}></label>
-                    <h3 className="pre-wrap f42 mv3" dangerouslySetInnerHTML={{__html:cData.car["title"][1]}}></h3>
-                    <p className="pre-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
+                    <h3 className="pre-wrap f40 mv3" dangerouslySetInnerHTML={{__html:cData.car["title"][1]}}></h3>
+                    <p className="lh-copy pre-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
                   </div>
                 </div>
               </div>
@@ -376,7 +382,7 @@ class App extends Component {
         {/* How */}
         <section id="how" className="pv0">
           <div className="container bg-blue-3 ph4-l ph3 pt4 brBox pb0 mh3">
-            <h2 className="title bg-blue-1 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["title"]}}></h2>
+            <h2 className="title bg-blue-1 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["title"]}}></h2>
             <div className="center">
               {
                 (isMobile) ? 
@@ -562,7 +568,7 @@ class App extends Component {
         {/* Factor */}
         <section id="factor" className="pv0">
           <div className="container bg-blue-3 ph4-l ph3 pt4 pb0 tc brBox mh3">
-            <h2 className="title bg-blue-1">{cData.factor["title"]}</h2>
+            <h2 className="title bg-blue-1 lh-copy">{cData.factor["title"]}</h2>
             <h3 className="mh5 lh-copy mt5 f32 fw5">{cData.factor["subtitle"]}</h3>
             <div className="flex flex-wrap mh6-l mh2">
               <div className="w-25-l w-50 pa3-l pa2">
@@ -618,7 +624,7 @@ class App extends Component {
         {/* QA */}
         <section id="qa" className="pv0">
           <div className="container bg-blue-5 ph4-l ph3 pv4 brBox mh3">
-            <h2 className="title bg-blue-3 mb5">{cData.qa["title"]}</h2>
+            <h2 className="title bg-blue-3 mb5 lh-copy">{cData.qa["title"]}</h2>
               {
                 (isMobile) ? 
                 (
@@ -724,10 +730,10 @@ class App extends Component {
         {/* Banner */}
         <section id="banner" className="pb0">
           <div className="ma0">
-            <h3 className="container tc lh-copy f2 pb4 pre-wrap">{cData.banner}</h3>
+            <h3 className="container tc lh-copy f50 pb4 pre-wrap">{cData.banner}</h3>
             <div className="relative" style={bgBanner}>
               <img className="db center o-0" src="https://fakeimg.pl/1000x360/"/>
-              <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} width={isMobile? "100":"280"}/>
+              <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} style={logo2style}/>
             </div>
           </div>
         </section>
