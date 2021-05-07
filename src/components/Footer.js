@@ -18,17 +18,19 @@ class Footer extends Component {
   }
   render(){
     var footerBG = {
-      backgroundColor: "#204087",
+      backgroundColor: "#1C3073",
       backgroundImage: "url("+bgr+"), url("+bgl+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "contain, contain",
-      backgroundPosition: "top right, top left"
+      backgroundPosition: "top right, top left",
+      fontSize: "12px",
+      lineHeight: "22px"
     }
     return (
-      <footer className="bg-blue-2 pv5" style={footerBG}>
-        <div className="container ph4">
+      <footer className="bg-blue-1 pv5" style={footerBG}>
+        <div className="ph6-l ph2">
           <h1 className="white">{cData.footer["title"]}</h1>
-          <ol className="white ma0 ph3">
+          <ol className="white ma0 ph3 lh-copy">
             <li>{cData.footer["list"][0]}</li>
             <li>{cData.footer["list"][1]}</li>
             <li>{cData.footer["list"][2]}</li>
@@ -41,6 +43,7 @@ class Footer extends Component {
             <li>{cData.footer["list"][9]}</li>
             <li>{cData.footer["list"][10]}</li>
             <li>{cData.footer["list"][11]}</li>
+            <li>{cData.footer["list"][12]}</li>
           </ol>
         </div>
       </footer>

@@ -3,104 +3,104 @@ var data = {
 	"content": {
 		// Header
 		"header": {
-			"title":"糖尿病",
-			"subtitle":"糖尿病"
+			"title":"糖尿病保腎護心卓越機構",
+			"subtitle":"快找你的控糖好厝邊"
 		},
 		"cover": {
-			"title": "糖尿病",
-			"content": "糖尿病"
+			"title": "別以為糖尿病只是尿尿比較甜而已\n它也會攻擊腎臟和心臟",
+			"content": "糖尿病殺手\n是如何攻擊\n腎和心的？\n快跟著我一起\n去瞧瞧吧！"
 		},
 		"start": "開始",
 		"car": {
 			"clue": ["線索一","線索二"],
-			"title": ["線索一","線索二"],
-			"content": ["線索一","線索二"],
-			"quote": ["線索一","線索二"]
+			"title": ["血管大塞車！\n原來跟糖尿病有關！","血管塞車可能會造成\n心衰竭或腎病變！"],
+			"content": ["糖尿病患者血中的糖分太多，導致血液黏踢踢，\n容易引起發炎跟斑塊堆積，造成血管大塞車","不同血管的塞車會造成不同的問題：\n主幹道－心臟：心血管疾病\n次線道－腎臟：腎臟疾病\n因此，心衰竭和腎病變是糖尿病友們常見的共病！1,2"],
+			"quote": ["讓我來告訴你\n血管塞車\n會怎樣～","那心衰竭和\n腎臟病又會\n造成什麼\n影響呢？"]
 		},
 		"how": {
-			"title": "如何",
-			"card1": "文字",
-			"card1list": ["1","2","3","4"],
-			"card2": "文字",
-			"quote": "quote" 
+			"title": "心衰竭或腎病變會如何影響糖尿病友？",
+			"card1": "心衰竭俗稱心臟無力，\n嚴重可能危及生命。\n對生活的常見影響還有：",
+			"card1list": ["1. 呼吸困難","2. 耐力變差","3. 腦部缺氧","4. 水腫...等"],
+			"card2": "腎病變則可能會導致\n糖尿病友需要洗腎！",
+			"quote": "萬萬不可輕忽\n高血糖殺手啊！\n而且啊..." 
 		},
 		"cause": {
-			"title": "十大",
-			"top": ["第1","第1","第3"],
-			"content": ["第1","第1","第3"],
-			"quote": "quote" 
+			"title": "糖尿病、心臟病、腎病變，都名列\n「國人十大死因」<sup>3</sup>",
+			"top": ["第2名","第5名","第9名"],
+			"content": ["心臟疾病","糖尿病","腎炎腎病症候群\n及腎病變"],
+			"quote": "到底是誰和糖尿病殺手\n一起造成心衰竭或\n腎病變呢？" 
 		},
 		"knowledge": {
-			"title": "知己",
-			"cardtitle": ["1","2"],
+			"title": "知己知彼，百戰百勝\n一起對抗糖尿病殺手的盟友們！",
+			"cardtitle": ["高血壓","蛋白尿"],
 			"cardcontent1": [
-				"1",
-				"2"
+				"<p class='f24'>血壓值高於\n140/90 mmHg</p><p class='f32 fw5'>每10個糖尿病患就有6個合併高血壓</p>",
+				"<p class='f24'>尿中蛋白質排出量大於\n150毫克</p><p class='f32 fw5'>每10個糖尿病患就有3個合併蛋白尿</p>",
 			],
 			"cardcontent2": [
-				"1",
-				"2"
+				"<p class='f24'>高血壓為心衰竭\n主要風險因子</p>",
+				"<p class='f24'>蛋白尿同時為心衰竭以及\n腎臟惡化的主要風險因子</p>",
 			],
 			"cardcontent3": [
-				"1",
-				"2"
+				"<p class='f32 fw5'>糖尿病+高血壓<br/>＝心衰竭風險增加2倍<sup>4,5</sup></p>",
+				"<p class='f32 fw5'>糖尿病+蛋白尿<br/>＝腎臟惡化風險快3倍，可能會洗腎！<sup>6</sup></p>",
 			],
-			"banner": "奸詐",
-			"quote": "quote"
+			"cardcontent4": [
+				"<p class='f32 fw5 mb0'>糖尿病+心衰竭<br/>＝死亡風險增加10倍<sup>7</sup></p>",
+				"<p class='f32 fw5 mb0'>糖尿病+腎病變<br/>＝死亡風險增加1.2倍<sup>8</sup><br/>而且要洗腎！</p>",
+			],
+			"banner": "奸詐的殺手們，居然還會互相合作！\n高血壓可能導致要洗腎，蛋白尿也會升高心衰竭風險。",
+			"quote": "別擔心！我有辦法！\n首先，要知道自己\n有沒有心臟病/腎臟病？"
 		},
 		"factor": {
-			"title": "你有",
-			"subtitle": "如果",
+			"title": "你有這些風險因子嗎",
+			"subtitle": "如果有以下風險因子的糖友，更可以到糖尿病保腎護心卓越機構篩檢並接受專業諮詢！",
 			"factors": [
-				"1",
-				"2",
-				"3",
-				"4",
-				"5",
-				"6",
-				"7",
-				"8"
+				"高血壓",
+				"蛋白尿",
+				"高血脂",
+				"抽菸",
+				"肥胖",
+				"心血管\n疾病",
+				"家族成員有\n心血管疾病",
+				"家族成員有\n慢性腎臟病"
 			],
-			"banner": "其他",
-			"quote": "quote"
+			"banner": "其他併發症（如眼睛和腳部）也不可以輕忽喔！",
+			"quote": "有其他問題嗎？\n讓我來解答！"
 		},
 		"qa": {
-			"title": "Q&A",
+			"title": "常見Q&A",
 			"question": [
-				"1q",
-				"2",
-				"3"
-			],
-			"answertitle": [
-				"1",
-				"2t",
-				"3"
+				"我是糖友/高風險群，該怎麼辦？",
+				"糖尿病保腎護心卓越機構是什麼?",
+				"到糖尿病保腎護心卓越機構有什麼好處？"
 			],
 			"answercontent": [
-				"1",
-				"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-				"3c"
+				"<p class='tc'>平時有良好的血糖/血脂/血壓控制、戒菸，\n搭配適合的運動及飲食外，也可以到<strong>「糖尿病保腎護心卓越機構」</strong>\n接受風險因子篩檢，並由專業醫護團隊提供您照護諮詢\n請認明品質認證標章～</p>",
+				"<p class='tl'>卓越機構皆通過以下認證規則：\n<strong>1. 治療觀念與時俱進：</strong>認證診所每年皆須參與協會認定之糖尿病治療課程\n<strong>2. 風險評估超前部署：</strong>診所糖友多數均接受腎心風險因子篩檢\n<strong>3. 重點衛教及時介入：</strong>經篩檢評估後，對於自身腎心風險因子有認知落差的糖友，醫師能及時介入治療</p>",
+				"<p class='tl'>糖友可以接受\n<strong>1. 專業照護：</strong>享受最專業的糖尿病治療團隊照護\n<strong>2. 風險篩檢：</strong>接受「糖尿病腎心風險因子」篩檢\n<strong>3. 及時諮詢：</strong>最新觀念的衛教與專業醫護人員諮詢</p>"
 			]
 		},
 		"map": {
-			"title": "要怎麼"
+			"title": "要怎麼找到糖尿病保腎護心卓越機構？"
 		},
-		"banner": "如果\n有",
+		"banner": "如果有飲食、生活習慣、糖尿病用藥建議等問題\n都可以請教您的醫師與照護團隊喔！\n讓我們作伙控血糖～",
 		"footer": {
 			"title": "Reference",
 			"list": [
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"1",
-				"12"
+				"2018糖尿病臨床照護指引(含2020修訂版)。2020出版。社團法人中華民國糖尿病學會。",
+				"2019台灣糖尿病腎臟疾病臨床照護指引。社團法人中華民國糖尿病學會。",
+				"108年國人死因統計結果。衛生福利部 https://www.mohw.gov.tw/cp-16-54482-1.html",
+				"J Community Hosp Intern Med Perspect. 2017;7(1):15-20.",
+				"Mayo Clin Proc. 2020;95(1):124-133.",
+				"Diabetes Care. 202;43(1):122-129.",
+				"Diabetologia. 2012;55:2154-2162.",
+				"臺灣糖尿病年鑑2019第二型糖尿病。社團法人中華民國糖尿病學會。",
+				"2007 年台灣地區高血壓、高血糖、 高血脂之追蹤調查研究。行政院衛生署國民健康局。",
+				"Circulation. 2019;139(25):e1082-e1143.",
+				"J Formos Med Assoc. 2017;116(4):217-248.",
+				"Diabetes and Chronic Kidney Disease. National Kidney Foundation. https://www.kidney.org/news/newsroom/factsheets/Diabetes-And-CKD",
+				"Diabetes Care 2020;43(1):122-129."
 			]
 		}
 	},
@@ -108,7 +108,7 @@ var data = {
 	"map": [
 		{
 			"id":1,
-			"name":"診所名稱1",
+			"name":"遠雄牙醫診所",
 			"city": "taipei-city",
 			"address": "台北市大安區診所地址1",
 			"info": "門診資訊",

@@ -9,12 +9,20 @@ body {
 
 body {
   background: #E3E3E3;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Noto Sans, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0;
 }
+
+.f80 {font-size: 80px;}
+.f55 {font-size: 55px;}
+.f32 {font-size: 32px;}
+.f24 {font-size: 24px;}
+.f42 {font-size: 42px;}
+.f40 {font-size: 40px;}
+.f16 {font-size: 16px;}
 
 .swiper-container {
   width: 100%;
@@ -45,12 +53,16 @@ body {
   flex-wrap: wrap;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 section {
 	padding: 80px 0;
 }
 
 section#car {
-  padding: 365px 0;
+  padding: 200px 0;
 }
 
 @media only screen and (max-width: 60em) {
@@ -89,8 +101,8 @@ header h1 {
 
 #cover {
 	position: relative;
-	top: -8rem;
-  margin-bottom: -8rem;
+	top: -210px;
+  margin-bottom: -210px;
 }
 
 h2.title {
@@ -124,18 +136,34 @@ h2.title {
 }
 
 .brBox {
-  border-radius: 30px;
+  border-radius: 61px;
 }
 
 .brRight {
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 24px 24px 0;
+}
+
+.brS {
+  border-radius: 8px;
+}
+
+.brM {
+  border-radius: 16px;
+}
+
+.brL {
+  border-radius: 24px;
+}
+
+.brXL {
+  border-radius: 32px;
 }
 
 .brBox h2 {
   color: white;
   padding: 20px;
-  font-size: 40px;
-  border-radius: 30px;
+  font-size: 50px;
+  border-radius: 32px;
   margin: 1rem 3rem 2rem 3rem; 
 }
 
@@ -157,31 +185,38 @@ h2.title {
  white-space: pre-wrap;
 }
 
+.h130 {
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* color */
 
 .blue-1 {
-  color: #002E78;
+  color: #001F64;
 }
 
 .bg-blue-1 {
-  background-color: #002E78;
+  background-color: #001F64;
 }
 
 .blue-2 {
-  color: #254286;
+  color: #1C3073;
 }
 
 .bg-blue-2 {
-  background-color: #254286;
+  background-color: #1C3073;
 }
 
 .blue-3 {
-  color: #A2BEF7;
+  color: #92AEF5;
 }
 
 .bg-blue-3 {
-  background-color: #A2BEF7;
+  background-color: #92AEF5;
 }
 
 .blue-4 {
@@ -204,6 +239,11 @@ h2.title {
   flex-shrink: 0;
 }
 
+.bw1 {
+  border: none !important;
+  height: 5px !important;
+}
+
 /* size */
 
 .size250 {
@@ -220,7 +260,7 @@ h2.title {
   width: 100px;
   height: 100px; 
   position: relative;
-  top: 30px;
+  top: 45px;
 }
 
 /* Modal */
@@ -328,7 +368,7 @@ input {
 .page2.false {
  pointer-events: none;
  opacity: 0; 
- transition: all .15s ease-in-out;
+ /*transition: all .15s ease-in-out;*/
 }
 
 .page2.true {
@@ -375,6 +415,7 @@ input {
 /* position */
 .l60 {left: 60%;}
 .b10 {bottom: 10%;}
+.r45 {right: 45%;}
 .r50 {right: 50%;}
 .b30 {bottom: 30%;}
 .b40 {bottom: 40%;}
@@ -417,4 +458,104 @@ input {
   .quote:not(.carQ) .b30 {bottom: auto;}
   .quote:not(.carQ) .b40 {bottom: auto;}
   .quote:not(.carQ) .l40 {left: auto;}
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+/* select */
+.select,
+.select::before,
+.select::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  padding: 0 1em 0 0;
+  /*margin: 0;*/
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  height: 60px;
+}
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #6A7DCB;
+}
+.select select, .select::after {
+  grid-area: select;
+}
+.select:not(.select--multiple)::after {
+  content: "";
+  justify-self: end;
+  width: 0.8em;
+  height: 0.5em;
+  background-color: white;
+  margin-right: 10px;
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select:focus + .focus {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+
+select[multiple] {
+  padding-right: 0;
+  /*
+   * Safari will not reveal an option
+   * unless the select height has room to 
+   * show all of it
+   * Firefox and Chrome allow showing 
+   * a partial option
+   */
+  height: 6rem;
+  /* 
+   * Experimental - styling of selected options
+   * in the multiselect
+   * Not supported crossbrowser
+   */
+}
+select[multiple] option {
+  white-space: normal;
+  outline-color: var(--select-focus);
+}
+
+.select--disabled {
+  cursor: not-allowed;
+  background-color: #eee;
+  background-image: linear-gradient(to top, #ddd, #eee 33%);
 }

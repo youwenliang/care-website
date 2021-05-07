@@ -10,6 +10,7 @@ import logo3 from '../images/logo3.png';
 import searchBtn from '../images/保腎護心網layout物件_57.png';
 import closeBtn from '../images/保腎護心網layout物件_58.png';
 import backBtn from '../images/保腎護心網layout物件_59.png';
+import mapBtn from '../images/map.png';
 
 // Data
 import data from '../data/data.js'
@@ -150,13 +151,15 @@ class Map extends Component {
           list.push({
             "dis": temp,
             "name": [s.name],
-            "address": [s.address]
+            "address": [s.address],
+            "phone": [s.phone]
           })
         } else {
           for(var i = 0; i < list.length; i++){
             if(list[i]["dis"] == temp) {
               list[i]["name"].push(s.name)
               list[i]["address"].push(s.address)
+              list[i]["phone"].push(s.phone)
             }
           }
         }
@@ -166,9 +169,9 @@ class Map extends Component {
       for(var j = 0; j < list.length; j++) {
         var temp = (
           <div className="w-50 tc" key={j}>
-            <h1>{list[j]["dis"]}</h1>
+            <h1 className="blue-2 fw5 f24 ph4 pv3 bg-white brM dib">{list[j]["dis"]}</h1>
             {list[j]["name"].map((name, i) => (
-              <div className="cp" data-id={j} data-order={i} onClick={this.detailMap}>{name}</div>
+              <p className="cp f16" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
           </div>
         )
@@ -218,7 +221,8 @@ class Map extends Component {
     var form = isMobile ? {
       position: "relative",
       width: "100%",
-      borderRadius: "16px"
+      borderRadius: "16px",
+      fontSize: "1.2rem"
     }:
     {
       position: "absolute",
@@ -253,6 +257,14 @@ class Map extends Component {
       left: "32px"
     }
 
+    var box = {
+      minHeight: "400px"
+    }
+
+    var drop = {
+      gap: "16px",
+    }
+
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
@@ -260,30 +272,37 @@ class Map extends Component {
             {
                 (isMobile) ? 
                 (
-                  <div className="relative bg-white mh2 brBox pb6 mt3">
+                  <div className="relative bg-white mh2 brXL mt3" style={box}>
                     <div className="pa4 absolute w-100">
+                      <img className="db center mt2 mb3" src={logo3} width="60" />
                       <form id="searchInput" className="center" style={form} onSubmit={this.handleSubmit}>
                         <div className="bg-blue-3 pa3 mb4" style={inputBox}>
                           <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                         </div>
-                        <div className="center tc">
-                          <select name="city" id="sCity" onChange={this.handleSelect1}>
-                            <option value="" disabled selected>縣市</option>
-                          </select>
-                          <select name="dis" id="sDis" onChange={this.handleSelect2}>
-                            <option value="" disabled selected>地區</option>
-                          </select>
-                          <input className="db tc center mt4" type="submit" value="查詢"/>
+                        <div className="flex mv3" style={drop}>
+                          <div className="tc select flex-grow brM">
+                            <select name="city" id="sCity" onChange={this.handleSelect1}>
+                              <option value="" disabled selected>縣市</option>
+                            </select>
+                          </div>
+                          <div className="tc select flex-grow brM">
+                            <select name="dis" id="sDis" onChange={this.handleSelect2}>
+                              <option value="" disabled selected>地區</option>
+                            </select>
+                          </div>
                         </div>
+                        <input className="db tc center mt4 bg-blue-1 pv2 cp ph3 white br3 f4 fw5" type="submit" value="查詢"/>
                       </form>                       
                     </div>
-                    <div id="detailInfo" className="o-0 pa4 relative z1 bg-white brBox">
-                      <div className="page1 mt5 flex flex-wrap">
+                    <div id="detailInfo" className="o-0 pa4 relative z-1 bg-white brXL" style={box}>
+                      <div className="page1 mt5 flex flex-wrap pb4">
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
-                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white pa4 brBox "+this.state.detail}>
-                        {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
+                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
+                        <div className="overflow-y-scroll h-100 mv3">
+                          {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
+                        </div>
                         <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
@@ -291,7 +310,7 @@ class Map extends Component {
                   </div>
                 ):
                 (
-                  <div className="mapContainer bg-white mh5 brBox cf pa4 relative mb3">
+                  <div className="mapContainer bg-white mh5 brXL cf pa4 relative mb3">
                     <div id="mapInfo" className="fl w-100 relative h-100">
                       <RadioSVGMap 
                         map={Taiwan}
@@ -305,17 +324,23 @@ class Map extends Component {
                         <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                       </form>                       
                     </div>
-                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 absolute ph4 pv5">
+                    <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute ph4 pv5">
                       <div className="page1 flex flex-wrap overflow-y-scroll h-100">
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
-                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brBox "+this.state.detail}>
-                        <div className="overflow-y-scroll h-100 mv3">
-                          {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
-                          <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
-                          <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
+                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brXL "+this.state.detail}>
+                        <div className="overflow-y-scroll h-100 mv3 blue-2 tl">
+                          <h3 className="f24 fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
+                          <div className="flex items-center">
+                            <p className="f16 dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
+                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank'><img src={mapBtn} className="dib ml2 cp" width="40"/></a>
+                          </div>
+                          <hr className="bw1 bg-white mv2"/>
+                          <p className="f16 fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
                         </div>
+                        <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
+                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
                     </div>
                     <img className="absolute pn bottom-0 left-0 pa5 transition" src={logo3} width={this.state.open ? "100":"230"} />
