@@ -37,9 +37,10 @@ import factor8 from './images/保腎護心網layout物件V3_34.png';
 import qa1 from './images/保腎護心網layout物件V3_36.png';
 import qa2 from './images/保腎護心網layout物件V3_37.png';
 import qa3 from './images/保腎護心網layout物件V3_38.png';
-import an1 from './images/保腎護心網layout物件V3_41.png';
-import an2 from './images/保腎護心網layout物件V3_42.png';
-import an3 from './images/保腎護心網layout物件V3_43.png';
+import hand from './images/保腎護心網layout物件_52.png';
+import an1 from './images/保腎護心網layout物件_53.png';
+import an2 from './images/保腎護心網layout物件_54.png';
+import an3 from './images/保腎護心網layout物件_55.png';
 
 import man1 from './images/保腎1.png';
 import man2 from './images/保腎2.png';
@@ -53,6 +54,9 @@ import candies1 from './images/candies1.png';
 import candies2 from './images/candies2.png';
 import candies3 from './images/candies5.png';
 import candies4 from './images/candies6.png';
+
+import closeBtn from './images/保腎護心網layout物件_58.png';
+import upBtn from './images/up.png';
 
 const cData = data.content;
 const causeImg = [cause1, cause2, cause3];
@@ -215,7 +219,7 @@ class App extends Component {
       backgroundImage: "url("+man2+"), url("+man3+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "contain, contain",
-      backgroundPosition: isMobile ? "-21% bottom, 115% bottom" : "left bottom, right bottom",
+      backgroundPosition: isMobile ?  "calc(50% - 160px) bottom, calc(50% + 160px) bottom" : "calc(50% - 400px) bottom, calc(50% + 400px) bottom",
       height: isMobile ? '150px':'360px'
     }
 
@@ -257,7 +261,9 @@ class App extends Component {
       <main className="overflow-hidden">
         {/* Header */}
         <Header/>
-        <div id="top" className="br-100"></div>
+        <div id="top" className="br-100 z-1">
+          <img src={upBtn}/>
+        </div>
 
         {/* Cover */}
         <section id="cover" className="pv0">
@@ -341,7 +347,7 @@ class App extends Component {
 
         {/* How */}
         <section id="how" className="pv0">
-          <div className="container bg-blue-3 pa4-l ph3 pt4 brBox pb0 mh3">
+          <div className="container bg-blue-3 ph4-l ph3 pt4 brBox pb0 mh3">
             <h2 className="title bg-blue-1 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["title"]}}></h2>
             <div className="center">
               {
@@ -404,7 +410,7 @@ class App extends Component {
 
         {/* Cause */}
         <section id="cause" className="pv0">
-          <div className="container bg-blue-3 pa4-l ph3 pt4 pb0 brBox mh3">
+          <div className="container bg-blue-3 ph4-l ph3 pt4 pb0 brBox mh3">
             <h2 className="title bg-blue-1" dangerouslySetInnerHTML={{__html:cData.cause["title"]}}></h2>
             <div className="center">
               {
@@ -470,7 +476,7 @@ class App extends Component {
 
         {/* Knowledge */}
         <section id="knowledge" className="pv0">
-          <div className="container bg-blue-4 pa4-l ph3 pt4 pb0 brBox mh3 relative">
+          <div className="container bg-blue-4 ph4-l ph3 pt4 pb0 brBox mh3 relative">
             <img className="absolute db-l dn" src={candies3} width="185" style={candies[0]}/>
             <img className="absolute db-l dn" src={candies1} width="155" style={candies[1]}/>
             <img className="absolute db-l dn" src={candies2} width="110" style={candies[2]}/>
@@ -523,7 +529,7 @@ class App extends Component {
 
         {/* Factor */}
         <section id="factor" className="pv0">
-          <div className="container bg-blue-3 pa4-l ph3 pt4 pb0 tc brBox mh3">
+          <div className="container bg-blue-3 ph4-l ph3 pt4 pb0 tc brBox mh3">
             <h2 className="title bg-blue-1">{cData.factor["title"]}</h2>
             <h3>{cData.factor["subtitle"]}</h3>
             <div className="flex flex-wrap mh6-l mh2">
@@ -579,7 +585,7 @@ class App extends Component {
 
         {/* QA */}
         <section id="qa" className="pv0">
-          <div className="container bg-blue-5 pa4-l ph3 pv4 brBox mh3">
+          <div className="container bg-blue-5 ph4-l ph3 pv4 brBox mh3">
             <h2 className="title bg-blue-3 mb5">{cData.qa["title"]}</h2>
               {
                 (isMobile) ? 
@@ -639,7 +645,9 @@ class App extends Component {
                       </div>
                       <p>{modalContent.content[this.state.modal-1]}</p>
                     </div>
-                    <div className="close" onClick={this.handleCloseModal}>x</div>
+                    <div className="close" onClick={this.handleCloseModal}>
+                      <img src={closeBtn}/>
+                    </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
@@ -647,7 +655,7 @@ class App extends Component {
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][0]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(1)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
+                      <img className="dib cp" src={hand} width="190"/>
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
@@ -656,7 +664,7 @@ class App extends Component {
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][1]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(2)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
+                      <img className="dib cp" src={hand} width="190"/>
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
@@ -665,7 +673,7 @@ class App extends Component {
                       <p className="dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][2]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(3)}>
-                      <img className="dib cp" src="https://fakeimg.pl/100x100/" width="190"/>
+                      <img className="dib cp" src={hand} width="190"/>
                     </div>
                   </div>
                 </div>
@@ -683,8 +691,8 @@ class App extends Component {
 
         {/* Banner */}
         <section id="banner" className="pb0">
-          <div className="container">
-            <h3 className="tc lh-copy f2 pb4 pre-wrap">{cData.banner}</h3>
+          <div className="ma0">
+            <h3 className="container tc lh-copy f2 pb4 pre-wrap">{cData.banner}</h3>
             <div className="relative" style={bgBanner}>
               <img className="db center o-0" src="https://fakeimg.pl/1000x360/"/>
               <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} width={isMobile? "100":"280"}/>

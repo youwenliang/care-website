@@ -41,6 +41,10 @@ body {
   align-items: center;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 section {
 	padding: 80px 0;
 }
@@ -66,6 +70,19 @@ section#car {
   }
 }
 
+@media only screen and (max-width: 60em) {
+  .container {
+    margin: auto !important;
+    max-width: 568px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: auto 1rem !important;
+  }
+}
+
 header h1 {
 	font-size: 48pt;
 }
@@ -88,6 +105,18 @@ h2.title {
   bottom: 48px;
   right: 48px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 60em) {
+  #top {
+    height: 44px;
+    width: 44px;
+    background-color: #A2BEF7;
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
+  }
 }
 
 .top-50 {
@@ -200,11 +229,14 @@ h2.title {
 }
 
 .modal.true {
-  display: block;
+  opacity: 100;
+  transition: all .15s ease-in-out;
 }
 
 .modal.false {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .15s ease-in-out;
 }
 
 .close {
@@ -220,6 +252,21 @@ h2.title {
   justify-content: center;
   align-items: center;
 }
+
+.back {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  background-color: #002E78;
+  border-radius: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 76px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Map */
 #changhua-county, #new-taipei-city, #miaoli-county, #hsinchu-city, #chiayi-county, #pingtung-county, #penghu-county {
@@ -262,7 +309,7 @@ input {
 #detailInfo {
   right: 2rem;
   height: calc(100% - 4rem);
-  width: 45%;
+  width: 40%;
   transition: all .15s ease-in-out;
 }
 @media only screen and (max-width: 60em) {
@@ -276,6 +323,18 @@ input {
 
 #detailInfo.o-0, .pn {
   pointer-events: none;
+}
+
+.page2.false {
+ pointer-events: none;
+ opacity: 0; 
+ transition: all .15s ease-in-out;
+}
+
+.page2.true {
+ pointer-events: auto;
+ opacity: 100; 
+ transition: all .15s ease-in-out;
 }
 
 /* quote */

@@ -7,12 +7,17 @@ import { SVGMap, CheckboxSVGMap, RadioSVGMap} from "react-svg-map";
 import "react-svg-map/lib/index.css";
 import logo3 from '../images/logo3.png';
 
+import searchBtn from '../images/保腎護心網layout物件_57.png';
+import closeBtn from '../images/保腎護心網layout物件_58.png';
+import backBtn from '../images/保腎護心網layout物件_59.png';
+
 // Data
 import data from '../data/data.js'
 const cData = data.content;
 const mData = data.map;
 var dis = [], list = [], allList = [];
 var sCity = [], sDis = [];
+var filteredClinics = null;
 
 class Map extends Component {
   constructor(props) {
@@ -26,12 +31,16 @@ class Map extends Component {
       same: false,
       allList: [],
       sCity: null,
-      sDis: null
+      sDis: null,
+      open: false,
+      detail: false,
+      currentClinic: null
     }
     this.handleSelect1 = this.handleSelect1.bind(this);
     this.handleSelect2 = this.handleSelect2.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.detailMap = this.detailMap.bind(this);
   }
 
   componentDidMount(){
@@ -59,7 +68,7 @@ class Map extends Component {
         $('#detailInfo').addClass("o-0");
         $('#mapInfo').addClass("w-100");
         $('#mapInfo').removeClass("w-50");
-        $t.setState({same: true});
+        $t.setState({same: true, open: false});
       } else {
         if($(this).attr('aria-before')) {
           $t.setState({currentMap:$(this).attr('aria-before'), search:$(this).attr('aria-before')});
@@ -95,11 +104,21 @@ class Map extends Component {
       }
     }
   }
+
+  detailMap = (e) => {
+    var n = e.target.getAttribute('data-id');
+    var i = e.target.getAttribute('data-order');
+    if(this.state.detail) {
+      this.setState({detail: false, currentClinic: null})
+    } else this.setState({detail: true, currentClinic: [n, i]})
+  }
+
   openMap = () => {
     $('#detailInfo').removeClass("o-0");
     $('#mapInfo').removeClass("w-100");
     $('#mapInfo').addClass("w-50");
     this.clinincList()
+    this.setState({open: true, currentClinic: null});
   }
 
   resetMap = () => {
@@ -111,46 +130,52 @@ class Map extends Component {
     $p.attr('aria-checked', "false");
     $p.attr('aria-before', $t.state.currentMap);
     $p.attr('tabindex', "-1");
-    $t.setState({currentMap:null, same: true, value: "", allList: null});
+    $t.setState({currentMap:null, detail: false, same: true, value: "", allList: null, open: false});
   }
 
   // Clinic Component
   clinincList = () => {
     dis = [];
     list = [];
-    let filteredClinics = mData.filter((s) => {
-      var check = s.city+" "+s.name+" "+s.address;
-      return check.indexOf(this.state.search) !== -1;
-    });
-    filteredClinics.map((s, i) => {
-      var count = s.address.indexOf('區') - 2;
-      var temp = s.address.substring(count, count+3);
-      if(!dis.includes(temp)) {
-        dis.push(temp);
-        list.push({
-          "dis": temp,
-          "address": [s.address]
-        })
-      } else {
-        for(var i = 0; i < list.length; i++){
-          if(list[i]["dis"] == temp) {
-            list[i]["address"].push(s.address)
+    
+      filteredClinics = mData.filter((s) => {
+        var check = s.city+" "+s.name+" "+s.address;
+        return check.indexOf(this.state.search) !== -1;
+      });
+      filteredClinics.map((s, i) => {
+        var count = s.address.indexOf('區') - 2;
+        var temp = s.address.substring(count, count+3);
+        if(!dis.includes(temp)) {
+          dis.push(temp);
+          list.push({
+            "dis": temp,
+            "name": [s.name],
+            "address": [s.address]
+          })
+        } else {
+          for(var i = 0; i < list.length; i++){
+            if(list[i]["dis"] == temp) {
+              list[i]["name"].push(s.name)
+              list[i]["address"].push(s.address)
+            }
           }
         }
-      }
-    });
-    allList = [];
+      });
+      allList = [];
 
-    for(var j = 0; j < list.length; j++) {
-      var temp = (
-        <div key={j}>
-          <h1>{list[j]["dis"]}</h1>
-          <div>{list[j]["address"]}</div>
-        </div>
-      )
-      allList.push(temp);
-    }
-    this.setState({allList:allList});
+      for(var j = 0; j < list.length; j++) {
+        var temp = (
+          <div className="w-50 tc" key={j}>
+            <h1>{list[j]["dis"]}</h1>
+            {list[j]["name"].map((name, i) => (
+              <div className="cp" data-id={j} data-order={i} onClick={this.detailMap}>{name}</div>
+            ))}
+          </div>
+        )
+        allList.push(temp);
+      }
+      this.setState({allList:allList});
+    
   }
 
   handleSelect1(event) {
@@ -202,11 +227,19 @@ class Map extends Component {
       bottom: "30px",
       width: "235px",
       transform: "translateX(80%)",
-      borderRadius: "16px"
+      borderRadius: "16px",
+      backgroundImage: "url("+searchBtn+")",
+      backgroundPosition: "10px center",
+      backgroundSize: "30px",
+      backgroundRepeat: "no-repeat"
     }
     var inputBox = {
       borderRadius: "16px",
-      width: "100%"
+      width: "100%",
+      backgroundImage: "url("+searchBtn+")",
+      backgroundPosition: "10px center",
+      backgroundSize: "30px",
+      backgroundRepeat: "no-repeat"
     }
 
     var input = isMobile ? {
@@ -245,9 +278,15 @@ class Map extends Component {
                       </form>                       
                     </div>
                     <div id="detailInfo" className="o-0 pa4 relative z1 bg-white brBox">
-                      <p>{this.state.currentMap}</p>
-                      {this.state.allList}
-                      <button onClick={() => {this.resetMap()}}>close</button>
+                      <div className="page1 mt5 flex flex-wrap">
+                        {this.state.allList}
+                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
+                      </div>
+                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white pa4 brBox "+this.state.detail}>
+                        {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
+                        <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
+                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
+                      </div>
                     </div>
                   </div>
                 ):
@@ -266,12 +305,20 @@ class Map extends Component {
                         <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                       </form>                       
                     </div>
-                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 absolute pa4">
-                      <p>{this.state.currentMap}</p>
-                      {this.state.allList}
-                      <button onClick={() => {this.resetMap()}}>close</button>
+                    <div id="detailInfo" className="fl brBox bg-blue-3 o-0 absolute ph4 pv5">
+                      <div className="page1 flex flex-wrap overflow-y-scroll h-100">
+                        {this.state.allList}
+                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
+                      </div>
+                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brBox "+this.state.detail}>
+                        <div className="overflow-y-scroll h-100 mv3">
+                          {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
+                          <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
+                          <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
+                        </div>
+                      </div>
                     </div>
-                    <img className="absolute pn bottom-0 left-0 pa5 transition" src={logo3} width={this.state.currentMap ? "100":"230"} />
+                    <img className="absolute pn bottom-0 left-0 pa5 transition" src={logo3} width={this.state.open ? "100":"230"} />
                   </div>
                 )
             }
