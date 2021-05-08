@@ -238,7 +238,7 @@ class Map extends Component {
       backgroundRepeat: "no-repeat"
     }
     var inputBox = {
-      borderRadius: "16px",
+      borderRadius: "8px",
       width: "100%",
       backgroundImage: "url("+searchBtn+")",
       backgroundPosition: "10px center",
@@ -248,8 +248,8 @@ class Map extends Component {
 
     var input = isMobile ? {
       borderRadius: "8px",
-      width: "calc(100% - 32px)",
-      left: "32px"
+      width: "calc(100% - 40px)",
+      left: "40px"
     }:
     {
       borderRadius: "8px",
@@ -258,7 +258,7 @@ class Map extends Component {
     }
 
     var box = {
-      minHeight: "400px"
+      minHeight: "360px"
     }
 
     var drop = {
@@ -268,7 +268,7 @@ class Map extends Component {
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
-            <h2 className="title bg-blue-1 pre-wrap">{cData.map["title"]}</h2>
+            <h2 className="title bg-blue-1 pre-wrap lh-copy">{cData.map["title"]}</h2>
             {
                 (isMobile) ? 
                 (
@@ -276,22 +276,22 @@ class Map extends Component {
                     <div className="pa4 absolute w-100">
                       <img className="db center mt2 mb3" src={logo3} width="60" />
                       <form id="searchInput" className="center" style={form} onSubmit={this.handleSubmit}>
-                        <div className="bg-blue-3 pa3 mb4" style={inputBox}>
+                        <div className="bg-blue-3 pa2 mb3" style={inputBox}>
                           <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                         </div>
-                        <div className="flex mv3" style={drop}>
-                          <div className="tc select flex-grow brM">
+                        <div className="f40 flex mv0" style={drop}>
+                          <div className="tc select flex-grow brS">
                             <select name="city" id="sCity" onChange={this.handleSelect1}>
                               <option value="" disabled selected>縣市</option>
                             </select>
                           </div>
-                          <div className="tc select flex-grow brM">
+                          <div className="tc select flex-grow brS">
                             <select name="dis" id="sDis" onChange={this.handleSelect2}>
                               <option value="" disabled selected>地區</option>
                             </select>
                           </div>
                         </div>
-                        <input className="db tc center mt4 bg-blue-1 pv2 cp ph3 white br3 f4 fw5" type="submit" value="查詢"/>
+                        <input className="db tc center mt3 bg-blue-1 pv3 cp ph4 white br3 f40 fw5" type="submit" value="查詢"/>
                       </form>                       
                     </div>
                     <div id="detailInfo" className="o-0 pa4 relative z-1 bg-white brXL" style={box}>
