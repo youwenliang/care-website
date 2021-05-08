@@ -165,13 +165,14 @@ class Map extends Component {
         }
       });
       allList = [];
+      var styleH1 = this.state.width <= 969 ? "white bg-blue-3" : "blue-2 bg-white"
 
       for(var j = 0; j < list.length; j++) {
         var temp = (
           <div className="w-50 tc" key={j}>
-            <h1 className="blue-2 fw5 f24 ph4 pv3 bg-white brM dib">{list[j]["dis"]}</h1>
+            <h1 className={ styleH1 + " fw5 f24_ ph4 pv3 brM dib"}>{list[j]["dis"]}</h1>
             {list[j]["name"].map((name, i) => (
-              <p className="cp f16" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
+              <p className="cp f16_" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
           </div>
         )
@@ -300,8 +301,14 @@ class Map extends Component {
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
-                        <div className="overflow-y-scroll h-100 mv3">
-                          {this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}
+                        <div className="overflow-y-scroll h-100 mv3 blue-2 tl">
+                          <h3 className="f24_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
+                          <div className="flex items-center">
+                            <p className="f16_ dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
+                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank'><img src={mapBtn} className="dib ml2 cp" width="40"/></a>
+                          </div>
+                          <hr className="bw1 bg-blue-2 mv2"/>
+                          <p className="f16_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
                         </div>
                         <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
@@ -331,13 +338,13 @@ class Map extends Component {
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brXL "+this.state.detail}>
                         <div className="overflow-y-scroll h-100 mv3 blue-2 tl">
-                          <h3 className="f24 fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
+                          <h3 className="f24_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
                           <div className="flex items-center">
-                            <p className="f16 dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
+                            <p className="f16_ dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
                             <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank'><img src={mapBtn} className="dib ml2 cp" width="40"/></a>
                           </div>
                           <hr className="bw1 bg-white mv2"/>
-                          <p className="f16 fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
+                          <p className="f16_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
                         </div>
                         <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
