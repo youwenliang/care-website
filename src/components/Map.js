@@ -58,7 +58,7 @@ class Map extends Component {
 
     // Maps
     $('path').click(function(){
-      $t.setState({value: ""})
+      $t.setState({value: "", detail: false})
       if($(this).attr('aria-checked') === "true") {
         $(this).attr('aria-checked', "false");
         $(this).attr('aria-before', $t.state.currentMap);
@@ -269,7 +269,6 @@ class Map extends Component {
 
     var page1box = {
       maxHeight: "504px",
-      overflowY: "scroll"
     }
 
     var drop = {
@@ -305,10 +304,9 @@ class Map extends Component {
                         <input className="db tc center mt3 bg-blue-1 pv3 cp ph4 white br3 f40 fw5" type="submit" value="查詢"/>
                       </form>                       
                     </div>
-                    <div id="detailInfo" className="o-0 pa4 relative z-1 bg-white brXL" style={box}>
-                      <div className="page1 mt5 flex flex-wrap pb4" style={page1box}>
+                    <div id="detailInfo" className="o-0 pa2 relative z-1 bg-white brXL" style={box}>
+                      <div className="page1 pt5 flex flex-wrap pb4 overflow-y-scroll content-start" style={page1box}>
                         {this.state.allList}
-                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
                         <div className="overflow-y-scroll h-100 mv3 blue-2 tl overflow-x-hidden">
@@ -321,8 +319,8 @@ class Map extends Component {
                           <p className="f16_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
                         </div>
                         <div className="back" onClick={this.detailMap}><img src={backBtn}/></div>
-                        <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
+                      <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                     </div>
                   </div>
                 ):
@@ -341,8 +339,8 @@ class Map extends Component {
                         <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange}/>
                       </form>                       
                     </div>
-                    <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute ph4 pv5">
-                      <div className="page1 flex flex-wrap overflow-y-scroll h-100">
+                    <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute pa2">
+                      <div className="page1 flex flex-wrap overflow-y-scroll h-100 ph4 pv5 content-start">
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>

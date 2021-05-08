@@ -9,12 +9,33 @@ body {
 
 body {
   background: #E3E3E3;
-  font-family: Noto Sans, sans-serif;
-  font-size: 14px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
   color: #000;
   margin: 0;
   padding: 0;
 }
+
+ol {
+  line-height: 1.83 !important;
+}
+
+.bg-white.modal {
+  border: 4px solid #505F9D;
+}
+
+/* scrollbar */
+
+*::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 /* Font Size */
 .f80 {font-size: 80px;}
@@ -127,7 +148,7 @@ section#car {
 
 @media only screen and (max-width: 1199px) {
   section#car {
-    padding: 130px 0 60px;
+    padding: 0 0 60px;
   }
 }
 
@@ -281,10 +302,19 @@ h2.title {
 
 @media only screen and (max-width: 1000px) {
   .mr4-l {
-    margin-right: 1rem !important;
+    margin-right: 1rem;
   }
   .mrl-l {
-    margin-left: 1rem !important;
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .mr4-l {
+    margin-right: auto !important;
+  }
+  .mrl-l {
+    margin-left: auto !important;
   }
 }
 

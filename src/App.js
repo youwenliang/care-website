@@ -18,6 +18,7 @@ import cover3 from './images/保腎護心網layout物件_08.png';
 import cover4 from './images/保腎護心網layout物件_09.png';
 
 import bgA from './images/保腎護心網layout物件V3_4.png';
+import beforeC from './images/保腎護心網layout物件V3_4s.png';
 import bgR from './images/保腎護心網layout物件V3_5.png';
 import bgL from './images/保腎護心網layout物件V3_6.png';
 import car1 from './images/car1.png';
@@ -115,7 +116,7 @@ class App extends Component {
   render(){
     const { width, height } = this.state;
     const isMobile = width <= 959;
-    const isPad = width <= 1200;
+    const isPad = width < 1200;
     const isLarge = width <= 1366;
     var $t = this;
 
@@ -295,6 +296,10 @@ class App extends Component {
       }
     ]
 
+    var bgC = {
+      display: isPad ? "block":"none"
+    }
+
     return (
       <main className="overflow-hidden">
         {/* Header */}
@@ -317,6 +322,10 @@ class App extends Component {
             </div>
           </div>
         </section>
+
+        <div className="tc" style={bgC}>
+          <img className="db center" src={beforeC} width="200px" />
+        </div>
 
         {/* Car */}
         <section id="car" style={carBG}>
@@ -459,19 +468,19 @@ class App extends Component {
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[0]}/>
-                        <p className="mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][0]}</span><br/>{cData.cause["content"][0]}</p>
+                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][0]}</span><br/>{cData.cause["content"][0]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[1]}/>
-                        <p className="mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][1]}</span><br/>{cData.cause["content"][1]}</p>
+                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][1]}</span><br/>{cData.cause["content"][1]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[2]}/>
-                        <p className="mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][2]}</span><br/>{cData.cause["content"][2]}</p>
+                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][2]}</span><br/>{cData.cause["content"][2]}</p>
                       </div>
                     </div>
                   </div>
@@ -681,10 +690,10 @@ class App extends Component {
                 (
                 <div className="flex flex-column mh5-l mh2 relative">
                   <div className={"modal tc w-80 brXL absolute h-100 bg-white black ph5 pv4 "+this.state.showModal}>
-                    <div className="overflow-y-scroll h-100">
+                    <div className="overflow-y-hidden h-100">
                       <h3 className="f32 fw5">{modalContent.title[this.state.modal-1]}</h3>
-                      <div className="bg-blue-3 pa3 br3">
-                        <img src={modalContent.image[this.state.modal-1]}/>
+                      <div className="bg-blue-3 pa0 br3">
+                        <img className="db" src={modalContent.image[this.state.modal-1]}/>
                       </div>
                       <p className="pre-wrap f24 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>
                     </div>
