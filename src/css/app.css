@@ -27,7 +27,7 @@ body {
 .f40 {font-size: 40px;}
 .f16 {font-size: 16px;}
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   .f80 {font-size: 50px;}
   .f55 {font-size: 35px;}
   .f50 {font-size: 32px;}
@@ -46,6 +46,17 @@ body {
   }
 }
 
+.mw-300 {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mw-1200 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* color */
 
 .blue-1 {
@@ -112,7 +123,7 @@ section#car {
   padding: 200px 0;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 1199px) {
   section#car {
     padding: 130px 0 60px;
   }
@@ -129,7 +140,7 @@ section#car {
   }
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   .container {
     margin: auto !important;
     max-width: 568px;
@@ -160,7 +171,7 @@ header h1 {
   margin-bottom: -210px;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   #cover {
     position: relative;
     top: 0;
@@ -184,7 +195,7 @@ h2.title {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   #top {
     height: 44px;
     width: 44px;
@@ -226,7 +237,7 @@ h2.title {
   border-radius: 32px;
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   .brBox {
     border-radius: 32px;
   }
@@ -256,13 +267,22 @@ h2.title {
   margin: 1rem 3rem 2rem 3rem; 
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   .brBox h2 {
     color: white;
     padding: 20px;
     font-size: 30px;
     border-radius: 30px;
     margin: 0.33rem 1rem 2rem 1rem; 
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .mr4-l {
+    margin-right: 1rem !important;
+  }
+  .mrl-l {
+    margin-left: 1rem !important;
   }
 }
 
@@ -274,8 +294,8 @@ h2.title {
   cursor: pointer;
 }
 
-.h130 {
-  height: 130px;
+.h160 {
+  min-height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -367,6 +387,7 @@ h2.title {
 
 .mapContainer {
   height: 750px;
+  max-width: 1200px;
 }
 
 .mapContainer svg {
@@ -395,7 +416,7 @@ input {
   width: 40%;
   transition: all .15s ease-in-out;
 }
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   #detailInfo {
     right: auto;
     height: auto;
@@ -467,7 +488,7 @@ input {
 .b40 {bottom: 40%;}
 
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 959px) {
   .quote:not(.carQ) h4 {
     left: 50% !important;
     transform: translateX(-50%) !important;
@@ -507,6 +528,15 @@ input {
   .quote:not(.carQ) .b30 {bottom: auto;}
   .quote:not(.carQ) .b40 {bottom: auto;}
   .quote:not(.carQ) .l40 {left: auto;}
+}
+
+
+*::placeholder,
+input[type=text] {
+  color: black;
+  font-size: 16px;
+  opacity: 100;
+  font-weight: 500;
 }
 
 /* select */

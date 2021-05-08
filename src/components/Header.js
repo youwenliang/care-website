@@ -32,6 +32,9 @@ class Header extends Component {
   render(){
     const { width, height } = this.state;
     const isMobile = width <= 959;
+    const isLarge = width <= 1888;
+    var goal = isLarge ? "calc(50% + 750px) top, calc(50% - 750px) top, calc(50% + 360px) 37%, calc(50% - 360px) 37%" : "right top, left top, calc(50% + 360px) 37%, calc(50% - 360px) 37%"
+
 
     var headerBG = {
       height: isMobile ? "auto":"565px",
@@ -39,7 +42,7 @@ class Header extends Component {
       backgroundImage: "url("+bgr+"), url("+bgl+"), url("+micr+"), url("+micl+")",
       backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat",
       backgroundSize: isMobile ? "contain, contain, 50px, 50px":"contain, contain, 136px, 136px",
-      backgroundPosition: isMobile ? "calc(50% + 400px) top, calc(50% - 400px) top, calc(50% + 220px) 67%, calc(50% - 220px) 67%" : "top right, top left, 73% 37%, 27% 37%"
+      backgroundPosition: isMobile ? "calc(50% + 400px) top, calc(50% - 400px) top, calc(50% + 220px) 67%, calc(50% - 220px) 67%" : goal
     }
     var logoContainer = {
       borderRadius: "20px 20px 0 0",

@@ -310,7 +310,7 @@ class Map extends Component {
                   </div>
                 ):
                 (
-                  <div className="mapContainer bg-white mh5 brXL cf pa4 relative mb3">
+                  <div className="mapContainer bg-white center brXL cf pa4 relative mb3">
                     <div id="mapInfo" className="fl w-100 relative h-100">
                       <RadioSVGMap 
                         map={Taiwan}
