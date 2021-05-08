@@ -111,7 +111,11 @@ class Map extends Component {
     var i = e.target.getAttribute('data-order');
     if(this.state.detail) {
       this.setState({detail: false, currentClinic: null})
-    } else this.setState({detail: true, currentClinic: [n, i]})
+      // $('#detailInfo').addClass('overflow-y-scroll');
+    } else {
+      this.setState({detail: true, currentClinic: [n, i]})
+      // $('#detailInfo').removeClass('overflow-y-scroll');
+    }
   }
 
   openMap = () => {
@@ -170,7 +174,7 @@ class Map extends Component {
       for(var j = 0; j < list.length; j++) {
         var temp = (
           <div className="w-50 tc" key={j}>
-            <h1 className={ styleH1 + " fw5 f24_ ph4 pv3 brM dib"}>{list[j]["dis"]}</h1>
+            <h1 className={ styleH1 + " fw5 f24_ ph4-l ph3 pv3 brM dib"}>{list[j]["dis"]}</h1>
             {list[j]["name"].map((name, i) => (
               <p className="cp f16_" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
@@ -259,7 +263,13 @@ class Map extends Component {
     }
 
     var box = {
-      minHeight: "360px"
+      minHeight: "360px",
+      maxHeight: "600px"
+    }
+
+    var page1box = {
+      maxHeight: "504px",
+      overflowY: "scroll"
     }
 
     var drop = {
@@ -296,16 +306,16 @@ class Map extends Component {
                       </form>                       
                     </div>
                     <div id="detailInfo" className="o-0 pa4 relative z-1 bg-white brXL" style={box}>
-                      <div className="page1 mt5 flex flex-wrap pb4">
+                      <div className="page1 mt5 flex flex-wrap pb4" style={page1box}>
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img src={closeBtn}/></div>
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
-                        <div className="overflow-y-scroll h-100 mv3 blue-2 tl">
+                        <div className="overflow-y-scroll h-100 mv3 blue-2 tl overflow-x-hidden">
                           <h3 className="f24_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
                           <div className="flex items-center">
-                            <p className="f16_ dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
-                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank'><img src={mapBtn} className="dib ml2 cp" width="40"/></a>
+                            <p className="f16_ dib mr2">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
+                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank'><img src={mapBtn} className="dib cp" width="40"/></a>
                           </div>
                           <hr className="bw1 bg-blue-2 mv2"/>
                           <p className="f16_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>

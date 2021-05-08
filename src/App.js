@@ -158,7 +158,9 @@ class App extends Component {
         color: "white",
         backgroundColor: "#6A7DCB",
         margin: "auto",
-        padding: 0
+        padding: 0,
+        inset: '50% 1rem auto',
+        transform: 'translateY(-50%)'
       }
     };
 
