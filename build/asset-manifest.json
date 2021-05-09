@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/care-website/static/css/main.eee4424d.chunk.css",
-    "main.js": "/care-website/static/js/main.d38ad6d7.chunk.js",
-    "main.js.map": "/care-website/static/js/main.d38ad6d7.chunk.js.map",
+    "main.css": "/care-website/static/css/main.142fc580.chunk.css",
+    "main.js": "/care-website/static/js/main.bd162dd9.chunk.js",
+    "main.js.map": "/care-website/static/js/main.bd162dd9.chunk.js.map",
     "runtime-main.js": "/care-website/static/js/runtime-main.8a775214.js",
     "runtime-main.js.map": "/care-website/static/js/runtime-main.8a775214.js.map",
     "static/css/2.d0c3c6f2.chunk.css": "/care-website/static/css/2.d0c3c6f2.chunk.css",
-    "static/js/2.3e5e1056.chunk.js": "/care-website/static/js/2.3e5e1056.chunk.js",
-    "static/js/2.3e5e1056.chunk.js.map": "/care-website/static/js/2.3e5e1056.chunk.js.map",
+    "static/js/2.6c9156ba.chunk.js": "/care-website/static/js/2.6c9156ba.chunk.js",
+    "static/js/2.6c9156ba.chunk.js.map": "/care-website/static/js/2.6c9156ba.chunk.js.map",
     "index.html": "/care-website/index.html",
-    "precache-manifest.38dc0328b2816bea87aec0ba4e2a868e.js": "/care-website/precache-manifest.38dc0328b2816bea87aec0ba4e2a868e.js",
+    "precache-manifest.2f9763e92912f796cd15fb02f8825585.js": "/care-website/precache-manifest.2f9763e92912f796cd15fb02f8825585.js",
     "service-worker.js": "/care-website/service-worker.js",
     "static/css/2.d0c3c6f2.chunk.css.map": "/care-website/static/css/2.d0c3c6f2.chunk.css.map",
-    "static/css/main.eee4424d.chunk.css.map": "/care-website/static/css/main.eee4424d.chunk.css.map",
-    "static/js/2.3e5e1056.chunk.js.LICENSE.txt": "/care-website/static/js/2.3e5e1056.chunk.js.LICENSE.txt",
+    "static/css/main.142fc580.chunk.css.map": "/care-website/static/css/main.142fc580.chunk.css.map",
+    "static/js/2.6c9156ba.chunk.js.LICENSE.txt": "/care-website/static/js/2.6c9156ba.chunk.js.LICENSE.txt",
     "static/media/candies1.png": "/care-website/static/media/candies1.06876074.png",
     "static/media/candies5.png": "/care-website/static/media/candies5.5a93f03f.png",
     "static/media/car1.png": "/care-website/static/media/car1.51a49f58.png",
@@ -49,6 +49,7 @@
     "static/media/保腎護心網layout物件V3_33.png": "/care-website/static/media/保腎護心網layout物件V3_33.8e834274.png",
     "static/media/保腎護心網layout物件V3_34.png": "/care-website/static/media/保腎護心網layout物件V3_34.144bbdbe.png",
     "static/media/保腎護心網layout物件V3_4.png": "/care-website/static/media/保腎護心網layout物件V3_4.0408e738.png",
+    "static/media/保腎護心網layout物件V3_4s.png": "/care-website/static/media/保腎護心網layout物件V3_4s.c316e96e.png",
     "static/media/保腎護心網layout物件V3_5.png": "/care-website/static/media/保腎護心網layout物件V3_5.6bec0aa6.png",
     "static/media/保腎護心網layout物件V3_6.png": "/care-website/static/media/保腎護心網layout物件V3_6.13e60fe0.png",
     "static/media/保腎護心網layout物件V3_9.png": "/care-website/static/media/保腎護心網layout物件V3_9.51514480.png",
@@ -58,15 +59,15 @@
     "static/media/保腎護心網layout物件_09.png": "/care-website/static/media/保腎護心網layout物件_09.7153033d.png",
     "static/media/保腎護心網layout物件_14.png": "/care-website/static/media/保腎護心網layout物件_14.18232e1c.png",
     "static/media/保腎護心網layout物件_15.png": "/care-website/static/media/保腎護心網layout物件_15.c7eb1843.png",
-    "static/media/保腎護心網layout物件_53.png": "/care-website/static/media/保腎護心網layout物件_53.b505a904.png",
+    "static/media/保腎護心網layout物件_53.png": "/care-website/static/media/保腎護心網layout物件_53.7bb32c25.png",
     "static/media/保腎護心網layout物件_54.png": "/care-website/static/media/保腎護心網layout物件_54.16c37386.png",
     "static/media/保腎護心網layout物件_55.png": "/care-website/static/media/保腎護心網layout物件_55.5723c5b1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8a775214.js",
     "static/css/2.d0c3c6f2.chunk.css",
-    "static/js/2.3e5e1056.chunk.js",
-    "static/css/main.eee4424d.chunk.css",
-    "static/js/main.d38ad6d7.chunk.js"
+    "static/js/2.6c9156ba.chunk.js",
+    "static/css/main.142fc580.chunk.css",
+    "static/js/main.bd162dd9.chunk.js"
   ]
 }

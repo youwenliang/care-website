@@ -172,7 +172,7 @@ class App extends Component {
         cData.qa["question"][2]
       ],
       "image":[
-        an1, an2, an3
+        isMobile?"https://fakeimg.pl/250x250/":an1, an2, an3
       ],
       "content":[
         cData.qa["answercontent"][0],
@@ -468,19 +468,19 @@ class App extends Component {
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[0]}/>
-                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][0]}</span><br/>{cData.cause["content"][0]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][0]}</span>{cData.cause["content"][0]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[1]}/>
-                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][1]}</span><br/>{cData.cause["content"][1]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][1]}</span>{cData.cause["content"][1]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[2]}/>
-                        <p className="flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24">{cData.cause["top"][2]}</span><br/>{cData.cause["content"][2]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][2]}</span>{cData.cause["content"][2]}</p>
                       </div>
                     </div>
                   </div>
@@ -676,7 +676,7 @@ class App extends Component {
                      contentLabel="Minimal Modal Example"
                      onRequestClose={this.handleCloseModal}
                   >
-                    <div>
+                    <div className="tc">
                       <div className="ph4 pt5 pb0">
                         <h3 className="tc f40 fw5 lh-copy">{modalContent.title[this.state.modal-1]}</h3>
                         <p className="pre-wrap f32 mb0 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>

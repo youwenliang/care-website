@@ -45,8 +45,7 @@ class Map extends Component {
   }
 
   componentDidMount(){
-    var $t = this
-
+    var $t = this;
     // Map
     $('.svg-map__location').each(function(){
       if($(this).attr('id').indexOf("city") >=0) {
@@ -55,6 +54,12 @@ class Map extends Component {
     })
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile()
+
+
+    var paths = document.querySelectorAll("path");
+    setTimeout(function(){
+      // for (var p in paths) $t.addText(paths[p]);
+    },3000);
 
     // Maps
     $('path').click(function(){
@@ -90,6 +95,18 @@ class Map extends Component {
         }
       }
     })
+  }
+
+  addText(p)
+  {
+      var t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      var b = p.getBBox();
+      // var b = $('#'+p.getAttribute('id'))[0].getBBox();
+      t.setAttribute("transform", "translate(" + (b.x + b.width/2) + " " + (b.y + b.height/2) + ")");
+      t.textContent = "a";
+      t.setAttribute("fill", "red");
+      t.setAttribute("font-size", "14");
+      p.parentNode.insertBefore(t, p.nextSibling);
   }
 
   checkMobile = () => {
