@@ -13,9 +13,11 @@ import data from './data/data.js'
 import logo2 from './images/logo2.png';
 import startImg from './images/start.png';
 import cover1 from './images/保腎護心網layout物件_06.png';
+import cover1m from './images/保腎護心網layout手機物件_08.png';
 import cover2 from './images/保腎護心網layout物件_07.png';
 import cover3 from './images/保腎護心網layout物件_08.png';
 import cover4 from './images/保腎護心網layout物件_09.png';
+import cover4m from './images/保腎護心網layout手機物件_09.png';
 
 import bgA from './images/保腎護心網layout物件V3_4.png';
 import beforeC from './images/保腎護心網layout物件V3_4s.png';
@@ -46,6 +48,7 @@ import qa1 from './images/保腎護心網layout物件V3_36.png';
 import qa2 from './images/保腎護心網layout物件V3_37.png';
 import qa3 from './images/保腎護心網layout物件V3_38.png';
 import hand from './images/保腎護心網layout物件_52.png';
+import an1m from './images/保腎護心網layout手機物件_44.png';
 import an1 from './images/保腎護心網layout物件_53.png';
 import an2 from './images/保腎護心網layout物件_54.png';
 import an3 from './images/保腎護心網layout物件_55.png';
@@ -125,10 +128,10 @@ class App extends Component {
     // Cover
     var coverBG = {
       backgroundColor: "#C0D5FF",
-      backgroundImage: "url("+cover2+"), url("+cover3+"), url("+cover1+"), url("+cover4+")",
+      backgroundImage: isMobile ? "url("+cover2+"), url("+cover3+"), url("+cover1m+"), url("+cover4m+")":"url("+cover2+"), url("+cover3+"), url("+cover1+"), url("+cover4+")",
       backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat",
-      backgroundSize: isMobile ? "50vw, 50vw, 38vw, 31vw":"contain, contain, 420px, 340px",
-      backgroundPosition: isMobile ? "calc(50% - 40vw) bottom, calc(50% + 40vw) bottom, calc(50% - 40vw) calc(90% - 20vw), calc(50% + 40vw) calc(90% - 20vw)" : goal,
+      backgroundSize: isMobile ? "60vw, 60vw, 50vw, 35vw":"contain, contain, 420px, 340px",
+      backgroundPosition: isMobile ? "calc(50% - 40vw) bottom, calc(50% + 40vw) bottom, calc(50% - 40vw) calc(90% - 15vw), calc(50% + 40vw) calc(90% - 30vw)" : goal,
       paddingBottom: 0,
       // height: "490px"
     }
@@ -172,7 +175,7 @@ class App extends Component {
         cData.qa["question"][2]
       ],
       "image":[
-        isMobile?"https://fakeimg.pl/250x250/":an1, an2, an3
+        isMobile? an1m:an1, an2, an3
       ],
       "content":[
         cData.qa["answercontent"][0],
@@ -312,9 +315,9 @@ class App extends Component {
         <section id="cover" className="pv0">
           <div className="container">
             <div className="pa2-l pa0 center tc bg-blue-2 brBox mh3" style={coverBG}>
-              <h3 className="tc blue-1 lh-copy f32_ mt4-l mt0 pt0-l pt4 ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["title"]}}></h3>
+              <h3 className="tc blue-1 lh-copy f32_ fw5 mt4-l mt0 pt0-l pt4 ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["title"]}}></h3>
               <div className="bg-blue-1 br-100 mb0-l mb6 size250 center ph3 flex justify-center items-center">
-                <h5 className="tc lh-copy white dib f3 normal pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["content"]}}></h5>
+                <h5 className="tc lh-copy white dib f24_ fw3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["content"]}}></h5>
               </div>
               <div id="start" className="dib ph4-l ph2 pv2 black mt4" style={startBG}>
                 <p className="mt3-l mt1">{cData.start}</p>
@@ -324,7 +327,7 @@ class App extends Component {
         </section>
 
         <div className="tc" style={bgC}>
-          <img className="db center" src={beforeC} width="200px" />
+          <img className="db center" src={beforeC} width="52px" />
         </div>
 
         {/* Car */}
@@ -337,11 +340,11 @@ class App extends Component {
                   <div className="pa3 car bg-white brBox mb5 mh3-l mh0">
                     <label className="f32 fw5 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][0]}}></label>
                     <h3 className="f50 pre-wrap mv2" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
-                    <p className="f32 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
+                    <p className="f32 ph4-m ph2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                     <div className="pa3 relative">
                       <img className="w-80-l w-100" src={car1}/>
                       <div className="quote carQ left top-0">
-                        <h4 className="f24 bg-white brL absolute l60 b10 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                        <h4 className="f24s bg-white brL fw4 absolute l60 b10 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -350,11 +353,11 @@ class App extends Component {
                   <div className="pa3 car bg-white brBox mh3-l mh0 lh-copy">
                     <label className="f32 fw5 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][1]}}></label>
                     <h3 className="f50 pre-wrap mv2" dangerouslySetInnerHTML={{__html:cData.car["title"][1]}}></h3>
-                    <p className="f32 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
+                    <p className="f32 ph4-m ph2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
                     <div className="pa3 relative">
                       <img className="w-80-l w-100" src={car2}/>
                       <div className="quote carQ right top-0">
-                        <h4 className="f24 bg-white brL absolute r50 b20 flex justify-center items-center pa4-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                        <h4 className="f24s bg-white brL fw4 absolute r50 b20 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                       </div>
                     </div>
                   </div>
@@ -371,7 +374,7 @@ class App extends Component {
                   </div>
                   <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar1}>
                     <div className="quote carQ left top-0">
-                      <h4 className="bg-white fw5 f24 brL absolute l60 bottom-0 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                      <h4 className="bg-white fw5 f24 brL fw4 absolute l60 bottom-0 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                     </div>
                   </div>
                 </div>
@@ -379,7 +382,7 @@ class App extends Component {
                 <div className="flex flex-column-reverse flex-row-l">
                   <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar2}>
                     <div className="quote carQ right top-0">
-                      <h4 className="bg-white fw5 f24 brL absolute r50 b20 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                      <h4 className="bg-white fw5 f24 brL fw4 absolute r50 b20 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                     </div>
                   </div>
                   <div className="flex-shrink w-100 w-60-l pr3 pl6 pv4 car" style={bgCar4}>
@@ -402,23 +405,23 @@ class App extends Component {
                 (isMobile) ? 
                 (
                   <div className="cf mh6-l mh2 flex flex-row-l flex-column">
-                    <div className="fl w-100 w-50-l pa2">
+                    <div className="fl w-100 w-50-l pa2 ph5-m">
                       <div className="bg-white pa5-l pa4 brXL mr4-l h-100">
                         <img className="w-100" src={how1}/>
                       </div>
                       <div className="pa3 tc">
                         <p className="f32 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["card1"]}}></p>
-                        <div className="cf">
+                        <div className="cf mb4 lh-copy">
                           <div className="f32 fw5 fl w-50 ph2-l">{cData.how["card1list"][0]}<br/>{cData.how["card1list"][1]}</div>
                           <div className="f32 fw5 fl w-50 ph2-l">{cData.how["card1list"][2]}<br/>{cData.how["card1list"][3]}</div>
                         </div>
                       </div>
                     </div>
-                    <div className="fl w-100 w-50-l pa2">
+                    <div className="fl w-100 w-50-l pa2 ph5-m">
                       <div className="bg-white pa0 brXL ml4-l">
                         <img className="db w-100" src={how2}/>
                       </div>
-                      <div className="pa3 tc">
+                      <div className="pa3 tc mb4">
                         <p className="f32 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["card2"]}}></p>
                       </div>
                     </div>
@@ -468,19 +471,19 @@ class App extends Component {
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[0]}/>
-                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][0]}</span>{cData.cause["content"][0]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][0]}</span>{cData.cause["content"][0]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
                         <img className="w-80" src={causeImg[1]}/>
-                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][1]}</span>{cData.cause["content"][1]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][1]}</span>{cData.cause["content"][1]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
-                      <div className="pv3 mh4">
+                      <div className="pv3 mh4 mb5">
                         <img className="w-80" src={causeImg[2]}/>
-                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24 db">{cData.cause["top"][2]}</span>{cData.cause["content"][2]}</p>
+                        <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][2]}</span>{cData.cause["content"][2]}</p>
                       </div>
                     </div>
                   </div>
@@ -534,9 +537,9 @@ class App extends Component {
             <h2 className="title bg-blue-2 pre-wrap lh-copy">{cData.knowledge["title"]}</h2>
             <div className="center tc lh-copy">
               <div className="cf mw-1200 mh2 flex flex-row-l flex-column">
-                <div className="fl w-100 w-50-l pa2">
+                <div className="fl w-100 w-50-l pa2-l ph2 pv4">
                   <div className="bg-white pa5-l pa4 brXL mr4-l h-100">
-                    <h3 className="pa3 tc bg-blue-5 brXL white f40 fw5 mt0 mb4 mh4">{cData.knowledge["cardtitle"][0]}</h3>
+                    <h3 className="pa3 tc bg-blue-5 brXL white f40_ fw5 mt0 mb4 mh4">{cData.knowledge["cardtitle"][0]}</h3>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent1"][0]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent2"][0]}}></p>
@@ -547,9 +550,9 @@ class App extends Component {
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent4"][0]}}></p>
                   </div>
                 </div>
-                <div className="fl w-100 w-50-l pa2">
+                <div className="fl w-100 w-50-l pa2-l ph2 pv4">
                   <div className="bg-white pa5-l pa4 brXL ml4-l h-100">
-                    <h3 className="pa3 tc bg-blue-5 brXL white f40 fw5 mt0 mb4 mh4">{cData.knowledge["cardtitle"][1]}</h3>
+                    <h3 className="pa3 tc bg-blue-5 brXL white f40_ fw5 mt0 mb4 mh4">{cData.knowledge["cardtitle"][1]}</h3>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent1"][1]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent2"][1]}}></p>
@@ -562,11 +565,11 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="mh6-l mh2 pa2">
+            <div className="mh6-l mh2 pa2 mb6 mb0-l">
               {
                 (isMobile) ? 
-                (<h3 className="pa3 tc brXL white f3 pre-wrap lh-copy">{cData.knowledge["banner"]}</h3>):
-                (<h3 className="pa4 tc bg-blue-3 brXL blue-1 f32 fw5 lh-copy pre-wrap">{cData.knowledge["banner"]}</h3>)
+                (<h3 className="fw5 pv3 tc brXL white f32_ pre-wrap lh-copy mb6 ph5-m">{cData.knowledge["banner"]}</h3>):
+                (<h3 className="fw5 pa4 tc bg-blue-3 brXL blue-1 f32_ fw5 lh-copy pre-wrap">{cData.knowledge["banner"]}</h3>)
               }
             </div>
             <div className="quote left relative mt6" style={bgNoWorry}>
@@ -583,46 +586,46 @@ class App extends Component {
         <section id="factor" className="pv0">
           <div className="container bg-blue-3 ph4-l ph3 pt4 pb0 tc brBox mh3">
             <h2 className="title bg-blue-1 lh-copy">{cData.factor["title"]}</h2>
-            <h3 className="mh5-l mh3 lh-copy mt5-l mt3 f32 fw5">{cData.factor["subtitle"]}</h3>
+            <h3 className="mh5-l mh3 lh-copy mt5-l mt3 f32 fw5 db-l dn">{cData.factor["subtitle"]}</h3>
             <div className="flex flex-wrap mw-1200 mh2">
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[0]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][0]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][0]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[1]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][1]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][1]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[2]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][2]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][2]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[3]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][3]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][3]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[4]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][4]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][4]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[5]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][5]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][5]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[6]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][6]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][6]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[7]}/>
-                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][7]}</label>
+                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][7]}</label>
               </div>
             </div>
             <div className="mh6-l mh2 pa2 mt4-l mt3 lh-copy">
               {
                 (isMobile) ? 
-                (<h3 className="pa3 tc brL blue-1 f3 pre-wrap">{cData.factor["banner"]}</h3>):
-                (<h3 className="dib pv3 ph4 f32 tc bg-white brL black f3 pre-wrap">{cData.factor["banner"]}</h3>)
+                (<h3 className="pa3 tc brL blue-1 f32_ pre-wrap">{cData.factor["banner"]}</h3>):
+                (<h3 className="dib pv3 ph4 f32_ tc bg-white brL black pre-wrap">{cData.factor["banner"]}</h3>)
               }
             </div>
             <div className="quote right relative mt5-l mt6" style={bgAnswer}>
@@ -649,7 +652,7 @@ class App extends Component {
                       <div className="center dib w-100 bg-blue-3 brL">
                         <img className="dib ma0 w-50" src={qaImg[0]}/>
                       </div>
-                      <h3 className="pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(1)}>答案</h3>  
+                      <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(1)}>答案</h3>  
                     </div>
                   </div>
                   <div className="w-100 pt2 pb4 flex justify-between">
@@ -658,7 +661,7 @@ class App extends Component {
                       <div className="center dib w-100 bg-blue-3 brL">
                         <img className="dib ma0 w-50" src={qaImg[1]}/>
                       </div>
-                      <h3 className="pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(2)}>答案</h3>  
+                      <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(2)}>答案</h3>  
                     </div>
                   </div>
                   <div className="w-100 pt2 flex justify-between">
@@ -667,7 +670,7 @@ class App extends Component {
                       <div className="center dib w-100 bg-blue-3 brL">
                         <img className="dib ma0 w-50" src={qaImg[2]}/>
                       </div>
-                      <h3 className="pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(3)}>答案</h3>  
+                      <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(3)}>答案</h3>  
                     </div>
                   </div>
                   <ReactModal 
@@ -678,10 +681,10 @@ class App extends Component {
                   >
                     <div className="tc">
                       <div className="ph4 pt5 pb0">
-                        <h3 className="tc f40 fw5 lh-copy">{modalContent.title[this.state.modal-1]}</h3>
+                        <h3 className="tc f42 fw5 lh-copy">{modalContent.title[this.state.modal-1]}</h3>
                         <p className="pre-wrap f32 mb0 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>
                       </div>
-                      <img className="pb4" src={modalContent.image[this.state.modal-1]}/>
+                      <img className={this.state.modal == 1 ? "pb4 mw-300 mt3":"pb4"} src={modalContent.image[this.state.modal-1]}/>
                     </div>
                     <div className="close" onClick={this.handleCloseModal}><img src={closeBtn}/></div>
                   </ReactModal>
@@ -744,7 +747,7 @@ class App extends Component {
         {/* Banner */}
         <section id="banner" className="pb0">
           <div className="ma0">
-            <h3 className="container tc lh-copy f50 pb4 pre-wrap">{cData.banner}</h3>
+            <h3 className={isMobile ? "container tc f32 fw5 lh-copy pb4 pre-wrap ph5-m" : "container tc fw5 f50 lh-copy pb4 pre-wrap"}>{cData.banner}</h3>
             <div className="relative" style={bgBanner}>
               <img className="db center o-0" src="https://fakeimg.pl/1000x360/"/>
               <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} style={logo2style}/>

@@ -44,20 +44,25 @@ ol {
 .f32 {font-size: 32px;}
 .f32_ {font-size: 32px;}
 .f16_ {font-size: 16px;}
+.f18_ {font-size: 18px;}
 .f24_ {font-size: 24px;}
 .f24 {font-size: 24px;}
+.f24s {font-size: 24px;}
 .f42 {font-size: 42px;}
 .f40 {font-size: 40px;}
+.f40_ {font-size: 40px;}
 .f16 {font-size: 16px;}
 
 @media only screen and (max-width: 959px) {
-  .f80 {font-size: 50px;}
-  .f55 {font-size: 35px;}
+  .f80 {font-size: 40px;}
+  .f55 {font-size: 22px;}
   .f50 {font-size: 32px;}
-  .f32 {font-size: 20px;}
-  .f24 {font-size: 16px;}
-  .f42 {font-size: 27px;}
-  .f40 {font-size: 24px;}
+  .f32 {font-size: 26px;}
+  .f24 {font-size: 20px;}
+  .f24s {font-size: 20px;}
+  .f42 {font-size: 32px;}
+  .f40 {font-size: 26px;}
+  .f40_ {font-size: 40px;}
   .f16 {font-size: 10px;}
 
   .mw-200 {
@@ -67,6 +72,10 @@ ol {
   .mw-270 {
     max-width: 270px;
   }
+}
+
+@media only screen and (max-width: 479px) {
+  .f24s {font-size: 12px;}
 }
 
 .mw-300 {
@@ -204,6 +213,7 @@ header h1 {
 
 h2.title {
 	text-align: center;
+  font-weight: 500;
 }
 
 /* Top */
@@ -541,7 +551,7 @@ input {
     position: absolute;
     left: 0 !important;
     right: 0 !important;
-    bottom: -30px !important;
+    bottom: -80% !important;
     transform: rotate(90deg);
     margin: auto;
     background-image: url('./images/bubble.png');
@@ -550,9 +560,9 @@ input {
     z-index: -1;
   }
 
-  .quote h4.mw-200:before {
+  /*.quote h4.mw-200:before {
     bottom: -80px !important;
-  }
+  }*/
 
   .quote:not(.carQ) .l60 {left: auto;}
   .quote:not(.carQ) .b10 {bottom: auto;}
@@ -574,7 +584,7 @@ input[type=text] {
 @media only screen and (max-width: 959px) {
   *::placeholder,
   input[type=text] {
-    font-size: 23px;
+    font-size: 26px;
   }
 }
 
