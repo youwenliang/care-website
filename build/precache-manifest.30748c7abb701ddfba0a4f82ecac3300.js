@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c19c09495cb5032e0c1891cd390e317f",
+    "revision": "3f8f354bbe3c80d963a1578f842ead1a",
     "url": "/care-website/index.html"
   },
   {
-    "revision": "519bf9e3b3a7835d828d",
+    "revision": "37f1cc4c75f9a5111c44",
     "url": "/care-website/static/css/2.d0c3c6f2.chunk.css"
   },
   {
-    "revision": "0f0ffbb0ea9dbead9e1b",
-    "url": "/care-website/static/css/main.142fc580.chunk.css"
+    "revision": "d849775eedaa5d3d408f",
+    "url": "/care-website/static/css/main.65bc3f3b.chunk.css"
   },
   {
-    "revision": "519bf9e3b3a7835d828d",
-    "url": "/care-website/static/js/2.6c9156ba.chunk.js"
+    "revision": "37f1cc4c75f9a5111c44",
+    "url": "/care-website/static/js/2.b95c9cf7.chunk.js"
   },
   {
     "revision": "dd9bb6a3a698bfa0f46890f000cb750f",
-    "url": "/care-website/static/js/2.6c9156ba.chunk.js.LICENSE.txt"
+    "url": "/care-website/static/js/2.b95c9cf7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f0ffbb0ea9dbead9e1b",
-    "url": "/care-website/static/js/main.bd162dd9.chunk.js"
+    "revision": "d849775eedaa5d3d408f",
+    "url": "/care-website/static/js/main.c820f456.chunk.js"
   },
   {
     "revision": "7157cfe5dbd0b0325027",
@@ -76,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/care-website/static/media/man7.294ff863.png"
   },
   {
-    "revision": "de69f21a453c50d5c13aa0303b3b0598",
-    "url": "/care-website/static/media/man7c.de69f21a.png"
+    "revision": "257e7afd92680ea55fe7e39022cbe1dc",
+    "url": "/care-website/static/media/man7c.257e7afd.png"
   },
   {
     "revision": "6b08cdcb3c5347c3abfaf164a83462ba",
@@ -98,6 +98,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6422a3bcbd3cfc59b86c6e255d30ced9",
     "url": "/care-website/static/media/保腎5.6422a3bc.png"
+  },
+  {
+    "revision": "819cd7c67926d3da24ca07be18eda5f8",
+    "url": "/care-website/static/media/保腎護心網layout手機物件_01.819cd7c6.png"
+  },
+  {
+    "revision": "ca68e9981d1b7c91d97b041068d3dc9d",
+    "url": "/care-website/static/media/保腎護心網layout手機物件_02.ca68e998.png"
+  },
+  {
+    "revision": "a736dd3be60cea7170ea960489032bc5",
+    "url": "/care-website/static/media/保腎護心網layout手機物件_08.a736dd3b.png"
+  },
+  {
+    "revision": "3d62b32616687f0f59e4379568fa2672",
+    "url": "/care-website/static/media/保腎護心網layout手機物件_09.3d62b326.png"
+  },
+  {
+    "revision": "78c79aab15d00e271360af360ee2dec9",
+    "url": "/care-website/static/media/保腎護心網layout手機物件_44.78c79aab.png"
   },
   {
     "revision": "497aab3498796836e68f9f71cbdf3025",
@@ -166,10 +186,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0408e738a8c2ad6d89a1bb7d92ed92b6",
     "url": "/care-website/static/media/保腎護心網layout物件V3_4.0408e738.png"
-  },
-  {
-    "revision": "c316e96edaf0e91146b988995003aa15",
-    "url": "/care-website/static/media/保腎護心網layout物件V3_4s.c316e96e.png"
   },
   {
     "revision": "6bec0aa66e3a4fe45788647f838df1b6",

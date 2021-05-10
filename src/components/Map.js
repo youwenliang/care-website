@@ -187,7 +187,6 @@ class Map extends Component {
       });
       allList = [];
       var styleH1 = this.state.width <= 969 ? "white bg-blue-3" : "blue-2 bg-white"
-
       for(var j = 0; j < list.length; j++) {
         var temp = (
           <div className="w-50 tc" key={j}>
