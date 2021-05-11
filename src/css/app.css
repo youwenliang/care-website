@@ -483,6 +483,11 @@ input {
  transition: all .15s ease-in-out;
 }
 
+.ReactModalPortal {
+  position: relative;
+  z-index: 2;
+}
+
 
 /* quote */
 .quote h4 {

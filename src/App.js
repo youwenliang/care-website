@@ -118,6 +118,7 @@ class App extends Component {
 
   render(){
     const { width, height } = this.state;
+    const isSmall = width <= 479;
     const isMobile = width <= 959;
     const isPad = width < 1200;
     const isLarge = width <= 1366;
@@ -163,8 +164,8 @@ class App extends Component {
         backgroundColor: "#6A7DCB",
         margin: "auto",
         padding: 0,
-        inset: '50% 1rem auto',
-        transform: 'translateY(-50%)'
+        inset: isSmall ? '16px':'50% 1rem auto',
+        transform: isSmall ? 'none':'translateY(-50%)'
       }
     };
 
