@@ -35,7 +35,8 @@ class Map extends Component {
       sDis: null,
       open: false,
       detail: false,
-      currentClinic: null
+      currentClinic: null,
+      dis: false
     }
     this.handleSelect1 = this.handleSelect1.bind(this);
     this.handleSelect2 = this.handleSelect2.bind(this);
@@ -152,7 +153,7 @@ class Map extends Component {
     $p.attr('aria-checked', "false");
     $p.attr('aria-before', $t.state.currentMap);
     $p.attr('tabindex', "-1");
-    $t.setState({currentMap:null, detail: false, same: true, value: "", allList: null, open: false});
+    $t.setState({currentMap:null, detail: false, same: true, value: "", allList: null, open: false, dis: false});
 
     $('#sCity option').prop('selected', function() {
         return this.defaultSelected;
@@ -195,11 +196,17 @@ class Map extends Component {
       allList = [];
       var styleH1 = this.state.width <= 969 ? "white bg-blue-3" : "blue-2 bg-white"
       for(var j = 0; j < list.length; j++) {
-        var temp = (
+        var temp = this.state.dis ? (
+          <div className="w-100 flex flex-wrap flex-gap tc" key={j}>
+            {list[j]["name"].map((name, i) => (
+              <p className="flex-grow-0 w-50 cp f16_ fw4 mv2 pa2" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
+            ))}
+          </div>
+        ):(
           <div className="w-50 tc" key={j}>
             <h1 className={ styleH1 + " fw5 f24_ ph4-l ph3 pv3 brM dib mb0"}>{list[j]["dis"]}</h1>
             {list[j]["name"].map((name, i) => (
-              <p className="cp f16_" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
+              <p className="cp f16_ fw4" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
           </div>
         )
@@ -234,7 +241,7 @@ class Map extends Component {
 
   handleSelect2(event) {
     this.setState({sDis:event.target.value}, () => {
-      this.setState({value: this.state.sCity+this.state.sDis});
+      this.setState({value: this.state.sCity+this.state.sDis, dis:true});
     });
   }
 
@@ -290,7 +297,7 @@ class Map extends Component {
     }
 
     var box = {
-      minHeight: "360px",
+      minHeight: "400px",
       maxHeight: "600px"
     }
 
