@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3f8f354bbe3c80d963a1578f842ead1a",
+    "revision": "0bd71a14d44b4073d90136abf1e0c71e",
     "url": "/care-website/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/care-website/static/css/2.d0c3c6f2.chunk.css"
   },
   {
-    "revision": "d849775eedaa5d3d408f",
-    "url": "/care-website/static/css/main.65bc3f3b.chunk.css"
+    "revision": "f922a6910434e1a0ae32",
+    "url": "/care-website/static/css/main.76fe603a.chunk.css"
   },
   {
     "revision": "37f1cc4c75f9a5111c44",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/care-website/static/js/2.b95c9cf7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d849775eedaa5d3d408f",
-    "url": "/care-website/static/js/main.c820f456.chunk.js"
+    "revision": "f922a6910434e1a0ae32",
+    "url": "/care-website/static/js/main.a7b43938.chunk.js"
   },
   {
     "revision": "7157cfe5dbd0b0325027",
