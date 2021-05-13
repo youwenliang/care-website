@@ -11,6 +11,7 @@ import data from './data/data.js'
 
 // Images
 import logo2 from './images/logo2.png';
+import loadingGIF from './images/loading.gif';
 import startImg from './images/start.png';
 import cover1 from './images/保腎護心網layout物件_06.png';
 import cover1m from './images/保腎護心網layout手機物件_08.png';
@@ -102,6 +103,7 @@ class App extends Component {
   }
 
   componentDidMount(){
+
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
@@ -306,6 +308,9 @@ class App extends Component {
 
     return (
       <main className="overflow-hidden">
+        <div id="loading" className="flex items-center justify-center">
+          <img src={loadingGIF} width="160"/>
+        </div>
         {/* Header */}
         <Header/>
         <div id="top" className="br-100 z-2">

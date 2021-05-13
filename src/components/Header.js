@@ -9,7 +9,18 @@ import micl from '../images/保腎護心網layout手機物件_04.png';
 import micr from '../images/保腎護心網layout手機物件_05.png';
 import logo1 from '../images/logo1.png';
 
+import startImg from '../images/start.png';
+import cover1 from '../images/保腎護心網layout物件_06.png';
+import cover1m from '../images/保腎護心網layout手機物件_08.png';
+import cover2 from '../images/保腎護心網layout物件_07.png';
+import cover3 from '../images/保腎護心網layout物件_08.png';
+import cover4 from '../images/保腎護心網layout物件_09.png';
+import cover4m from '../images/保腎護心網layout手機物件_09.png';
+
+
+
 import data from '../data/data.js'
+import loadImage from 'image-promise';
 
 // Data
 const cData = data.content;
@@ -25,7 +36,31 @@ class Header extends Component {
   }
   componentDidMount(){
     window.addEventListener('resize', this.checkMobile);
-    this.checkMobile()
+    this.checkMobile();
+
+    document.body.classList.add('ds');
+    document.getElementById('loading').classList.remove('fade');
+
+    // var images  = [];
+    var images  = [bgl, bgr, bglm, bgrm, micl, micr, logo1, startImg, cover1, cover1m, cover2, cover3, cover4, cover4m];
+    var loaded = false;
+    
+    loadImage(images)
+    .then(function (allImgs) {
+      console.log(allImgs.length, 'images loaded!', allImgs);
+      loaded = true;
+
+      setTimeout(function(){
+        document.getElementById('loading').classList.add('fade');
+        document.body.classList.remove('ds');
+      },1200);
+    })
+    .catch(function (err) {
+      console.error('One or more images have failed to load :(');
+      console.error(err.errored);
+      console.info('But these loaded fine:');
+      console.info(err.loaded);
+    });
   }
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
