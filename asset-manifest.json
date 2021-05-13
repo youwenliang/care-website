@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/care-website/static/css/main.abbd3f35.chunk.css",
-    "main.js": "/care-website/static/js/main.00f1f027.chunk.js",
-    "main.js.map": "/care-website/static/js/main.00f1f027.chunk.js.map",
+    "main.js": "/care-website/static/js/main.fd262199.chunk.js",
+    "main.js.map": "/care-website/static/js/main.fd262199.chunk.js.map",
     "runtime-main.js": "/care-website/static/js/runtime-main.8a775214.js",
     "runtime-main.js.map": "/care-website/static/js/runtime-main.8a775214.js.map",
     "static/css/2.d0c3c6f2.chunk.css": "/care-website/static/css/2.d0c3c6f2.chunk.css",
     "static/js/2.aaac53c1.chunk.js": "/care-website/static/js/2.aaac53c1.chunk.js",
     "static/js/2.aaac53c1.chunk.js.map": "/care-website/static/js/2.aaac53c1.chunk.js.map",
     "index.html": "/care-website/index.html",
-    "precache-manifest.f39e599f0239c32c2872d205f6663188.js": "/care-website/precache-manifest.f39e599f0239c32c2872d205f6663188.js",
+    "precache-manifest.88252f6dce4e677b3cb402915354b491.js": "/care-website/precache-manifest.88252f6dce4e677b3cb402915354b491.js",
     "service-worker.js": "/care-website/service-worker.js",
     "static/css/2.d0c3c6f2.chunk.css.map": "/care-website/static/css/2.d0c3c6f2.chunk.css.map",
     "static/css/main.abbd3f35.chunk.css.map": "/care-website/static/css/main.abbd3f35.chunk.css.map",
@@ -71,6 +71,6 @@
     "static/css/2.d0c3c6f2.chunk.css",
     "static/js/2.aaac53c1.chunk.js",
     "static/css/main.abbd3f35.chunk.css",
-    "static/js/main.00f1f027.chunk.js"
+    "static/js/main.fd262199.chunk.js"
   ]
 }
