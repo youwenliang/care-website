@@ -85,7 +85,6 @@ class App extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      height: window.innerHeight,
       showModal: false,
       modal: 0
     }
@@ -115,16 +114,14 @@ class App extends Component {
 
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
-    this.setState({ height: window.innerHeight });
   }
 
   render(){
-    const { width, height } = this.state;
+    const { width } = this.state;
     const isSmall = width <= 479;
     const isMobile = width <= 959;
     const isPad = width < 1200;
     const isLarge = width <= 1366;
-    var $t = this;
 
     var goal = isLarge ? "calc(50% - 400px) bottom, calc(50% + 400px) bottom, calc(50% - 35vw) top, calc(50% + 37vw) top" : "left bottom, right bottom, -20px top, right top"
 
@@ -309,12 +306,12 @@ class App extends Component {
     return (
       <main className="overflow-hidden">
         <div id="loading" className="flex items-center justify-center">
-          <img src={loadingGIF} width="160"/>
+          <img src={loadingGIF} alt="Loading" width="160"/>
         </div>
         {/* Header */}
         <Header/>
         <div id="top" className="br-100 z-2">
-          <img src={upBtn}/>
+          <img alt="Top" src={upBtn}/>
         </div>
 
         {/* Cover */}
@@ -333,7 +330,7 @@ class App extends Component {
         </section>
 
         <div className="tc" style={bgC}>
-          <img className="db center" src={beforeC} width="52px" />
+          <img alt="line" className="db center" src={beforeC} width="52px" />
         </div>
 
         {/* Car */}
@@ -348,7 +345,7 @@ class App extends Component {
                     <h3 className="f50 pre-wrap mv2" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
                     <p className="f32 ph4-m ph2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                     <div className="pa3 relative">
-                      <img className="w-80-l w-100" src={car1}/>
+                      <img className="w-80-l w-100" src={car1} alt="car" />
                       <div className="quote carQ left top-0">
                         <h4 className="f24s bg-white brL fw4 absolute l60 b10 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
                       </div>
@@ -361,7 +358,7 @@ class App extends Component {
                     <h3 className="f50 pre-wrap mv2" dangerouslySetInnerHTML={{__html:cData.car["title"][1]}}></h3>
                     <p className="f32 ph4-m ph2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][1]}}></p>
                     <div className="pa3 relative">
-                      <img className="w-80-l w-100" src={car2}/>
+                      <img className="w-80-l w-100" src={car2} alt="car" />
                       <div className="quote carQ right top-0">
                         <h4 className="f24s bg-white brL fw4 absolute r50 b20 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
                       </div>
@@ -413,7 +410,7 @@ class App extends Component {
                   <div className="cf mh6-l mh2 flex flex-row-l flex-column">
                     <div className="fl w-100 w-50-l pa2 ph5-m">
                       <div className="bg-white pa5-l pa4 brXL mr4-l h-100">
-                        <img className="w-100" src={how1}/>
+                        <img className="w-100" src={how1} alt="illustration" />
                       </div>
                       <div className="pa3 tc">
                         <p className="f32 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["card1"]}}></p>
@@ -425,7 +422,7 @@ class App extends Component {
                     </div>
                     <div className="fl w-100 w-50-l pa2 ph5-m">
                       <div className="bg-white pa0 brXL ml4-l">
-                        <img className="db w-100" src={how2}/>
+                        <img className="db w-100" src={how2} alt="illustration" />
                       </div>
                       <div className="pa3 tc mb4">
                         <p className="f32 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["card2"]}}></p>
@@ -437,7 +434,7 @@ class App extends Component {
                   <div className="cf mw-1200 mh2 flex flex-row-l flex-column">
                     <div className="fl w-100 w-50-l pa2">
                       <div className="f24 bg-white pa5-l pa4 brXL mr4-l h-100">
-                        <img className="w-100" src={how1}/>
+                        <img className="w-100" src={how1} alt="illustration" />
                         <p className="pre-wrap tc lh-copy" dangerouslySetInnerHTML={{__html:cData.how["card1"]}}></p>
                         <div className="cf fw5 lh-copy">
                           <div className="fl w-50 ph2-l">{cData.how["card1list"][0]}<br/>{cData.how["card1list"][1]}</div>
@@ -447,7 +444,7 @@ class App extends Component {
                     </div>
                     <div className="fl w-100 w-50-l pa2">
                       <div className="f24 bg-white pa5-l pa4 brXL ml4-l h-100">
-                        <img className="w-100 bg-blue-4 brBox" src={how2}/>
+                        <img className="w-100 bg-blue-4 brBox" src={how2} alt="illustration" />
                         <p className="pre-wrap tc lh-copy" dangerouslySetInnerHTML={{__html:cData.how["card2"]}}></p>
                       </div>
                     </div>
@@ -462,7 +459,7 @@ class App extends Component {
         </section>
 
         <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
+          <img className="db center" src={bgR} alt="line" width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Cause */}
@@ -476,19 +473,19 @@ class App extends Component {
                   <div className="cf tc">
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
-                        <img className="w-80" src={causeImg[0]}/>
+                        <img className="w-80" src={causeImg[0]} alt="illustration" />
                         <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][0]}</span>{cData.cause["content"][0]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4">
-                        <img className="w-80" src={causeImg[1]}/>
+                        <img className="w-80" src={causeImg[1]} alt="illustration" />
                         <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][1]}</span>{cData.cause["content"][1]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv3 mh4 mb5">
-                        <img className="w-80" src={causeImg[2]}/>
+                        <img className="w-80" src={causeImg[2]} alt="illustration" />
                         <p className="pre-wrap flex flex-column mw-270 center f40 fw5 bg-blue-5 br4 pa3 white lh-copy"><span className="f24_ db">{cData.cause["top"][2]}</span>{cData.cause["content"][2]}</p>
                       </div>
                     </div>
@@ -498,21 +495,21 @@ class App extends Component {
                   <div className="cf tc fw5">
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv4 mh4-l mh5">
-                        <img className="w-90" src={causeImg[0]}/>
+                        <img className="w-90" src={causeImg[0]} alt="illustration" />
                         <label className="f24 db bg-blue-1 br-100 white size100 center flex justify-center items-center">{cData.cause["top"][0]}</label>
                         <p className="mw-300 h160 mh0 f32 bg-blue-5 br4 pa4 white">{cData.cause["content"][0]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv4 mh4-l mh5">
-                        <img className="w-90" src={causeImg[1]}/>
+                        <img className="w-90" src={causeImg[1]} alt="illustration" />
                         <label className="f24 db bg-blue-1 br-100 white size100 center flex justify-center items-center">{cData.cause["top"][1]}</label>
                         <p className="mw-300 h160 mh0 f32 bg-blue-5 br4 pa4 white">{cData.cause["content"][1]}</p>
                       </div>
                     </div>
                     <div className="fl w-100 w-third-l pa2">
                       <div className="pv4 mh4-l mh5">
-                        <img className="w-90" src={causeImg[2]}/>
+                        <img className="w-90" src={causeImg[2]} alt="illustration" />
                         <label className="f24 db bg-blue-1 br-100 white size100 center flex justify-center items-center">{cData.cause["top"][2]}</label>
                         <p className="mw-300 h160 mh0 f32 pre-wrap lh-copy bg-blue-5 br4 pa4 white">{cData.cause["content"][2]}</p>
                       </div>
@@ -528,18 +525,18 @@ class App extends Component {
         </section>
 
         <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" src={bgL} width={isMobile ? "80":"450"}/>
+          <img className="db center" alt="line" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Knowledge */}
         <section id="knowledge" className="pv0">
           <div className="container bg-blue-4 ph4-l ph3 pt4 pb0 brBox mh3 relative">
-            <img className="absolute db-l dn" src={candies3} width="185" style={candies[0]}/>
-            <img className="absolute db-l dn" src={candies1} width="155" style={candies[1]}/>
-            <img className="absolute db-l dn" src={candies2} width="110" style={candies[2]}/>
-            <img className="absolute db-l dn" src={candies1} width="110" style={candies[3]}/>
-            <img className="absolute db-l dn" src={candies2} width="155" style={candies[4]}/>
-            <img className="absolute db-l dn" src={candies4} width="185" style={candies[5]}/>
+            <img className="absolute db-l dn" src={candies3} width="185" style={candies[0]}  alt="illustration" />
+            <img className="absolute db-l dn" src={candies1} width="155" style={candies[1]}  alt="illustration" />
+            <img className="absolute db-l dn" src={candies2} width="110" style={candies[2]}  alt="illustration" />
+            <img className="absolute db-l dn" src={candies1} width="110" style={candies[3]}  alt="illustration" />
+            <img className="absolute db-l dn" src={candies2} width="155" style={candies[4]}  alt="illustration" />
+            <img className="absolute db-l dn" src={candies4} width="185" style={candies[5]}  alt="illustration" />
             <h2 className="title bg-blue-2 pre-wrap lh-copy">{cData.knowledge["title"]}</h2>
             <div className="center tc lh-copy">
               <div className="cf mw-1200 mh2 flex flex-row-l flex-column">
@@ -549,10 +546,10 @@ class App extends Component {
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent1"][0]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent2"][0]}}></p>
-                    <img className="w-100" src={knowImg[0]}/>
+                    <img className="w-100" src={knowImg[0]}  alt="illustration" />
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent3"][0]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
-                    <img className="w-100" src={knowImg[1]}/>
+                    <img className="w-100" src={knowImg[1]}  alt="illustration" />
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent4"][0]}}></p>
                   </div>
                 </div>
@@ -562,10 +559,10 @@ class App extends Component {
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent1"][1]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent2"][1]}}></p>
-                    <img className="w-100" src={knowImg[2]}/>
+                    <img className="w-100" src={knowImg[2]}  alt="illustration" />
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent3"][1]}}></p>
                     <hr className="bw1 bg-blue-5 mv4 db-l dn"/>
-                    <img className="w-100" src={knowImg[3]}/>
+                    <img className="w-100" src={knowImg[3]}  alt="illustration" />
                     <p className="pre-wrap" dangerouslySetInnerHTML={{__html:cData.knowledge["cardcontent4"][1]}}></p>
                   </div>
                 </div>
@@ -585,7 +582,7 @@ class App extends Component {
         </section>
 
         <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
+          <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Factor */}
@@ -595,35 +592,35 @@ class App extends Component {
             <h3 className="mh5-l mh3 lh-copy mt5-l mt3 f32 fw5 db-l dn">{cData.factor["subtitle"]}</h3>
             <div className="flex flex-wrap mw-1200 mh2">
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[0]}/>
+                <img className="w-90 db center" src={factorImg[0]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][0]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[1]}/>
+                <img className="w-90 db center" src={factorImg[1]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][1]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[2]}/>
+                <img className="w-90 db center" src={factorImg[2]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][2]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[3]}/>
+                <img className="w-90 db center" src={factorImg[3]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][3]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[4]}/>
+                <img className="w-90 db center" src={factorImg[4]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][4]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[5]}/>
+                <img className="w-90 db center" src={factorImg[5]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][5]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[6]}/>
+                <img className="w-90 db center" src={factorImg[6]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][6]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
-                <img className="w-90 db center" src={factorImg[7]}/>
+                <img className="w-90 db center" src={factorImg[7]}  alt="illustration" />
                 <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][7]}</label>
               </div>
             </div>
@@ -641,7 +638,7 @@ class App extends Component {
         </section>
 
         <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" src={bgL} width={isMobile ? "80":"450"}/>
+          <img className="db center" alt="line" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* QA */}
@@ -656,7 +653,7 @@ class App extends Component {
                     <div className="ma0 tc w-100 bg-white br4 pa4">
                       <p className="f42 fw5 lh-copy db mt0 mr5 w-100 mb3 pre-wrap">{cData.qa["question"][0]}</p>
                       <div className="center dib w-100 bg-blue-3 brL">
-                        <img className="dib ma0 w-50" src={qaImg[0]}/>
+                        <img className="dib ma0 w-50" src={qaImg[0]}  alt="illustration" />
                       </div>
                       <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(1)}>答案</h3>  
                     </div>
@@ -665,7 +662,7 @@ class App extends Component {
                     <div className="ma0 tc w-100 bg-white br4 pa4">
                       <p className="f42 fw5 lh-copy db mt0 mr5 w-100 mb3 pre-wrap">{cData.qa["question"][1]}</p>
                       <div className="center dib w-100 bg-blue-3 brL">
-                        <img className="dib ma0 w-50" src={qaImg[1]}/>
+                        <img className="dib ma0 w-50" src={qaImg[1]}  alt="illustration" />
                       </div>
                       <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(2)}>答案</h3>  
                     </div>
@@ -674,7 +671,7 @@ class App extends Component {
                     <div className="ma0 tc w-100 bg-white br4 pa4">
                       <p className="f42 fw5 lh-copy db mt0 mr5 w-100 mb3 pre-wrap">{cData.qa["question"][2]}</p>
                       <div className="center dib w-100 bg-blue-3 brL">
-                        <img className="dib ma0 w-50" src={qaImg[2]}/>
+                        <img className="dib ma0 w-50" src={qaImg[2]}  alt="illustration" />
                       </div>
                       <h3 className="fw5 pv2 tc bg-blue-4 brM white f40 dib ph4 mt3 mb0 cp" onClick={() => this.handleOpenModal(3)}>答案</h3>  
                     </div>
@@ -690,9 +687,9 @@ class App extends Component {
                         <h3 className="tc f42 fw5 lh-copy">{modalContent.title[this.state.modal-1]}</h3>
                         <p className="pre-wrap f32 mb0 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>
                       </div>
-                      <img className={this.state.modal == 1 ? "pb4 mw-300 mt3":"pb4"} src={modalContent.image[this.state.modal-1]}/>
+                      <img  alt="illustration" className={this.state.modal === 1 ? "pb4 mw-300 mt3":"pb4"} src={modalContent.image[this.state.modal-1]}/>
                     </div>
-                    <div className="close" onClick={this.handleCloseModal}><img src={closeBtn}/></div>
+                    <div className="close" onClick={this.handleCloseModal}><img alt="close" src={closeBtn}/></div>
                   </ReactModal>
                 </div>
                 ) : 
@@ -702,39 +699,39 @@ class App extends Component {
                     <div className="overflow-y-hidden h-100">
                       <h3 className="f32 fw5">{modalContent.title[this.state.modal-1]}</h3>
                       <div className="bg-blue-3 pa0 br3">
-                        <img className="db" src={modalContent.image[this.state.modal-1]}/>
+                        <img className="db" alt="illustration" src={modalContent.image[this.state.modal-1]}/>
                       </div>
                       <p className="pre-wrap f24 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>
                     </div>
                     <div className="close" onClick={this.handleCloseModal}>
-                      <img src={closeBtn}/>
+                      <img alt="close" src={closeBtn}/>
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 flex-shrink" src={qaImg[0]} height="190"/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[0]} height="190" alt="illustration" />
                       <p className="f32 fw5 dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][0]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(1)}>
-                      <img className="dib cp" src={hand} width="190"/>
+                      <img className="dib cp" src={hand} width="190" alt="illustration" />
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 flex-shrink" src={qaImg[1]} height="190"/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[1]} height="190" alt="illustration" />
                       <p className="f32 fw5 dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][1]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(2)}>
-                      <img className="dib cp" src={hand} width="190"/>
+                      <img className="dib cp" src={hand} width="190" alt="illustration" />
                     </div>
                   </div>
                   <div className="w-100 pa3 flex justify-between items-center">
                     <div className="ma0 flex items-center w-100">
-                      <img className="dib ma0 flex-shrink" src={qaImg[2]} height="190"/>
+                      <img className="dib ma0 flex-shrink" src={qaImg[2]} height="190" alt="illustration" />
                       <p className="f32 fw5 dib mv0 mr5 bg-white brRight pa4 w-100 pre-wrap">{cData.qa["question"][2]}</p>
                     </div>
                     <div className="br-100 size190 bg-white pa2 overflow-hidden flex-shrink" onClick={() => this.handleOpenModal(3)}>
-                      <img className="dib cp" src={hand} width="190"/>
+                      <img className="dib cp" src={hand} width="190" alt="illustration" />
                     </div>
                   </div>
                 </div>
@@ -744,7 +741,7 @@ class App extends Component {
         </section>
 
         <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" src={bgR} width={isMobile ? "80":"450"}/>
+          <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Map */}
@@ -755,8 +752,8 @@ class App extends Component {
           <div className="ma0">
             <h3 className={isMobile ? "container tc f32 fw5 lh-copy pb4 pre-wrap ph5-m" : "container tc fw5 f50 lh-copy pb4 pre-wrap"}>{cData.banner}</h3>
             <div className="relative" style={bgBanner}>
-              <img className="db center o-0" src="https://fakeimg.pl/1000x360/"/>
-              <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" src={logo2} style={logo2style}/>
+              <img className="db center o-0" src="https://fakeimg.pl/1000x360/" alt="illustration" />
+              <img className="db center absolute left-0 right-0 bottom-0 pb4-l pb2" alt="logo" src={logo2} style={logo2style}/>
             </div>
           </div>
         </section>

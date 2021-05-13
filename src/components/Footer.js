@@ -7,14 +7,12 @@ import data from '../data/data.js'
 
 // Data
 const cData = data.content;
-const mData = data.map;
 
 class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       width: window.innerWidth,
-      height: window.innerHeight,
       footerH: $('footer').outerHeight()
     }
   }
@@ -24,12 +22,11 @@ class Footer extends Component {
   }
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
-    this.setState({ height: window.innerHeight });
     this.setState({ footerH: $('footer').outerHeight()});
   }
 
   render(){
-    const { width, height } = this.state;
+    const { width } = this.state;
     const isMobile = width <= 959;
     var f = this.state.footerH;
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import bgl from '../images/headerBGL.png';
 import bgr from '../images/headerBGR.png';
 import bglm from '../images/保腎護心網layout手機物件_01.png';
@@ -22,16 +21,14 @@ import cover4m from '../images/保腎護心網layout手機物件_09.png';
 import data from '../data/data.js'
 import loadImage from 'image-promise';
 
-// Data
+// Data 
 const cData = data.content;
-const mData = data.map;
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight
+      width: window.innerWidth
     }
   }
   componentDidMount(){
@@ -41,8 +38,8 @@ class Header extends Component {
     document.body.classList.add('ds');
     document.getElementById('loading').classList.remove('fade');
 
-    // var images  = [];
     var images  = [bgl, bgr, bglm, bgrm, micl, micr, logo1, startImg, cover1, cover1m, cover2, cover3, cover4, cover4m];
+    // eslint-disable-next-line no-unused-vars
     var loaded = false;
     
     loadImage(images)
@@ -64,11 +61,10 @@ class Header extends Component {
   }
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
-    this.setState({ height: window.innerHeight });
   }
 
   render(){
-    const { width, height } = this.state;
+    const { width } = this.state;
     const isSmall = width <= 600;
     const isMobile = width <= 959;
     const isLarge = width <= 1888;
@@ -98,7 +94,7 @@ class Header extends Component {
         <h2 className="tc white f55 fw5 mv0 tracked">{cData.header["subtitle"]}</h2>
         <div id="logos" className="center w-100 tc">
           <div className="dib bg-white ma0 pa0" style={logoContainer}>
-            <img className="ma2" src={logo1} width={isMobile ? "90":"200"}/>
+            <img className="ma2" alt="logo" src={logo1} width={isMobile ? "90":"200"}/>
           </div>
         </div>
       </header>
