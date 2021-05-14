@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/care-website/static/css/main.abbd3f35.chunk.css",
-    "main.js": "/care-website/static/js/main.fd262199.chunk.js",
-    "main.js.map": "/care-website/static/js/main.fd262199.chunk.js.map",
+    "main.css": "/care-website/static/css/main.c069dbc5.chunk.css",
+    "main.js": "/care-website/static/js/main.b57f868e.chunk.js",
+    "main.js.map": "/care-website/static/js/main.b57f868e.chunk.js.map",
     "runtime-main.js": "/care-website/static/js/runtime-main.8a775214.js",
     "runtime-main.js.map": "/care-website/static/js/runtime-main.8a775214.js.map",
     "static/css/2.d0c3c6f2.chunk.css": "/care-website/static/css/2.d0c3c6f2.chunk.css",
-    "static/js/2.aaac53c1.chunk.js": "/care-website/static/js/2.aaac53c1.chunk.js",
-    "static/js/2.aaac53c1.chunk.js.map": "/care-website/static/js/2.aaac53c1.chunk.js.map",
+    "static/js/2.84c8de6d.chunk.js": "/care-website/static/js/2.84c8de6d.chunk.js",
+    "static/js/2.84c8de6d.chunk.js.map": "/care-website/static/js/2.84c8de6d.chunk.js.map",
     "index.html": "/care-website/index.html",
-    "precache-manifest.88252f6dce4e677b3cb402915354b491.js": "/care-website/precache-manifest.88252f6dce4e677b3cb402915354b491.js",
+    "precache-manifest.450c6226fb4504d0629b634980bbbaa7.js": "/care-website/precache-manifest.450c6226fb4504d0629b634980bbbaa7.js",
     "service-worker.js": "/care-website/service-worker.js",
     "static/css/2.d0c3c6f2.chunk.css.map": "/care-website/static/css/2.d0c3c6f2.chunk.css.map",
-    "static/css/main.abbd3f35.chunk.css.map": "/care-website/static/css/main.abbd3f35.chunk.css.map",
-    "static/js/2.aaac53c1.chunk.js.LICENSE.txt": "/care-website/static/js/2.aaac53c1.chunk.js.LICENSE.txt",
+    "static/css/main.c069dbc5.chunk.css.map": "/care-website/static/css/main.c069dbc5.chunk.css.map",
+    "static/js/2.84c8de6d.chunk.js.LICENSE.txt": "/care-website/static/js/2.84c8de6d.chunk.js.LICENSE.txt",
     "static/media/candies1.png": "/care-website/static/media/candies1.06876074.png",
     "static/media/candies5.png": "/care-website/static/media/candies5.5a93f03f.png",
     "static/media/car1.png": "/care-website/static/media/car1.51a49f58.png",
@@ -69,8 +69,8 @@
   "entrypoints": [
     "static/js/runtime-main.8a775214.js",
     "static/css/2.d0c3c6f2.chunk.css",
-    "static/js/2.aaac53c1.chunk.js",
-    "static/css/main.abbd3f35.chunk.css",
-    "static/js/main.fd262199.chunk.js"
+    "static/js/2.84c8de6d.chunk.js",
+    "static/css/main.c069dbc5.chunk.css",
+    "static/js/main.b57f868e.chunk.js"
   ]
 }
