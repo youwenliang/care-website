@@ -412,7 +412,7 @@ class App extends Component {
                       <div className="bg-white pa5-l pa4 brXL mr4-l h-100">
                         <img className="w-100" src={how1} alt="illustration" />
                       </div>
-                      <div className="pa3 tc">
+                      <div className="pa3-l pa0 tc">
                         <p className="f32 lh-copy pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["card1"]}}></p>
                         <div className="cf mb4 lh-copy">
                           <div className="f32 fw5 fl w-50 ph2-l">{cData.how["card1list"][0]}<br/>{cData.how["card1list"][1]}</div>
@@ -593,38 +593,38 @@ class App extends Component {
             <div className="flex flex-wrap mw-1200 mh2">
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[0]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][0]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][0]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[1]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][1]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][1]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[2]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][2]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][2]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[3]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][3]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][3]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[4]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][4]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][4]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[5]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][5]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][5]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[6]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][6]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][6]}</label>
               </div>
               <div className="w-25-l w-50 pa3-l pa2">
                 <img className="w-90 db center" src={factorImg[7]}  alt="illustration" />
-                <label className="f32_ fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][7]}</label>
+                <label className="f32 fw5 mv3 db pre-wrap lh-copy">{cData.factor["factors"][7]}</label>
               </div>
             </div>
-            <div className="mh6-l mh2 pa2 mt4-l mt3 lh-copy">
+            <div className="mh6-l mh2 pa2 mt4-l mt3 pb5 pb0-l lh-copy">
               {
                 (isMobile) ? 
                 (<h3 className="pa3 tc brL blue-1 f32_ pre-wrap">{cData.factor["banner"]}</h3>):
