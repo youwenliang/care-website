@@ -55,6 +55,24 @@ class Map extends Component {
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile()
 
+
+    var $description = $(".description");
+    $('path').hover(function(e) {
+      e.preventDefault();
+      $(this).attr("class", "heyo");
+      $description.addClass('active');
+      $description.html($(this).attr('name'));
+    }, function() {
+      $description.removeClass('active');
+    });
+
+  $(document).on('mousemove', function(e){
+    $description.css({
+      left:  e.pageX,
+      top:   e.pageY - 70
+    });
+  });
+
     // Maps
     $('path').click(function(){
       $t.setState({value: "", detail: false})
@@ -294,6 +312,7 @@ class Map extends Component {
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
             <h2 className="title bg-blue-1 pre-wrap lh-copy">{cData.map["title"]}</h2>
+            <div className="description"></div>
             {
                 (isMobile) ? 
                 (

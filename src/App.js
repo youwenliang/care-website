@@ -306,7 +306,7 @@ class App extends Component {
     return (
       <main className="overflow-hidden">
         <div id="loading" className="flex items-center justify-center">
-          <img src={loadingGIF} alt="Loading" width="160"/>
+          <img src={loadingGIF} alt="Loading" width="100"/>
         </div>
         {/* Header */}
         <Header/>
