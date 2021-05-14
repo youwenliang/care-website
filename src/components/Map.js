@@ -308,6 +308,10 @@ class Map extends Component {
       gap: "16px",
     }
 
+    var ahref = this.state.detail ? (
+      <a className="flex-shrink" href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib cp ml2-l" width="40" alt="map"/></a>
+    ):null;
+
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
@@ -347,7 +351,7 @@ class Map extends Component {
                           <h3 className="f32_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
                           <div className="flex items-center">
                             <p className="f24_ dib mr2">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
-                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib cp" width="40" alt="map"/></a>
+                            {ahref}
                           </div>
                           <hr className="bw1 bg-blue-2 mv2"/>
                           <p className="f18_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
@@ -383,7 +387,7 @@ class Map extends Component {
                           <h3 className="f24_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
                           <div className="flex items-center">
                             <p className="f16_ dib">地址：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]] : null}</p>
-                            <a href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib ml2 cp" width="40" alt="map"/></a>
+                            {ahref}
                           </div>
                           <hr className="bw1 bg-white mv2"/>
                           <p className="f16_ fw5 mt4">門診電話：{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["phone"][this.state.currentClinic[1]] : null}</p>
