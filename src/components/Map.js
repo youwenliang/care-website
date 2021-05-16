@@ -171,8 +171,8 @@ class Map extends Component {
         return check.indexOf(this.state.search) !== -1;
       });
       filteredClinics.map((s, i) => {
-        var count = s.address.indexOf('區') - 2;
-        var temp = s.address.substring(count, count+3);
+        var temp = s.address.substring(3, 6);
+        if(s.address.indexOf('區') === 4 ) temp = s.address.substring(3, 5);
         if(!dis.includes(temp)) {
           dis.push(temp);
           list.push({
@@ -227,11 +227,12 @@ class Map extends Component {
       $('#sDis').append('<option value="" disabled selected>地區</option>');
       for(var i = 0; i < mData.length; i++) {
         if(mData[i]["address"].includes($t.state.value)) {
-          console.log(mData[i]);  
-          console.log(this.state.value);
-          if(!sDis.includes(mData[i]["address"].substring(3,6))) {
-            sDis.push(mData[i]["address"].substring(3,6));
-            $('#sDis').append('<option>'+mData[i]["address"].substring(3,6)+'</option>');
+          var temp = mData[i]["address"].substring(3,6);
+          if(mData[i]["address"].indexOf('區') === 4) temp = mData[i]["address"].substring(3,5);
+          if(!sDis.includes(temp)) {
+            sDis.push(temp);
+            var temp1 = '<option>'+temp+'</option>'
+            $('#sDis').append(temp1);
           }
         }
       }

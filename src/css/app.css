@@ -440,10 +440,10 @@ h2.title {
 
 
 /* Map */
-#changhua-county, #new-taipei-city, #miaoli-county, #hsinchu-city, #chiayi-county, #pingtung-county, #penghu-county {
+#changhua-county, #new-tp-city, #miaoli-county, #chiayi-county, #pingtung-county, #penghu-county {
   fill: #CBE6E3
 }
-#keelung-city, #taipei-city, #taoyuan-city, #yunlin-county, #hualien-county, #tainan-city {
+#keelung-city, #taipei-city, #taoyuan-city, #hsinchu-city, #yunlin-county, #hualien-county, #tainan-city {
   fill: #5DBCB6
 }
 #kaohsiung-city, #taichung-city, #hsinchu-county {
