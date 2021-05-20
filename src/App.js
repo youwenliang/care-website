@@ -453,7 +453,7 @@ class App extends Component {
               }
             </div>
             <div className="quote left relative mt6" style={bgWarning}>
-              <h4 className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute l60 b10 flex justify-center items-center pa5-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></h4>
+              <h4 className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute l60 b10 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></h4>
             </div>
           </div>
         </section>
@@ -632,7 +632,7 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt5-l mt6" style={bgAnswer}>
-              <h4 className="fw5 f24 tc lh-copy bg-white brL absolute b40 r50 flex justify-center items-center pa5-l pa3 pre-wrap" >{cData.factor["quote"]}</h4>
+              <h4 className="fw5 f24 tc lh-copy bg-white brL absolute b40 r45 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" >{cData.factor["quote"]}</h4>
             </div>
           </div>
         </section>

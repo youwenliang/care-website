@@ -32,7 +32,7 @@ class Header extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      showModal: true,
+      showModal: false,
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -96,7 +96,8 @@ class Header extends Component {
         margin: "auto",
         padding: 0,
         inset: isSmall ? '16px':'50% 1rem auto',
-        transform: isSmall ? 'none':'translateY(-50%)'
+        transform: isSmall ? 'none':'translateY(-50%)',
+        boxShadow: '0 3px 12px 3px rgba(0,0,0,.2)'
       }
     };
 
