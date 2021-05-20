@@ -16,6 +16,9 @@ import cover3 from '../images/保腎護心網layout物件_08.png';
 import cover4 from '../images/保腎護心網layout物件_09.png';
 import cover4m from '../images/保腎護心網layout手機物件_09.png';
 
+import ReactModal from 'react-modal';
+import closeBtn from '../images/保腎護心網layout物件_58.png';
+
 
 
 import data from '../data/data.js'
@@ -28,9 +31,21 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: window.innerWidth
+      width: window.innerWidth,
+      showModal: true,
     }
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
+
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+  
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
+
   componentDidMount(){
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
@@ -50,7 +65,7 @@ class Header extends Component {
       setTimeout(function(){
         document.getElementById('loading').classList.add('fade');
         document.body.classList.remove('ds');
-      },1200);
+      },400);
     })
     .catch(function (err) {
       console.error('One or more images have failed to load :(');
@@ -70,6 +85,20 @@ class Header extends Component {
     const isLarge = width <= 1888;
     var goal0 = isSmall ? "calc(50% + 195px) top, calc(50% - 195px) top, calc(50% + 150px) 69%, calc(50% - 150px) 69%" : "right top, left top, calc(50% + 150px) 69%, calc(50% - 150px) 69%"
     var goal1 = isLarge ? "calc(50% + 750px) top, calc(50% - 750px) top, calc(50% + 360px) 37%, calc(50% - 360px) 37%" : "right top, left top, calc(50% + 360px) 37%, calc(50% - 360px) 37%"
+
+    const customStyles = {
+      content : {
+        borderRadius: '30px',
+        maxWidth: '960px',
+        border: '0px',
+        color: "black",
+        backgroundColor: "white",
+        margin: "auto",
+        padding: 0,
+        inset: isSmall ? '16px':'50% 1rem auto',
+        transform: isSmall ? 'none':'translateY(-50%)'
+      }
+    };
 
 
     var headerBG = {
@@ -97,6 +126,18 @@ class Header extends Component {
             <img className="ma2" alt="logo" src={logo1} width={isMobile ? "90":"200"}/>
           </div>
         </div>
+        <ReactModal 
+           style={customStyles}
+           isOpen={this.state.showModal}
+           contentLabel="Minimal Modal Example"
+           onRequestClose={this.handleCloseModal}
+        >
+          <div className="tc pa4">
+            <h1>這是一個 modal</h1>
+            <p className="f24 lh-copy">這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文</p>
+          </div>  
+          <div className="close" onClick={this.handleCloseModal}><img alt="close" src={closeBtn}/></div>
+        </ReactModal>
       </header>
     )
   }

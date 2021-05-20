@@ -12,7 +12,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name="title" content="糖尿病保腎護心卓越機構，快找你的控糖好厝邊">
+    <meta name="title" content="糖尿病保腎護心卓越機構，快找你的控糖好厝邊！">
     <meta name="description" content="糖尿病是個殺手，別以為糖尿病只是尿尿比較甜而已，它也會攻擊腎臟與心臟！想找你的控糖好厝邊嗎？糖尿病保腎護心卓越機構！快跟我一起GO～">
     <meta name="keywords" content="糖尿病, 心衰竭, 腎病變, 糖尿病保腎護心卓越機構">
 
@@ -24,17 +24,6 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet"> 
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-197011250-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-197011250-1');
-    </script>
-
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -50,7 +39,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>糖尿病保腎護心卓越機構，快找你的控糖好厝邊</title>
+    <title>糖尿病保腎護心卓越機構，快找你的控糖好厝邊！</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -65,5 +54,28 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAthH2IaIun_enomZWVZtB_Ri6NmBynry8",
+        authDomain: "actonmrf.firebaseapp.com",
+        projectId: "actonmrf",
+        storageBucket: "actonmrf.appspot.com",
+        messagingSenderId: "372224780021",
+        appId: "1:372224780021:web:22ca6d5de3df80afa507bc",
+        measurementId: "G-VHYYGBC08X"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
