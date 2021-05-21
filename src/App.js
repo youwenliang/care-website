@@ -329,9 +329,13 @@ class App extends Component {
           </div>
         </section>
 
-        <div className="tc" style={bgC}>
-          <img alt="line" className="db center" src={beforeC} width="52px" />
-        </div>
+        {
+        (isPad) ? (
+          <div className="tc" style={bgC}>
+            <img alt="line" className="db center" src={beforeC} width="52px" />
+          </div>
+        ):null
+        }
 
         {/* Car */}
         <section id="car" style={carBG}>
@@ -531,12 +535,18 @@ class App extends Component {
         {/* Knowledge */}
         <section id="knowledge" className="pv0">
           <div className="container bg-blue-4 ph4-l ph3 pt4 pb0 brBox mh3 relative">
-            <img className="absolute db-l dn" src={candies3} width="185" style={candies[0]}  alt="illustration" />
-            <img className="absolute db-l dn" src={candies1} width="155" style={candies[1]}  alt="illustration" />
-            <img className="absolute db-l dn" src={candies2} width="110" style={candies[2]}  alt="illustration" />
-            <img className="absolute db-l dn" src={candies1} width="110" style={candies[3]}  alt="illustration" />
-            <img className="absolute db-l dn" src={candies2} width="155" style={candies[4]}  alt="illustration" />
-            <img className="absolute db-l dn" src={candies4} width="185" style={candies[5]}  alt="illustration" />
+            {
+              (isMobile) ? null : (
+              <div className="pa0 ma0">
+                <img className="absolute db-l dn" src={candies3} width="185" style={candies[0]}  alt="illustration" />
+                <img className="absolute db-l dn" src={candies1} width="155" style={candies[1]}  alt="illustration" />
+                <img className="absolute db-l dn" src={candies2} width="110" style={candies[2]}  alt="illustration" />
+                <img className="absolute db-l dn" src={candies1} width="110" style={candies[3]}  alt="illustration" />
+                <img className="absolute db-l dn" src={candies2} width="155" style={candies[4]}  alt="illustration" />
+                <img className="absolute db-l dn" src={candies4} width="185" style={candies[5]}  alt="illustration" />
+              </div>
+              )
+            }
             <h2 className="title bg-blue-2 pre-wrap lh-copy">{cData.knowledge["title"]}</h2>
             <div className="center tc lh-copy">
               <div className="cf mw-1200 mh2 flex flex-row-l flex-column">

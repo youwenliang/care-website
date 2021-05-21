@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "actonmrf"
+    "default": "actonmrf",
+    "staging": "actonmrf"
   }
 }
