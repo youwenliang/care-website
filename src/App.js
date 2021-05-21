@@ -320,7 +320,7 @@ class App extends Component {
             <div className="pa2-l pa0 center tc bg-blue-2 brBox mh3" style={coverBG}>
               <h3 className="tc blue-1 lh-copy f32_ fw5 mt4-l mt0 pt0-l pt4 ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["title"]}}></h3>
               <div className="bg-blue-1 br-100 mb0-l mb6 size250 center ph3 flex justify-center items-center">
-                <h5 className="tc lh-copy white dib f24_ fw3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["content"]}}></h5>
+                <h3 className="tc lh-copy white dib f24_ fw3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.cover["content"]}}></h3>
               </div>
               <div id="start" className="dib ph4-l ph2 pv2 black mt4" style={startBG}>
                 <p className="mt3-l mt1">{cData.start}</p>
@@ -642,7 +642,7 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt5-l mt6" style={bgAnswer}>
-              <h4 className="fw5 f24 tc lh-copy bg-white brL absolute b40 r45 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" >{cData.factor["quote"]}</h4>
+              <h4 className="fw5 f24 tc lh-copy bg-white brL absolute b40 r50 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" >{cData.factor["quote"]}</h4>
             </div>
           </div>
         </section>
