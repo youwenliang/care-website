@@ -164,7 +164,8 @@ class App extends Component {
         margin: "auto",
         padding: 0,
         inset: isSmall ? '16px':'50% 1rem auto',
-        transform: isSmall ? 'none':'translateY(-50%)'
+        transform: isSmall ? 'none':'translateY(-50%)',
+        overflowY: 'hidden'
       }
     };
 
@@ -301,6 +302,10 @@ class App extends Component {
 
     var bgC = {
       display: isPad ? "block":"none"
+    }
+
+    var modalbox = {
+       maxHeight: "calc(100vh - 32px)"
     }
 
     return (
@@ -692,7 +697,7 @@ class App extends Component {
                      contentLabel="Minimal Modal Example"
                      onRequestClose={this.handleCloseModal}
                   >
-                    <div className="tc">
+                    <div className="tc overflow-y-scroll" style={modalbox}>
                       <div className="ph4 pt5 pb0">
                         <h3 className="tc f42 fw5 lh-copy">{modalContent.title[this.state.modal-1]}</h3>
                         <p className="pre-wrap f32 mb0 lh-copy" dangerouslySetInnerHTML={{__html:modalContent.content[this.state.modal-1]}}></p>

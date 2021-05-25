@@ -161,7 +161,7 @@ class Header extends Component {
               <div className="bw1 db h1 w-100 bg-blue-2 mh3-l mh1"></div>
             </div>
             <h2 className="f50 blue-2">台灣基層糖尿病協會關心您</h2>
-            <p className="f24ss lh-copy mw-600 center blue-5">就醫時請主動告知接觸史、旅遊史、職業暴露、周遭其他人是否有類似症狀等。如出現發燒或呼吸道症狀，請配戴口罩儘速就醫，建議前往鄰近指定採檢院所篩檢。</p>
+            <p className="f24ss lh-copy mw-600 center blue-5 fw4">就醫時請主動告知接觸史、旅遊史、職業暴露、周遭其他人是否有類似症狀等。如出現發燒或呼吸道症狀，請配戴口罩儘速就醫，建議前往鄰近指定採檢院所篩檢。</p>
             <div className="flex flex-row-l flex-column">
               <div className="quote-block w-40-l center mh5-l mv5-l mb0 mt3 f32 fw5 tc lh-copy bg-blue-6 brL white flex justify-center items-center pa4-l pa3 pre-wrap relative" style={blockStyle}>
               <p className="ma0">控糖穩定 保腎護心<br/>維持按時服藥，<br/>規律回診</p>
