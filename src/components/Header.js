@@ -7,6 +7,8 @@ import bgrm from '../images/保腎護心網layout手機物件_02.png';
 import micl from '../images/保腎護心網layout手機物件_04.png';
 import micr from '../images/保腎護心網layout手機物件_05.png';
 import logo1 from '../images/logo1.png';
+import logo1_ from '../images/logo1_.png';
+import logo2_ from '../images/logo2_.png';
 
 import startImg from '../images/start.png';
 import cover1 from '../images/保腎護心網layout物件_06.png';
@@ -15,6 +17,10 @@ import cover2 from '../images/保腎護心網layout物件_07.png';
 import cover3 from '../images/保腎護心網layout物件_08.png';
 import cover4 from '../images/保腎護心網layout物件_09.png';
 import cover4m from '../images/保腎護心網layout手機物件_09.png';
+
+import modal from '../images/modal.png';
+import modalm from '../images/modalm.png';
+import modalcircle from '../images/modalcircle.png';
 
 import ReactModal from 'react-modal';
 import closeBtn from '../images/保腎護心網layout物件_58.png';
@@ -32,7 +38,7 @@ class Header extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      showModal: false,
+      showModal: true,
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -89,15 +95,16 @@ class Header extends Component {
     const customStyles = {
       content : {
         borderRadius: '30px',
-        maxWidth: '960px',
-        border: '0px',
+        maxWidth: isMobile ? '600px':'960px',
+        border: '8px solid #212E72',
         color: "black",
         backgroundColor: "white",
         margin: "auto",
         padding: 0,
-        inset: isSmall ? '16px':'50% 1rem auto',
-        transform: isSmall ? 'none':'translateY(-50%)',
-        boxShadow: '0 3px 12px 3px rgba(0,0,0,.2)'
+        inset: '50% 1rem auto',
+        transform: 'translateY(-50%)',
+        boxShadow: '0 3px 12px 3px rgba(0,0,0,.2)',
+        overflow: 'hidden'
       }
     };
 
@@ -118,6 +125,14 @@ class Header extends Component {
       transform: "translateX(-50%)"
     }
 
+    var quoteStyle = {
+      bottom: isMobile ? "-40px":"-60px"
+    }
+
+    var blockStyle = {
+      width: isMobile ? "256px":"auto"
+    }
+
     return (
       <header className="center pt4 pb6-l pb5 relative" style={headerBG}>
         <h1 className="tc white f80 fw5 mt4 mb3 tracked" dangerouslySetInnerHTML={{__html:cData.header["title"]}}></h1>
@@ -133,9 +148,27 @@ class Header extends Component {
            contentLabel="Minimal Modal Example"
            onRequestClose={this.handleCloseModal}
         >
-          <div className="tc pa4">
-            <h1>這是一個 modal</h1>
-            <p className="f24 lh-copy">這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文這是一個 modal 的內文</p>
+          <div className="tc ph4 pt4 pb0">
+            <div className="flex mw-600 items-center mt4">
+              <div className="bw1 db h1 w-100 bg-blue-2 mh3-l mh1"></div>
+              <div className="flex flex-column flex-shrink">
+                <div className="flex justify-center">
+                  <img src={logo1_} alt="TACD" height={isMobile ? "30":"35"}/>
+                  <img src={logo2_} alt="AstraZeneca" height={isMobile ? "30":"35"}/>
+                </div>
+                <h1 className="blue-2 f30 mv1">支持醫護,協力抗疫</h1>
+              </div>
+              <div className="bw1 db h1 w-100 bg-blue-2 mh3-l mh1"></div>
+            </div>
+            <h2 className="f50 blue-2">台灣基層糖尿病協會關心您</h2>
+            <p className="f24ss lh-copy mw-600 center blue-5">就醫時請主動告知接觸史、旅遊史、職業暴露、周遭其他人是否有類似症狀等。如出現發燒或呼吸道症狀，請配戴口罩儘速就醫，建議前往鄰近指定採檢院所篩檢。</p>
+            <div className="flex flex-row-l flex-column">
+              <div className="quote-block w-40-l center mh5-l mv5-l mb0 mt3 f32 fw5 tc lh-copy bg-blue-6 brL white flex justify-center items-center pa4-l pa3 pre-wrap relative" style={blockStyle}>
+              <p className="ma0">控糖穩定 保腎護心<br/>維持按時服藥，<br/>規律回診</p>
+              <img src={modalcircle} alt="heart" className="absolute bottom-0 right-0 pa4-l pa3" width={isMobile?"36":"50"}/>
+              </div>
+              <img className="center relative" src={isMobile ? modalm:modal} alt="illustration" width={isMobile?"290":"280"} style={quoteStyle}/>
+            </div>
           </div>  
           <div className="close" onClick={this.handleCloseModal}><img alt="close" src={closeBtn}/></div>
         </ReactModal>

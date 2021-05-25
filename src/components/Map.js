@@ -49,7 +49,7 @@ class Map extends Component {
     // Map
     $('.svg-map__location').each(function(){
       if($(this).attr('id').indexOf("city") >=0) {
-        $(this).attr('aria-city', 'true');
+        $(this).attr('data-city', 'true');
       }
     })
     window.addEventListener('resize', this.checkMobile);

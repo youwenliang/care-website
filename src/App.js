@@ -351,7 +351,7 @@ class App extends Component {
                     <div className="pa3 relative">
                       <img className="w-80-l w-100" src={car1} alt="car" />
                       <div className="quote carQ left top-0">
-                        <h4 className="f24s bg-white brL fw4 absolute l60 b10 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                        <p className="f24s bg-white brL fw4 absolute l60 b10 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></p>
                       </div>
                     </div>
                   </div>
@@ -364,7 +364,7 @@ class App extends Component {
                     <div className="pa3 relative">
                       <img className="w-80-l w-100" src={car2} alt="car" />
                       <div className="quote carQ right top-0">
-                        <h4 className="f24s bg-white brL fw4 absolute r50 b20 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                        <p className="f24s bg-white brL fw4 absolute r50 b20 flex justify-center items-center pa4-l pv3 ph4-m ph3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></p>
                       </div>
                     </div>
                   </div>
@@ -381,7 +381,7 @@ class App extends Component {
                   </div>
                   <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar1}>
                     <div className="quote carQ left top-0">
-                      <h4 className="bg-white fw5 f24 brL fw4 absolute l60 bottom-0 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></h4>
+                      <p className="bg-white fw5 f24 brL fw4 absolute l60 bottom-0 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][0]}}></p>
                     </div>
                   </div>
                 </div>
@@ -389,7 +389,7 @@ class App extends Component {
                 <div className="flex flex-column-reverse flex-row-l">
                   <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar2}>
                     <div className="quote carQ right top-0">
-                      <h4 className="bg-white fw5 f24 brL fw4 absolute r50 b20 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></h4>
+                      <p className="bg-white fw5 f24 brL fw4 absolute r50 b20 flex justify-center items-center ph4 pv3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["quote"][1]}}></p>
                     </div>
                   </div>
                   <div className="flex-shrink w-100 w-60-l pr3 pl6 pv4 car" style={bgCar4}>
@@ -457,7 +457,7 @@ class App extends Component {
               }
             </div>
             <div className="quote left relative mt6" style={bgWarning}>
-              <h4 className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute l60 b10 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></h4>
+              <p className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute l60 b10 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" dangerouslySetInnerHTML={{__html:cData.how["quote"]}}></p>
             </div>
           </div>
         </section>
@@ -523,7 +523,7 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt4-l mt6" style={bgBats}>
-              <h4 className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute r45 b10 flex justify-center items-center pa4-l pa3 pre-wrap">{cData.cause["quote"]}</h4>
+              <p className="mw-200 fw5 tc f24 lh-copy bg-white brL absolute r45 b10 flex justify-center items-center pa4-l pa3 pre-wrap">{cData.cause["quote"]}</p>
             </div>
           </div>
         </section>
@@ -586,7 +586,7 @@ class App extends Component {
               }
             </div>
             <div className="quote left relative mt6" style={bgNoWorry}>
-              <h4 className="mw-200 f24 fw5 tc lh-copy bg-white brL absolute b40 l40 flex justify-center items-center pa4-l pa3 pre-wrap">{cData.knowledge["quote"]}</h4>
+              <p className="mw-200 f24 fw5 tc lh-copy bg-white brL absolute b40 l40 flex justify-center items-center pa4-l pa3 pre-wrap">{cData.knowledge["quote"]}</p>
             </div>
           </div>
         </section>
@@ -642,7 +642,7 @@ class App extends Component {
               }
             </div>
             <div className="quote right relative mt5-l mt6" style={bgAnswer}>
-              <h4 className="fw5 f24 tc lh-copy bg-white brL absolute b40 r50 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" >{cData.factor["quote"]}</h4>
+              <p className="fw5 f24 tc lh-copy bg-white brL absolute b40 r50 flex justify-center items-center pv4-l ph5-l pa3 pre-wrap" >{cData.factor["quote"]}</p>
             </div>
           </div>
         </section>
