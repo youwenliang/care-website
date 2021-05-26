@@ -566,7 +566,7 @@ input {
   background-image: url('./images/bubble2.png');
   background-size: contain;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 959px) {
@@ -582,7 +582,7 @@ input {
     background-image: url('./images/bubble2m.png');
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
   }
 }
 

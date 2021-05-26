@@ -38,6 +38,7 @@ class Header extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
+      height: window.innerHeight,
       showModal: true,
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -81,14 +82,16 @@ class Header extends Component {
     });
   }
   checkMobile = () => {
-    this.setState({ width: window.innerWidth });
+    this.setState({ width: window.innerWidth, height: window.innerHeight});
   }
 
   render(){
-    const { width } = this.state;
+    const { width, height } = this.state;
+    const isSmalls = width <= 480;
     const isSmall = width <= 600;
     const isMobile = width <= 959;
     const isLarge = width <= 1888;
+    const isLow = height <= 760;
     var goal0 = isSmall ? "calc(50% + 195px) top, calc(50% - 195px) top, calc(50% + 150px) 69%, calc(50% - 150px) 69%" : "right top, left top, calc(50% + 150px) 69%, calc(50% - 150px) 69%"
     var goal1 = isLarge ? "calc(50% + 750px) top, calc(50% - 750px) top, calc(50% + 360px) 37%, calc(50% - 360px) 37%" : "right top, left top, calc(50% + 360px) 37%, calc(50% - 360px) 37%"
 
@@ -101,10 +104,11 @@ class Header extends Component {
         backgroundColor: "white",
         margin: "auto",
         padding: 0,
-        inset: '50% 1rem auto',
-        transform: 'translateY(-50%)',
+        inset: isSmalls ? '16px':'50% 1rem auto',
+        transform: isSmalls ? 'none':'translateY(-50%)',
         boxShadow: '0 3px 12px 3px rgba(0,0,0,.2)',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        maxHeight: isSmalls ? '755px' : 'auto'
       }
     };
 
@@ -126,12 +130,19 @@ class Header extends Component {
     }
 
     var quoteStyle = {
-      bottom: isMobile ? "-40px":"-60px"
+      bottom: 0,
+      maxHeight: isMobile ? "auto" : "268px"
     }
 
     var blockStyle = {
-      width: isMobile ? "256px":"auto"
+      maxWidth: isMobile ? "256px":"inherit"
     }
+
+    var modalbox = {
+       maxHeight: "calc(100vh - 32px)",
+       overflowY: isLow ? "scroll" : "hidden"
+    }
+
 
     return (
       <header className="center pt4 pb6-l pb5 relative" style={headerBG}>
@@ -148,7 +159,7 @@ class Header extends Component {
            contentLabel="Minimal Modal Example"
            onRequestClose={this.handleCloseModal}
         >
-          <div className="tc ph4 pt4 pb0">
+          <div className="tc ph4 pt4 pb0" style={modalbox}>
             <div className="flex mw-600 items-center mt4">
               <div className="bw1 db h1 w-100 bg-blue-2 mh3-l mh1"></div>
               <div className="flex flex-column flex-shrink">
@@ -162,10 +173,10 @@ class Header extends Component {
             </div>
             <h2 className="f50 blue-2">台灣基層糖尿病協會關心您</h2>
             <p className="f24ss lh-copy mw-600 center blue-5 fw4">就醫時請主動告知接觸史、旅遊史、職業暴露、周遭其他人是否有類似症狀等。如出現發燒或呼吸道症狀，請配戴口罩儘速就醫，建議前往鄰近指定採檢院所篩檢。</p>
-            <div className="flex flex-row-l flex-column">
-              <div className="quote-block w-40-l center mh5-l mv5-l mb0 mt3 f32 fw5 tc lh-copy bg-blue-6 brL white flex justify-center items-center pa4-l pa3 pre-wrap relative" style={blockStyle}>
-              <p className="ma0">控糖穩定 保腎護心<br/>維持按時服藥，<br/>規律回診</p>
-              <img src={modalcircle} alt="heart" className="absolute bottom-0 right-0 pa4-l pa3" width={isMobile?"36":"50"}/>
+            <div className="flex flex-row-l flex-column items-end">
+              <div className="quote-block w-40-l center mh5-l mv5-l mv4 f32 fw5 tc lh-copy bg-blue-6 brL white flex justify-center items-center pa4-l pa3 pre-wrap relative" style={blockStyle}>
+                <p className="ma0">控糖穩定 保腎護心<br/>維持按時服藥，<br/>規律回診</p>
+                <img src={modalcircle} alt="heart" className="absolute bottom-0 right-0 pa4-l pa3" width={isMobile?"36":"50"}/>
               </div>
               <img className="center relative" src={isMobile ? modalm:modal} alt="illustration" width={isMobile?"290":"280"} style={quoteStyle}/>
             </div>
