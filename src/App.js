@@ -95,10 +95,12 @@ class App extends Component {
 
   handleOpenModal (n) {
     this.setState({ showModal: true , modal: n});
+    document.body.classList.add('ds');
   }
   
   handleCloseModal () {
     this.setState({ showModal: false });
+    document.body.classList.remove('ds');
   }
 
   componentDidMount(){

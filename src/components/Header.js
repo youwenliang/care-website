@@ -47,10 +47,12 @@ class Header extends Component {
 
   handleOpenModal () {
     this.setState({ showModal: true });
+    document.body.classList.add('ds');
   }
   
   handleCloseModal () {
     this.setState({ showModal: false });
+    document.body.classList.remove('ds');
   }
 
   componentDidMount(){
@@ -71,7 +73,7 @@ class Header extends Component {
 
       setTimeout(function(){
         document.getElementById('loading').classList.add('fade');
-        document.body.classList.remove('ds');
+        // document.body.classList.remove('ds');
       },400);
     })
     .catch(function (err) {

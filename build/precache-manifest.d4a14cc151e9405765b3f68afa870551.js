@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "92831e339a78a99762db5cad51be68ca",
+    "revision": "273940cb77e9e95810a9b695bf14e326",
     "url": "/index.html"
   },
   {
-    "revision": "d2bb74ea172ee81ebd19",
+    "revision": "2cb8321524fd0a9b9c66",
     "url": "/static/css/2.a88d5bf4.chunk.css"
   },
   {
-    "revision": "896a310944ebaeb7d769",
-    "url": "/static/css/main.f32ca775.chunk.css"
+    "revision": "eb9b52b37715c4d8e83b",
+    "url": "/static/css/main.42be7426.chunk.css"
   },
   {
-    "revision": "d2bb74ea172ee81ebd19",
-    "url": "/static/js/2.0abf37ad.chunk.js"
+    "revision": "2cb8321524fd0a9b9c66",
+    "url": "/static/js/2.5ebed744.chunk.js"
   },
   {
     "revision": "83e5ecdd973240e0a4d0c80eed465862",
-    "url": "/static/js/2.0abf37ad.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.5ebed744.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "896a310944ebaeb7d769",
-    "url": "/static/js/main.60f72fbb.chunk.js"
+    "revision": "eb9b52b37715c4d8e83b",
+    "url": "/static/js/main.ddfae443.chunk.js"
   },
   {
     "revision": "224a14eb28c284003ce5",
@@ -64,8 +64,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/logo1.13a7ab43.png"
   },
   {
+    "revision": "47b7dd8492d67c3d726cf82dcf917020",
+    "url": "/static/media/logo1_.47b7dd84.png"
+  },
+  {
     "revision": "c2d508d1fa66ec02a3cc2ebeeca3d0db",
     "url": "/static/media/logo2.c2d508d1.png"
+  },
+  {
+    "revision": "d2ff234b4183d29ab1aa33689fe8629c",
+    "url": "/static/media/logo2_.d2ff234b.png"
   },
   {
     "revision": "2f621adc97903270b6c7c2e6b40cadf0",
@@ -78,6 +86,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8def512eda374d43682892ff07ac6818",
     "url": "/static/media/man7c.8def512e.png"
+  },
+  {
+    "revision": "3df80ee04fa1b691283668dec4d7404e",
+    "url": "/static/media/modal.3df80ee0.png"
+  },
+  {
+    "revision": "ea639cf6a5894e845a1f404ddbf04ca4",
+    "url": "/static/media/modalm.ea639cf6.png"
   },
   {
     "revision": "6b08cdcb3c5347c3abfaf164a83462ba",
