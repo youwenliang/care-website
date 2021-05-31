@@ -45,21 +45,23 @@ class Header extends Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal () {
-    this.setState({ showModal: true });
-    document.body.classList.add('ds');
+  handleOpenModal (n) {
+    this.setState({ showModal: true , modal: n});
   }
   
   handleCloseModal () {
     this.setState({ showModal: false });
-    document.body.classList.remove('ds');
+    // When the modal is hidden...
+    
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
   componentDidMount(){
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
-
-    document.body.classList.add('ds');
     document.getElementById('loading').classList.remove('fade');
 
     var images  = [bgl, bgr, bglm, bgrm, micl, micr, logo1, startImg, cover1, cover1m, cover2, cover3, cover4, cover4m];

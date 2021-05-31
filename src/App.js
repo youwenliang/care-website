@@ -86,7 +86,8 @@ class App extends Component {
     this.state = {
       width: window.innerWidth,
       showModal: false,
-      modal: 0
+      modal: 0,
+      scroll: 0
     }
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -95,21 +96,28 @@ class App extends Component {
 
   handleOpenModal (n) {
     this.setState({ showModal: true , modal: n});
-    document.body.classList.add('ds');
+    // When the modal is shown, we want a fixed body
+    if(this.state.width <= 959) $('body').css({'position':'fixed','width':'100vw','top':-1*window.scrollY});
   }
   
   handleCloseModal () {
     this.setState({ showModal: false });
-    document.body.classList.remove('ds');
+    // When the modal is hidden...
+    if(this.state.width <= 959) {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
   }
 
   componentDidMount(){
-
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
       }, 800);
     });
+    $('body').css({'position':'fixed','width':'100vw','top':-1*window.scrollY});
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
   }
