@@ -97,7 +97,7 @@ class App extends Component {
   handleOpenModal (n) {
     this.setState({ showModal: true , modal: n});
     // When the modal is shown, we want a fixed body
-    if(this.state.width <= 959) $('body').css({'position':'fixed','width':'100vw','top':-1*window.scrollY});
+    if(this.state.width <= 959) $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
   }
   
   handleCloseModal () {
@@ -106,6 +106,7 @@ class App extends Component {
     if(this.state.width <= 959) {
       const scrollY = document.body.style.top;
       document.body.style.position = '';
+      document.body.style.overflow = 'scroll';
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
@@ -117,7 +118,7 @@ class App extends Component {
         scrollTop: 0
       }, 800);
     });
-    $('body').css({'position':'fixed','width':'100vw','top':-1*window.scrollY});
+    $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
   }
@@ -315,7 +316,7 @@ class App extends Component {
     }
 
     var modalbox = {
-       maxHeight: "calc(100vh - 32px)"
+       height: '100%'
     }
 
     return (

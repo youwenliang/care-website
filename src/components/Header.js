@@ -54,6 +54,7 @@ class Header extends Component {
     // When the modal is hidden...
     
     const scrollY = document.body.style.top;
+    document.body.style.overflow = 'scroll';
     document.body.style.position = '';
     document.body.style.top = '';
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
@@ -143,7 +144,7 @@ class Header extends Component {
     }
 
     var modalbox = {
-       maxHeight: "calc(100vh - 32px)",
+       height: '100%',
        overflowY: isLow ? "scroll" : "hidden"
     }
 
