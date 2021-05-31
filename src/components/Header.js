@@ -92,13 +92,17 @@ class Header extends Component {
 
   render(){
     const { width, height } = this.state;
-    const isSmalls = width <= 480;
+    const isSmalls = width <= 483;
     const isSmall = width <= 600;
     const isMobile = width <= 959;
     const isLarge = width <= 1888;
+    const isBig = width <= 1576;
     const isLow = height <= 760;
-    var goal0 = isSmall ? "calc(50% + 195px) top, calc(50% - 195px) top, calc(50% + 150px) 69%, calc(50% - 150px) 69%" : "right top, left top, calc(50% + 150px) 69%, calc(50% - 150px) 69%"
-    var goal1 = isLarge ? "calc(50% + 750px) top, calc(50% - 750px) top, calc(50% + 360px) 37%, calc(50% - 360px) 37%" : "right top, left top, calc(50% + 360px) 37%, calc(50% - 360px) 37%"
+    var micY = isSmalls ? '75%':'69%';
+    var popX = isSmalls ? '500px':'195px';
+
+    var goal0 = isSmall ? "calc(50% + "+popX+") top, calc(50% - "+popX+") top, calc(50% + 150px) "+micY+", calc(50% - 150px) "+micY : "right top, left top, calc(50% + 150px) 69%, calc(50% - 150px) 69%"
+    var goal1 = isBig ? "calc(50% + 1750px) top, calc(50% - 1750px) top, calc(50% + 360px) 37%, calc(50% - 360px) 37%" : "right top, left top, calc(50% + 360px) 37%, calc(50% - 360px) 37%"
 
     const customStyles = {
       content : {

@@ -116,7 +116,7 @@ class App extends Component {
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
-      }, 800);
+      }, 800, 'linear');
     });
     $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
     window.addEventListener('resize', this.checkMobile);
@@ -326,7 +326,7 @@ class App extends Component {
         </div>
         {/* Header */}
         <Header/>
-        <div id="top" className="br-100 z-2">
+        <div id="top" className="br-100 z-2 ba b--white bw2">
           <img alt="Top" src={upBtn}/>
         </div>
 
