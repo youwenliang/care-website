@@ -10,7 +10,7 @@ import logo3 from '../images/logo3.png';
 import searchBtn from '../images/保腎護心網layout物件_57.png';
 import closeBtn from '../images/保腎護心網layout物件_58.png';
 import backBtn from '../images/保腎護心網layout物件_59.png';
-import mapBtn from '../images/map.png';
+import mapBtn from '../images/map-marker.svg';
 
 // Data
 import data from '../data/data.js'
