@@ -193,19 +193,20 @@ class Map extends Component {
         return true;
       });
       allList = [];
-      var styleH1 = this.state.width <= 969 ? "white bg-blue-3" : "blue-2 bg-white"
+      var styleH1 = this.state.width <= 969 ? "black" : "blue-2"
+      var styleP = this.state.width <= 969 ? "bg-blue-3 white" : "bg-white black"
       for(let j = 0; j < list.length; j++) {
         var temp = this.state.dis ? (
           <div className="w-100 flex flex-wrap flex-gap tc" key={j}>
             {list[j]["name"].map((name, i) => (
-              <p className="flex-grow-0 w-50 cp f16_ fw4 mv2 pa2" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
+              <p className={"flex-grow-0 w-50 cp f16_ fw4 mv2 pa2 brS ma2 "+styleP} data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
           </div>
         ):(
           <div className="w-50 tc" key={j}>
             <h1 className={ styleH1 + " fw5 f24_ ph4-l ph3 pv3 brM dib mb0"}>{list[j]["dis"]}</h1>
             {list[j]["name"].map((name, i) => (
-              <p className="cp f16_ fw4" data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
+              <p className={"cp f16_ fw4 pa2 brS ma2 "+styleP} data-id={j} data-order={i} onClick={this.detailMap}>{name}</p>
             ))}
           </div>
         )

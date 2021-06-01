@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.1070d68e.chunk.css",
-    "main.js": "/static/js/main.24295300.chunk.js",
-    "main.js.map": "/static/js/main.24295300.chunk.js.map",
+    "main.css": "/static/css/main.968365d1.chunk.css",
+    "main.js": "/static/js/main.da7afea9.chunk.js",
+    "main.js.map": "/static/js/main.da7afea9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cc899f16.js",
     "runtime-main.js.map": "/static/js/runtime-main.cc899f16.js.map",
     "static/css/2.a88d5bf4.chunk.css": "/static/css/2.a88d5bf4.chunk.css",
-    "static/js/2.5ebed744.chunk.js": "/static/js/2.5ebed744.chunk.js",
-    "static/js/2.5ebed744.chunk.js.map": "/static/js/2.5ebed744.chunk.js.map",
+    "static/js/2.7b7fd8c3.chunk.js": "/static/js/2.7b7fd8c3.chunk.js",
+    "static/js/2.7b7fd8c3.chunk.js.map": "/static/js/2.7b7fd8c3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b21e0231767a879160bafb8e7d564c69.js": "/precache-manifest.b21e0231767a879160bafb8e7d564c69.js",
+    "precache-manifest.d9acbfc7568e2ebf3cd7ab1a2169cb3d.js": "/precache-manifest.d9acbfc7568e2ebf3cd7ab1a2169cb3d.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.a88d5bf4.chunk.css.map": "/static/css/2.a88d5bf4.chunk.css.map",
-    "static/css/main.1070d68e.chunk.css.map": "/static/css/main.1070d68e.chunk.css.map",
-    "static/js/2.5ebed744.chunk.js.LICENSE.txt": "/static/js/2.5ebed744.chunk.js.LICENSE.txt",
+    "static/css/main.968365d1.chunk.css.map": "/static/css/main.968365d1.chunk.css.map",
+    "static/js/2.7b7fd8c3.chunk.js.LICENSE.txt": "/static/js/2.7b7fd8c3.chunk.js.LICENSE.txt",
     "static/media/candies1.png": "/static/media/candies1.0d5d4a9f.png",
     "static/media/candies5.png": "/static/media/candies5.f1003d91.png",
     "static/media/car1.png": "/static/media/car1.b70c3d0a.png",
@@ -26,6 +26,7 @@
     "static/media/logo3.png": "/static/media/logo3.880469a1.png",
     "static/media/man7.png": "/static/media/man7.a1955ee2.png",
     "static/media/man7c.png": "/static/media/man7c.b6bf790a.png",
+    "static/media/map-marker.svg": "/static/media/map-marker.9732d55d.svg",
     "static/media/modal.png": "/static/media/modal.c56a3101.png",
     "static/media/保腎1.png": "/static/media/保腎1.3bd8e723.png",
     "static/media/保腎2.png": "/static/media/保腎2.67e4ab38.png",
@@ -69,8 +70,8 @@
   "entrypoints": [
     "static/js/runtime-main.cc899f16.js",
     "static/css/2.a88d5bf4.chunk.css",
-    "static/js/2.5ebed744.chunk.js",
-    "static/css/main.1070d68e.chunk.css",
-    "static/js/main.24295300.chunk.js"
+    "static/js/2.7b7fd8c3.chunk.js",
+    "static/css/main.968365d1.chunk.css",
+    "static/js/main.da7afea9.chunk.js"
   ]
 }
