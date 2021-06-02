@@ -95,7 +95,7 @@ class Header extends Component {
     const isSmalls = width <= 483;
     const isSmall = width <= 600;
     const isMobile = width <= 959;
-    const isLarge = width <= 1888;
+    // const isLarge = width <= 1888;
     const isBig = width <= 1576;
     const isLow = height <= 760;
     var micY = isSmalls ? '75%':'69%';

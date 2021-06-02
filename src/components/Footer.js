@@ -28,14 +28,16 @@ class Footer extends Component {
   render(){
     const { width } = this.state;
     const isMobile = width <= 959;
+    const isLarge = width <= 1500;
     var f = this.state.footerH;
+    var pos = isLarge ? '500px':'right';
 
     var footerBG = {
       backgroundColor: "#1C3073",
       backgroundImage: "url("+bgr+"), url("+bgl+")",
       backgroundRepeat: "no-repeat, no-repeat",
       backgroundSize: "auto "+f+"px, auto "+f+"px",
-      backgroundPosition: isMobile ? "80vw top, -10vw top":"right top, left top",
+      backgroundPosition: isMobile ? "80vw top, -10vw top": pos+" top, left top",
       fontSize: "12px",
       lineHeight: "22px"
     }

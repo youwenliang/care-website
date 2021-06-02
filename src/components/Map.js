@@ -10,7 +10,8 @@ import logo3 from '../images/logo3.png';
 import searchBtn from '../images/保腎護心網layout物件_57.png';
 import closeBtn from '../images/保腎護心網layout物件_58.png';
 import backBtn from '../images/保腎護心網layout物件_59.png';
-import mapBtn from '../images/map-marker.svg';
+import mapBtn from '../images/map.png';
+import clinicImg from '../images/clinics.png';
 
 // Data
 import data from '../data/data.js'
@@ -173,6 +174,7 @@ class Map extends Component {
       filteredClinics.map((s, i) => {
         var temp = s.address.substring(3, 6);
         if(s.address.indexOf('區') === 4 ) temp = s.address.substring(3, 5);
+        if(s.address.indexOf('嘉義市') > -1 ) temp = s.address.substring(0, 3);
         if(!dis.includes(temp)) {
           dis.push(temp);
           list.push({
@@ -230,6 +232,7 @@ class Map extends Component {
         if(mData[i]["address"].includes($t.state.value)) {
           var temp = mData[i]["address"].substring(3,6);
           if(mData[i]["address"].indexOf('區') === 4) temp = mData[i]["address"].substring(3,5);
+          // if(mData[i]["address"].indexOf('嘉義市') > -1) temp = mData[i]["address"].substring(0,3);
           if(!sDis.includes(temp)) {
             sDis.push(temp);
             var temp1 = '<option>'+temp+'</option>'
@@ -314,6 +317,14 @@ class Map extends Component {
       <a className="flex-shrink" href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib cp ml2-l" width="40" alt="map"/></a>
     ):null;
 
+
+    var page2BG = {
+      backgroundImage: 'url('+clinicImg+')',
+      backgroundPosition: 'right bottom',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat'
+    }
+
     return (
         <section id="map" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
@@ -384,7 +395,7 @@ class Map extends Component {
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img alt="close" src={closeBtn}/></div>
                       </div>
-                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brXL "+this.state.detail}>
+                      <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-blue-3 ph4 pv5 brXL "+this.state.detail} style={page2BG}>
                         <div className="overflow-y-scroll h-100 mv3 blue-2 tl">
                           <h3 className="f24_ fw5 mb0">{this.state.currentClinic && filteredClinics ? list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null}</h3>
                           <div className="flex items-center">
