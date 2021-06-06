@@ -97,7 +97,6 @@ class Header extends Component {
     const isMobile = width <= 959;
     // const isLarge = width <= 1888;
     const isBig = width <= 1576;
-    const isLow = height <= 760;
     var micY = isSmalls ? '75%':'69%';
     var popX = isSmalls ? '500px':'195px';
 
@@ -117,7 +116,7 @@ class Header extends Component {
         transform: isSmalls ? 'none':'translateY(-50%)',
         boxShadow: '0 3px 12px 3px rgba(0,0,0,.2)',
         overflow: 'hidden',
-        maxHeight: isSmalls ? '755px' : 'auto'
+        maxHeight: isSmalls ? '755px' : 'calc(100vh - 32px)'
       }
     };
 
@@ -149,7 +148,8 @@ class Header extends Component {
 
     var modalbox = {
        height: '100%',
-       overflowY: isLow ? "scroll" : "hidden"
+       maxHeight: 'calc(100vh - 32px)',
+       overflowY: "scroll"
     }
 
 

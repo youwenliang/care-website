@@ -17,10 +17,15 @@ body {
   font-display: swap;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  overflow-x: hidden;
 }
 
 body.ds {
   overflow-y: hidden;
+}
+
+:not(body) {
+  overflow-y: visible;
 }
 
 #loading {
@@ -381,6 +386,10 @@ h2.title {
 
 .pre-wrap {
  white-space: pre-wrap;
+}
+
+.no-wrap {
+ white-space: nowrap; 
 }
 
 .cp {

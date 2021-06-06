@@ -393,7 +393,7 @@ class App extends Component {
                   <div className="flex-shrink w-100 w-50-l pl3 pr6 pv4 car" style={bgCar3}>
                     <label className="f24 fw5 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][0]}}></label>
                     <h3 className="pre-wrap f40 mv3" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
-                    <p className="lh-copy pre-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
+                    <p className="lh-copy no-wrap f24 mv0" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
                   </div>
                   <div className="w-100 w-50-l pa3 relative mh4 brBox" style={bgCar1}>
                     <div className="quote carQ left top-0">

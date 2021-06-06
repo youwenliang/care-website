@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5068b06c7ee7b1cd84ca1c1a81a3a5ba",
+    "revision": "53b5b73c495d59ef362c4bed06c85bba",
     "url": "/index.html"
   },
   {
-    "revision": "875f1562127350b61d02",
+    "revision": "545e54e7cef2b5f04dce",
     "url": "/static/css/2.a88d5bf4.chunk.css"
   },
   {
-    "revision": "569e73dbf83fc2ded11d",
-    "url": "/static/css/main.94107730.chunk.css"
+    "revision": "f45207b5fec894bd86fb",
+    "url": "/static/css/main.a9e0ebde.chunk.css"
   },
   {
-    "revision": "875f1562127350b61d02",
-    "url": "/static/js/2.7b7fd8c3.chunk.js"
+    "revision": "545e54e7cef2b5f04dce",
+    "url": "/static/js/2.1a977826.chunk.js"
   },
   {
     "revision": "83e5ecdd973240e0a4d0c80eed465862",
-    "url": "/static/js/2.7b7fd8c3.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.1a977826.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "569e73dbf83fc2ded11d",
-    "url": "/static/js/main.7972858f.chunk.js"
+    "revision": "f45207b5fec894bd86fb",
+    "url": "/static/js/main.9d965abb.chunk.js"
   },
   {
     "revision": "224a14eb28c284003ce5",
@@ -44,12 +44,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/car2.96490447.png"
   },
   {
+    "revision": "07792e9df382375ca70d16635d5f9f07",
+    "url": "/static/media/clinics.07792e9d.png"
+  },
+  {
     "revision": "94cdb013291cf56f73dbe4cec05fa920",
     "url": "/static/media/footerBGL.94cdb013.png"
   },
   {
-    "revision": "c15808a63a67b938d2b87722ea9e3945",
-    "url": "/static/media/footerBGR.c15808a6.png"
+    "revision": "deecf55d233a6b0256f70cd3b088f8c0",
+    "url": "/static/media/footerBGR.deecf55d.png"
   },
   {
     "revision": "ac03658ae851667a091d7aa1a393fdb7",
@@ -74,10 +78,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6bf790a7039487b7e77d83860e25bde",
     "url": "/static/media/man7c.b6bf790a.png"
-  },
-  {
-    "revision": "9732d55dad0cf07e4499e2c4b58e46fc",
-    "url": "/static/media/map-marker.9732d55d.svg"
   },
   {
     "revision": "c56a310177757d066d01fbde16ddad5c",
@@ -224,15 +224,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/保腎護心網layout物件_15.74064f5b.png"
   },
   {
-    "revision": "278095bcb41dccaef6df632483bab9fc",
-    "url": "/static/media/保腎護心網layout物件_53.278095bc.png"
+    "revision": "29f6fd8290c1dab86cd04c5a36396ab2",
+    "url": "/static/media/保腎護心網layout物件_53.29f6fd82.png"
   },
   {
     "revision": "af259684c80cf34772a01ec23eb5ed7a",
     "url": "/static/media/保腎護心網layout物件_54.af259684.png"
   },
   {
-    "revision": "2bcafe5eabad1461db28163dd0b0ff79",
-    "url": "/static/media/保腎護心網layout物件_55.2bcafe5e.png"
+    "revision": "e4954f436388e1b75b1bd6780f49ec52",
+    "url": "/static/media/保腎護心網layout物件_55.e4954f43.png"
   }
 ]);
