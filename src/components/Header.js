@@ -71,7 +71,7 @@ class Header extends Component {
     
     loadImage(images)
     .then(function (allImgs) {
-      console.log(allImgs.length, 'images loaded!', allImgs);
+      // console.log(allImgs.length, 'images loaded!', allImgs);
       loaded = true;
 
       setTimeout(function(){
@@ -80,10 +80,10 @@ class Header extends Component {
       },400);
     })
     .catch(function (err) {
-      console.error('One or more images have failed to load :(');
-      console.error(err.errored);
-      console.info('But these loaded fine:');
-      console.info(err.loaded);
+      // console.error('One or more images have failed to load :(');
+      // console.error(err.errored);
+      // console.info('But these loaded fine:');
+      // console.info(err.loaded);
     });
   }
   checkMobile = () => {

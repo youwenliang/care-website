@@ -17,7 +17,7 @@ body {
   font-display: swap;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 body.ds {
@@ -672,7 +672,7 @@ input {
 *::placeholder,
 input[type=text] {
   color: black;
-  font-size: 16px;
+  font-size: 11px;
   opacity: 100;
   font-weight: 500;
 }
@@ -687,7 +687,7 @@ input[type=text] {
 @media only screen and (max-width: 479px) {
   *::placeholder,
   input[type=text] {
-    font-size: 16px;
+    font-size: 11px;
   }
 }
 

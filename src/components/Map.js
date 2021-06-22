@@ -338,7 +338,7 @@ class Map extends Component {
                       <img className="db center mt2 mb3" src={logo3} width="60" alt="logo" />
                       <form id="searchInput" className="center" style={form} onSubmit={this.handleSubmit}>
                         <div className="bg-blue-3 pa2 mb3" style={inputBox}>
-                          <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange} required/>
+                          <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所關鍵字或縣市查詢" value={this.state.value} onChange={this.handleChange} required/>
                         </div>
                         <div className="f40 flex mv0" style={drop}>
                           <div className="tc select flex-grow brS">
@@ -387,7 +387,7 @@ class Map extends Component {
                         }}
                       />
                       <form id="searchInput" className="center bg-blue-3 pa3" style={form} onSubmit={this.handleSubmit}>
-                        <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所名稱查詢" value={this.state.value} onChange={this.handleChange} required/>
+                        <input style={input} className="bg-white pa2 relative" type="text" id="search" name="clinic" placeholder="輸入診所關鍵字或點選地圖查詢" value={this.state.value} onChange={this.handleChange} required/>
                       </form>                       
                     </div>
                     <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute pa2">

@@ -317,69 +317,6 @@ var data = {
 		    "phone": "03-7667985"
 		  },
 		  {
-		    "id": "31",
-		    "name": "陳宏麟診所",
-		    "city": "nantou-county",
-            "address": "南投縣埔里鎮南昌街221號",
-		    "phone": "049-2900303"
-		  },
-		  {
-		    "id": "32",
-		    "name": "安杏診所",
-		    "city": "nantou-county",
-            "address": "南投縣埔里鎮中山路三段100號",
-		    "phone": "049-2980445"
-		  },
-		  {
-		    "id": "33",
-		    "name": "慶鴻診所",
-		    "city": "changhua-county",
-            "address": "彰化市彰南路二段179號",
-		    "phone": "04-7320068"
-		  },
-		  {
-		    "id": "34",
-		    "name": "十仁診所",
-		    "city": "changhua-county",
-            "address": "彰化市辭修路82號",
-		    "phone": "04-7281067"
-		  },
-		  {
-		    "id": "35",
-		    "name": "王健龍診所",
-		    "city": "changhua-county",
-            "address": "彰化市鹿港鎮中山路259號",
-		    "phone": "04-7755188"
-		  },
-		  {
-		    "id": "36",
-		    "name": "謝立偉診所",
-		    "city": "changhua-county",
-            "address": "彰化縣和美鎮道周路720號",
-		    "phone": "04-7568909"
-		  },
-		  {
-		    "id": "37",
-		    "name": "南恩內科診所",
-		    "city": "changhua-county",
-            "address": "彰化縣溪湖鎮大溪路二段346號",
-		    "phone": "04-8827009"
-		  },
-		  {
-		    "id": "38",
-		    "name": "黃建成診所",
-		    "city": "changhua-county",
-            "address": "彰化縣大村鄉茄苳路一段235號",
-		    "phone": "04-8524074"
-		  },
-		  {
-		    "id": "39",
-		    "name": "陳嘉烈診所",
-		    "city": "changhua-county",
-            "address": "彰化縣埤頭鄉斗苑西路156號",
-		    "phone": "04-8920222"
-		  },
-		  {
 		    "id": "40",
 		    "name": "王欽耀診所",
 		    "city": "taichung-city",
@@ -485,6 +422,83 @@ var data = {
 		    "phone": "04-23330268"
 		  },
 		  {
+		    "id": "33",
+		    "name": "慶鴻診所",
+		    "city": "changhua-county",
+            "address": "彰化市彰南路二段179號",
+		    "phone": "04-7320068"
+		  },
+		  {
+		    "id": "34",
+		    "name": "十仁診所",
+		    "city": "changhua-county",
+            "address": "彰化市辭修路82號",
+		    "phone": "04-7281067"
+		  },
+		  {
+		    "id": "35",
+		    "name": "王健龍診所",
+		    "city": "changhua-county",
+            "address": "彰化市鹿港鎮中山路259號",
+		    "phone": "04-7755188"
+		  },
+		  {
+		    "id": "36",
+		    "name": "謝立偉診所",
+		    "city": "changhua-county",
+            "address": "彰化縣和美鎮道周路720號",
+		    "phone": "04-7568909"
+		  },
+		  {
+		    "id": "37",
+		    "name": "南恩內科診所",
+		    "city": "changhua-county",
+            "address": "彰化縣溪湖鎮大溪路二段346號",
+		    "phone": "04-8827009"
+		  },
+		  {
+		    "id": "38",
+		    "name": "黃建成診所",
+		    "city": "changhua-county",
+            "address": "彰化縣大村鄉茄苳路一段235號",
+		    "phone": "04-8524074"
+		  },
+		  {
+		    "id": "39",
+		    "name": "陳嘉烈診所",
+		    "city": "changhua-county",
+            "address": "彰化縣埤頭鄉斗苑西路156號",
+		    "phone": "04-8920222"
+		  },
+		  {
+		    "id": "31",
+		    "name": "陳宏麟診所",
+		    "city": "nantou-county",
+            "address": "南投縣埔里鎮南昌街221號",
+		    "phone": "049-2900303"
+		  },
+		  {
+		    "id": "32",
+		    "name": "安杏診所",
+		    "city": "nantou-county",
+            "address": "南投縣埔里鎮中山路三段100號",
+		    "phone": "049-2980445"
+		  },
+		  {
+		    "id": "62",
+		    "name": "洤華診所",
+		    "city": "yunlin-county",
+            "address": "雲林縣斗南鎮民權路11-1號",
+		    "phone": "05-5965596"
+		  },
+		  {
+		    "id": "63",
+		    "name": "腎安診所",
+		    "city": "yunlin-county",
+            "address": "雲林縣虎尾鎮光復路360號",
+		    "phone": "05-6330133"
+		  },
+		  {
 		    "id": "55",
 		    "name": "曾良達診所",
 		    "city": "chiayi-city",
@@ -532,20 +546,6 @@ var data = {
 		    "city": "chiayi-city",
             "address": "嘉義市博愛路二段359號",
 		    "phone": "05-2310505"
-		  },
-		  {
-		    "id": "62",
-		    "name": "洤華診所",
-		    "city": "yunlin-county",
-            "address": "雲林縣斗南鎮民權路11-1號",
-		    "phone": "05-5965596"
-		  },
-		  {
-		    "id": "63",
-		    "name": "腎安診所",
-		    "city": "yunlin-county",
-            "address": "雲林縣虎尾鎮光復路360號",
-		    "phone": "05-6330133"
 		  },
 		  {
 		    "id": "64",
