@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
+
 import bgl from '../images/headerBGL.png';
 import bgr from '../images/headerBGR.png';
 import bglm from '../images/保腎護心網layout手機物件_01.png';
@@ -85,6 +87,11 @@ class Header extends Component {
       // console.info('But these loaded fine:');
       // console.info(err.loaded);
     });
+    $("#button").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#map").offset().top - 40
+        }, 800);
+    });
   }
   checkMobile = () => {
     this.setState({ width: window.innerWidth, height: window.innerHeight});
@@ -156,7 +163,7 @@ class Header extends Component {
     return (
       <header className="center pt4 pb6-l pb5 relative" style={headerBG}>
         <h1 className="tc white f80 fw5 mt4 mb3 tracked" dangerouslySetInnerHTML={{__html:cData.header["title"]}}></h1>
-        <h2 className="tc white f55 fw5 mv0 tracked">{cData.header["subtitle"]}</h2>
+        <h2 className="tc white f55 fw5 mv0 tracked cp" id="button">{cData.header["subtitle"]}</h2>
         <div id="logos" className="center w-100 tc">
           <div className="dib bg-white ma0 pa0" style={logoContainer}>
             <img className="ma2" alt="logo" src={logo1} width={isMobile ? "90":"200"}/>
