@@ -6,6 +6,8 @@ import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
 
+import ReactGA from 'react-ga';
+
 // Data
 import data from './data/data.js'
 
@@ -95,6 +97,7 @@ class App extends Component {
   }
 
   handleOpenModal (n) {
+    ReactGA.ga('send', 'event', 'Q&A', 'click', 'Question#'+n);
     this.setState({ showModal: true , modal: n});
     // When the modal is shown, we want a fixed body
     if(this.state.width <= 959) $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
@@ -113,6 +116,9 @@ class App extends Component {
   }
 
   componentDidMount(){
+
+    ReactGA.initialize('UA-197011250-1');
+
     $('#top').click(function(){
       $('html, body').animate({
         scrollTop: 0
