@@ -97,8 +97,15 @@ class App extends Component {
   }
 
   handleOpenModal (n) {
-    ReactGA.ga('send', 'event', 'Q&A', 'click', 'Question#'+n);
+    ReactGA.event({       
+        category: 'Q&A',  // Required
+        action: 'Q&A'+n,       // Required
+        label: 'Q&A',       
+        value: n,       
+        nonInteraction: false     
+    });   
     this.setState({ showModal: true , modal: n});
+    console.log("open Question#"+n);
     // When the modal is shown, we want a fixed body
     if(this.state.width <= 959) $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
   }
@@ -118,6 +125,7 @@ class App extends Component {
   componentDidMount(){
 
     ReactGA.initialize('UA-197011250-1');
+    ReactGA.pageview("/")
 
     $('#top').click(function(){
       $('html, body').animate({
