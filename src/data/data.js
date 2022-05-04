@@ -349,7 +349,7 @@ var data = {
     "name": "姜博文診所",
     "city": "taoyuan-city",
     "address": "桃園市楊梅區永美路335號",
-    "phone": "0921-775684"
+    "phone": "(03) 2714927"
   },
   {
     "id": 36,
@@ -465,23 +465,23 @@ var data = {
   },
   {
     "id": 52,
-    "name": "中心診所",
+    "name": "苗栗+中心診所",
     "city": "miaoli-county",
     "address": "苗栗縣苗栗市中正路632號2樓",
-    "phone": "(037) 358988"
+    "phone": "(03) 7358988"
   },
   {
     "id": 53,
     "name": "台糖診所",
     "city": "miaoli-county",
     "address": "苗栗縣苗栗市中正路1293號",
-    "phone": "(037) 369147"
+    "phone": "(03) 7369147"
   },
   {
     "id": 54,
-    "name": "祥安診所",
-    "city": "yilan-county",
-    "address": "宜蘭縣頭份市中華路928號",
+    "name": "苗栗+祥安診所",
+    "city": "miaoli-county",
+    "address": "苗栗縣頭份市中華路928號",
     "phone": "(03) 7667985"
   },
   {
@@ -804,7 +804,7 @@ var data = {
     "name": "王國哲診所",
     "city": "chiayi-city",
     "address": "嘉義市博愛路二段359號",
-    "phone": "(05) 2332883"
+    "phone": "(05) 2310550"
   },
   {
     "id": 101,
