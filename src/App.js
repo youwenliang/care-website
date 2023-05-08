@@ -6,7 +6,7 @@ import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
 
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 // Data
 import data from './data/data.js'
@@ -124,8 +124,9 @@ class App extends Component {
 
   componentDidMount(){
 
-    ReactGA.initialize('UA-197011250-1');
-    ReactGA.pageview("/")
+    ReactGA.initialize('G-DEZD9D6479');
+    // Send pageview with a custom path
+    ReactGA.send({ hitType: "pageview", page: "/", title: "首頁" });
 
     $('#top').click(function(){
       $('html, body').animate({
