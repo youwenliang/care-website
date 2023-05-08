@@ -250,7 +250,7 @@ var data = {
     "id": 21,
     "name": "蘇景傑診所",
     "city": "new-tp-city",
-    "address": "新北巿新店區建國路6號1樓",
+    "address": "新北市新店區建國路6號1樓",
     "phone": "(02) 86657771"
   },
   {
@@ -313,7 +313,7 @@ var data = {
     "id": 30,
     "name": "自在診所",
     "city": "taipei-city",
-    "address": "台北巿信義區中坡南路84號",
+    "address": "台北市信義區中坡南路84號",
     "phone": "(02) 27268199"
   },
   {
@@ -349,7 +349,7 @@ var data = {
     "name": "姜博文診所",
     "city": "taoyuan-city",
     "address": "桃園市楊梅區永美路335號",
-    "phone": "(03) 2714927"
+    "phone": "(03) 2714921"
   },
   {
     "id": 36,
@@ -544,14 +544,14 @@ var data = {
     "id": 63,
     "name": "博智診所",
     "city": "taichung-city",
-    "address": "台中市北區西屯路一段351-8號",
+    "address": "台中市北區西屯路一段353號",
     "phone": "(04) 23232066"
   },
   {
     "id": 64,
     "name": "合康診所",
     "city": "taichung-city",
-    "address": "台中市霧峰區中正路892號1樓",
+    "address": "台中市霧峰區中正路802-1號",
     "phone": "(04) 23330268"
   },
   {
@@ -572,7 +572,7 @@ var data = {
     "id": 67,
     "name": "鴻安診所",
     "city": "taichung-city",
-    "address": "台中巿太平區立功路310號",
+    "address": "台中市太平區立功路310號",
     "phone": "(04) 23917581"
   },
   {
@@ -698,7 +698,7 @@ var data = {
     "id": 85,
     "name": "王健龍診所",
     "city": "changhua-county",
-    "address": "彰化縣彰化市鹿港鎮中山路259號",
+    "address": "彰化縣鹿港鎮中山路259號",
     "phone": "(04) 7755188"
   },
   {
