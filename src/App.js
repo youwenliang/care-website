@@ -177,7 +177,7 @@ class App extends Component {
       backgroundImage: isPad ? null : "url("+bgA+")",
       backgroundRepeat: "no-repeat",
       backgroundSize: "750px",
-      backgroundPosition: "calc(50% - 40px) 60px",
+      backgroundPosition: "calc(50% - 40px) 0px",
     }
 
     // Modal
@@ -327,11 +327,17 @@ class App extends Component {
     ]
 
     var bgC = {
-      display: isPad ? "block":"none"
+      top: "15px",
+      zIndex: '-1',
+      display: (isPad) ? 'none':'block'
     }
 
     var modalbox = {
        height: '100%'
+    }
+
+    var videoMV = {
+      margin: (isPad) ? '6rem 0 4rem 0': '0'
     }
 
     return (
@@ -360,13 +366,24 @@ class App extends Component {
           </div>
         </section>
 
-        {
-        (isPad) ? (
-          <div className="tc" style={bgC}>
-            <img alt="line" className="db center" src={beforeC} width="52px" />
+        <div className="tc relative" style={bgC}>
+          <img alt="line" className="db center" src={beforeC} width="52px" />
+        </div>
+
+        {/* Video */}
+        <section className="pv0" style={videoMV}>
+          <div className="container brXL overflow-hidden">
+            <div class="video-container">
+              <iframe
+                title="及時篩腎"
+                class="video"
+                src="https://www.youtube.com/embed/63cuImwyaas"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                allowfullscreen></iframe>
+            </div>
           </div>
-        ):null
-        }
+        </section>
 
         {/* Car */}
         <section id="car" style={carBG}>
@@ -682,8 +699,15 @@ class App extends Component {
           <img className="db center" alt="line" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
+        {/* Map */}
+        <Map/>        
+
+        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+          <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
+        </div>
+
         {/* QA */}
-        <section id="qa" className="pv0">
+        <section id="qa" className="pv0 mb5">
           <div className="container bg-blue-5 ph4-l ph3 pv4 brBox mh3">
             <h2 className="title bg-blue-3 mb5 lh-copy">{cData.qa["title"]}</h2>
               {
@@ -780,14 +804,6 @@ class App extends Component {
               }
           </div>      
         </section>
-
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
-          <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
-        </div>
-
-        {/* Map */}
-        <Map/>
-
         {/* Banner */}
         <section id="banner" className="pb0">
           <div className="ma0">
