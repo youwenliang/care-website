@@ -854,3 +854,8 @@ path[data-city=true][aria-checked=true] {
   width: 100%;
   height: 100%;
 }
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
