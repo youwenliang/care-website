@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Map from './components/Map.js';
+import Nav from './components/Nav.js';
 import ReactModal from 'react-modal';
 import $ from 'jquery';
 import './App.css';
@@ -160,6 +161,10 @@ class App extends Component {
       backgroundPosition: isMobile ? "calc(50% - 40vw) bottom, calc(50% + 40vw) bottom, calc(50% - 40vw) calc(90% - 15vw), calc(50% + 40vw) calc(90% - 30vw)" : goal,
       paddingBottom: 0,
       // height: "490px"
+    }
+
+    var hidingM = {
+      display: isMobile ? "none" : "block"
     }
 
     var startBG = {
@@ -347,7 +352,7 @@ class App extends Component {
         </div>
         {/* Header */}
         <Header/>
-        <div id="top" className="br-100 z-2 ba b--white bw2">
+        <div id="top" className="br-100 z-2 ba b--white bw2" style={hidingM}>
           <img alt="Top" src={upBtn}/>
         </div>
 
@@ -370,8 +375,11 @@ class App extends Component {
           <img alt="line" className="db center" src={beforeC} width="52px" />
         </div>
 
+        {/* Nav */}
+        <Nav/>
+
         {/* Video */}
-        <section className="pv0" style={videoMV}>
+        <section id="video" className="pv0" style={videoMV}>
           <div className="container brXL overflow-hidden">
             <div class="video-container">
               <iframe
@@ -449,6 +457,11 @@ class App extends Component {
               </div>
             )
           }
+        </section>
+
+        {/* Test */}        
+        <section id="test">
+
         </section>
 
         {/* How */}
