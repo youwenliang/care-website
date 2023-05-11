@@ -356,6 +356,10 @@ h2.title {
   margin: 1rem 3rem 2rem 3rem; 
 }
 
+.mh3rem {
+  margin:  auto 3rem 1rem;
+}
+
 @media only screen and (max-width: 959px) {
   .brBox h2 {
     color: white;
@@ -788,6 +792,12 @@ select[multiple] option {
 }
 
 
+.selectForm {
+  width: auto;
+  color:  black;
+}
+
+
 .description {
   pointer-events: none;
   position: absolute;
@@ -823,6 +833,10 @@ select[multiple] option {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid white;
+}
+
+.bt3 {
+  border-top:  3px solid #001F64;
 }
 
 path {
@@ -982,4 +996,59 @@ nav a:hover .hover-text {
   nav span {
     display: none;
   }
+}
+
+#test select,
+#test input[type=number]{
+  border:  1.5px #CBCBCB solid;
+  border-radius: 8px;
+  height:  36px;
+  width: 120px;
+  padding:  0 8px;
+}
+
+#test .formTable {
+  padding: 24px 40px;
+  justify-content: space-between;
+}
+
+#test .flex-grow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#test .formTable:nth-child(odd) {
+  background-color: rgba(146, 174, 245, .4);
+}
+
+#test .formTable:first-child {
+  border-radius: 8px 8px 0 0;
+}
+#test .formTable:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+#test .formTable:nth-child(even) {
+  background-color: rgba(146, 174, 245, .2);
+}
+
+
+#test .flex-grow input[type=radio] {
+  width:  4rem;
+}
+
+#formSubmit {
+  margin:  30px auto 0;
+  background-color: #CBCBCB;
+  color:  #585858;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius:  100px;
+  padding:  6px 22px;
+  cursor: pointer;
+}
+
+.mw-500 {
+  max-width: 500px;
 }
