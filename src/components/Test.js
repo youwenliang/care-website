@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import $ from 'jquery';
+import React, { Component} from 'react';
 import '../App.css';
 import logo from '../images/logo3.png';
 import green from '../images/green.png';
@@ -11,53 +10,85 @@ class Test extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      results: 2
+      results: 0
     }
+    this.elementRef = React.createRef();
   }
 
   componentDidMount(){
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
+    this.handleReset = this.handleReset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   } 
+  componentDidUpdate(){
+    if (this.elementRef.current) {
+      // Perform your desired actions on the element
+      const tabLinks = document.querySelectorAll('.results a');
+
+      // Add a click event listener to each tab link
+      tabLinks.forEach(tabLink => {
+        tabLink.addEventListener('click', event => {
+          // Prevent default link behavior
+          event.preventDefault();
+
+          // Get the ID of the linked section
+          const targetId = tabLink.getAttribute('href');
+
+          // Get the linked section
+          const targetSection = document.querySelector(targetId);
+
+          // Calculate the distance from the top of the page to the linked section
+          const targetOffsetTop = targetSection.offsetTop - 20;
+
+          // Animate scrolling to the linked section
+          window.scrollTo({
+            top: targetOffsetTop,
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
+  }
   checkMobile = () => {
     this.setState({ width: window.innerWidth });
   }
-  handleSubmit(event) {
+  handleReset(event) {
     this.setState({results:0});
     event.preventDefault();
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwUPsLKn_CpewqK_PKnUWYFBiUr7Rjo2ed8gvPITwZVO3U6MClW_KXd51-x3iHHdyyf/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    if (form.checkValidity()) {
+      var radioButtons = document.querySelectorAll('.formTable input[type=radio]');
+      var isChecked = false;
+
+      for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].value === '是' && radioButtons[i].checked) {
+          isChecked = true;
+          break;
+        }
+      }
+      if (isChecked) {
+        this.setState({results:2});
+      } else {
+        this.setState({results:1});
+      }
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+    } else {
+      form.reportValidity();
+    }
   }
 
   render(){
     const { width } = this.state;
     const isMobile = width <= 959;
-    var $t = this;
-
-      // Get all the tab links
-    const tabLinks = document.querySelectorAll('.results a');
-
-    // Add a click event listener to each tab link
-    tabLinks.forEach(tabLink => {
-      tabLink.addEventListener('click', event => {
-        // Prevent default link behavior
-        event.preventDefault();
-
-        // Get the ID of the linked section
-        const targetId = tabLink.getAttribute('href');
-
-        // Get the linked section
-        const targetSection = document.querySelector(targetId);
-
-        // Calculate the distance from the top of the page to the linked section
-        const targetOffsetTop = targetSection.offsetTop - 20;
-
-        // Animate scrolling to the linked section
-        window.scrollTo({
-          top: targetOffsetTop,
-          behavior: 'smooth'
-        });
-      });
-    });
 
     var logoImg = {
       width: '100%',
@@ -66,7 +97,7 @@ class Test extends Component {
 
     var bigButton = isMobile ? (
       <div>
-        <img src={logo} width="227"/>
+        <img src={logo} width="227" alt="logo"/>
         <div className="bigButton mt3 flex justify-center flex-row items-center bg-blue-7 brRound pointer">
           <p className="tc f50 white fw5 mv2">↓ 快速尋找 ↓<br/>「保腎護心卓越機構」</p>
         </div>
@@ -74,7 +105,7 @@ class Test extends Component {
     ):(
       <div>
         <div className="bigButton center flex tc flex-row items-center bg-blue-7 brRound pointer">
-          <img src={logo} style={logoImg}/>
+          <img src={logo} style={logoImg} alt="logo"/>
           <p className="tc f50 white ml3 fw5">↓ 快速尋找 ↓<br/>「保腎護心卓越機構」</p>
         </div>
       </div>
@@ -83,30 +114,30 @@ class Test extends Component {
     let content;
     if(this.state.results === 1) {
       content = (
-        <div className="results tc mh4-l mh3">
+        <div className="results tc mh4-l mh3" ref={this.elementRef}>
           <h3 className="f50 blue-1 tc">"您的狀況為<span className="green-1">綠燈</span>"</h3>
-          <a href="#map" className="link">
+          <a href="#map" className="link" ref={this.elementRef}>
             {bigButton}
           </a>
           <div className="tc w-100">
-            <input className="formSubmit" type="submit" value="重測一次" onClick={this.handleSubmit}/>
+            <input className="formSubmit" type="submit" value="重測一次" onClick={this.handleReset}/>
           </div>
-          <img className="mt5 resultImg mw-600" src={green} width='100%'/>
+          <img className="mt5 resultImg mw-600" src={green} width='100%' alt="green light"/>
         </div>
       )
 
 
     } else if(this.state.results === 2) {
       content = (
-        <div className="results tc mh4-l mh3">
+        <div className="results tc mh4-l mh3" ref={this.elementRef}>
           <h3 className="f50 blue-1 tc">"您的狀況為<span className="red-1">紅燈</span>"</h3>
           <a href="#map" className="link">
             {bigButton}
           </a>
           <div className="tc w-100">
-            <input className="formSubmit" type="submit" value="重測一次" onClick={this.handleSubmit}/>
+            <input className="formSubmit" type="submit" value="重測一次" onClick={this.handleReset}/>
           </div>
-          <img className="mt5 resultImg mw-600" src={red} width='100%'/>
+          <img className="mt5 resultImg mw-600" src={red} width='100%' alt="red light"/>
         </div>
       )
 
@@ -115,12 +146,12 @@ class Test extends Component {
       content = (
         <div className="ph6-l ph4-ns pb5-l pb4-ns pb3">
           <h3 className="f32_ ma0 pb4 blue-1">基本資料</h3>
-                <form className="f24_">
-                  <label for="age" className="pr3">年齡</label>
+                <form className="f24_" name="submit-to-google-sheet">
+                  <label htmlFor="age" className="pr3">年齡</label>
                   <input type="number" id="age" name="age" required/><br/><br/>
                   
-                  <label for="diabetes-duration" className="pr3">糖尿病病齡</label>
-                  <select id="diabetes-duration" name="diabetes-duration" className="selectForm">
+                  <label htmlFor="diabetes-duration" className="pr3">糖尿病病齡</label>
+                  <select id="diabetes-duration" name="diabetes-duration" className="selectForm" required>
                     <option value="none" default></option>
                     <option value="0-5">0-5年</option>
                     <option value="5-10">5-10年</option>
@@ -131,15 +162,15 @@ class Test extends Component {
                   </select><br/><br/>
                   
                   <label className="pr3">性別</label>
-                  <input type="radio" id="gender-male" name="gender" value="男"  className="mr2"/>
-                  <label for="gender-male" className="pr3">男</label>
+                  <input type="radio" id="gender-male" name="gender" value="男"  className="mr2" required/>
+                  <label htmlFor="gender-male" className="pr3">男</label>
                   <input type="radio" id="gender-female" name="gender" value="女"  className="mr2"/>
-                  <label for="gender-female" className="pr3">女</label>
+                  <label htmlFor="gender-female" className="pr3">女</label>
                   <input type="radio" id="gender-undisclosed" name="gender" value="不願透漏" className="mr2"/>
-                  <label for="gender-undisclosed">不願透漏</label><br/><br/>
+                  <label htmlFor="gender-undisclosed">不願透漏</label><br/><br/>
                   
-                  <label for="location" className="pr3">所在地區</label>
-                  <select id="location" name="location" className="selectForm">
+                  <label htmlFor="location" className="pr3">所在地區</label>
+                  <select id="location" name="location" className="selectForm" required>
                     <option value="none" default></option>
                     <option value="臺北市">臺北市</option>
                     <option value="新北市">新北市</option>
@@ -178,7 +209,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">高血壓</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="hypertension-yes" name="health-condition-hypertension" value="是"/>
+                        <input type="radio" id="hypertension-yes" name="health-condition-hypertension" value="是" required/>
                         <input type="radio" id="hypertension-no" name="health-condition-hypertension" value="否"/>
                         <input type="radio" id="hypertension-unknown" name="health-condition-hypertension" value="不知"/>  
                       </div>
@@ -186,7 +217,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">微量蛋白尿以上</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="hyperlipidemia-yes" name="health-condition-hyperlipidemia" value="是"/>
+                        <input type="radio" id="hyperlipidemia-yes" name="health-condition-hyperlipidemia" value="是" required/>
                         <input type="radio" id="hyperlipidemia-no" name="health-condition-hyperlipidemia" value="否"/>
                         <input type="radio" id="hyperlipidemia-unknown" name="health-condition-hyperlipidemia" value="不知"/>
                       </div>
@@ -194,7 +225,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">高脂血症</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="proteinuria-yes" name="health-condition-proteinuria" value="是"/>
+                        <input type="radio" id="proteinuria-yes" name="health-condition-proteinuria" value="是" required/>
                         <input type="radio" id="proteinuria-no" name="health-condition-proteinuria" value="否"/>
                         <input type="radio" id="proteinuria-unknown" name="health-condition-proteinuria" value="不知"/>  
                       </div>
@@ -202,7 +233,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">抽菸</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="smoking-yes" name="health-condition-smoking" value="是"/>
+                        <input type="radio" id="smoking-yes" name="health-condition-smoking" value="是" required/>
                         <input type="radio" id="smoking-no" name="health-condition-smoking" value="否"/>
                         <input type="radio" id="smoking-unknown" name="health-condition-smoking" value="不知"/>  
                       </div>
@@ -210,7 +241,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">肥胖 (BMI > 27)</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="obesity-yes" name="health-condition-obesity" value="是"/>
+                        <input type="radio" id="obesity-yes" name="health-condition-obesity" value="是" required/>
                         <input type="radio" id="obesity-no" name="health-condition-obesity" value="否"/>
                         <input type="radio" id="obesity-unknown" name="health-condition-obesity" value="不知"/>
                       </div>
@@ -218,7 +249,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">心血管疾病</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="cardiovascular-disease-yes" name="health-condition-cardiovascular-disease" value="是"/>
+                        <input type="radio" id="cardiovascular-disease-yes" name="health-condition-cardiovascular-disease" value="是" required/>
                         <input type="radio" id="cardiovascular-disease-no" name="health-condition-cardiovascular-disease" value="否"/>
                         <input type="radio" id="cardiovascular-disease-unknown" name="health-condition-cardiovascular-disease" value="不知"/>
                       </div>
@@ -226,7 +257,7 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">家族成員有心血管疾病</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="family-cardiovascular-disease-yes" name="health-condition-family-cardiovascular-disease" value="是"/>
+                        <input type="radio" id="family-cardiovascular-disease-yes" name="health-condition-family-cardiovascular-disease" value="是" required/>
                         <input type="radio" id="family-cardiovascular-disease-no" name="health-condition-family-cardiovascular-disease" value="否"/>
                         <input type="radio" id="family-cardiovascular-disease-unknown" name="health-condition-family-cardiovascular-disease" value="不知"/>
                       </div>
@@ -234,14 +265,14 @@ class Test extends Component {
                     <div className="formTable flex flex-row">
                       <div className="flex-shrink"><label className="table">家族成員有慢性腎臟病</label></div>
                       <div className="f18_ flex-grow mw-500">
-                        <input type="radio" id="family-chronic-kidney-disease-yes" name="health-condition-family-chronic-kidney-disease" value="是"/>
+                        <input type="radio" id="family-chronic-kidney-disease-yes" name="health-condition-family-chronic-kidney-disease" value="是" required/>
                         <input type="radio" id="family-chronic-kidney-disease-no" name="health-condition-family-chronic-kidney-disease" value="否"/>
                         <input type="radio" id="family-chronic-kidney-disease-unknown" name="health-condition-family-chronic-kidney-disease" value="不知"/>
                       </div>
                     </div>
                   </div>
                   <div className="tc w-100">
-                    <input className="formSubmit" type="submit" value="送出"/>
+                    <input className="formSubmit" type="submit" value="送出" onClick={this.handleSubmit}/>
                   </div>
                 </form>
             </div>

@@ -382,14 +382,14 @@ class App extends Component {
         {/* Video */}
         <section id="video" className="pv0" style={videoMV}>
           <div className="container brXL overflow-hidden">
-            <div class="video-container">
+            <div className="video-container">
               <iframe
                 title="及時篩腎"
-                class="video"
+                className="video"
                 src="https://www.youtube.com/embed/63cuImwyaas"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope;"
-                allowfullscreen></iframe>
+                allowFullScreen></iframe>
             </div>
           </div>
         </section>

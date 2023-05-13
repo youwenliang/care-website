@@ -1026,6 +1026,11 @@ nav a:hover .hover-text {
   position: relative;
 }
 
+#test select:hover,
+#test input[type=number]:hover {
+  background-color: #F2F2F2;
+}
+
 #test select {
   appearance: auto;
 }
@@ -1072,6 +1077,11 @@ nav a:hover .hover-text {
   cursor: pointer;
 }
 
+.formSubmit:hover {
+  background-color: #1C3073;
+  color:  white;
+}
+
 .mw-500 {
   max-width: 500px;
 }
@@ -1080,6 +1090,10 @@ nav a:hover .hover-text {
 .bigButton {
   padding:  55px 60px;
   max-width: 872px;
+}
+
+.bigButton:hover {
+  background-color: #1C3073 !important;
 }
 
 
@@ -1114,3 +1128,17 @@ nav a:hover .hover-text {
 
 }
 
+@media only screen and (max-width: 450px) {
+  #test .f20 {
+    font-size: 12px !important;
+  }
+  #test .f18_ {
+    font-size: 12px !important;
+  }
+  #test .flex-shrink {
+    min-width: 120px;
+  }
+  #test .flex-grow {
+    padding: 0 4px;
+  }
+}
