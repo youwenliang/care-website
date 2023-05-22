@@ -335,7 +335,7 @@ class App extends Component {
     var bgC = {
       top: "15px",
       zIndex: '-1',
-      display: (isPad) ? 'none':'block'
+      // display: (isPad) ? 'none':'block'
     }
 
     var modalbox = {
@@ -343,7 +343,7 @@ class App extends Component {
     }
 
     var videoMV = {
-      margin: (isPad) ? '6rem 0 4rem 0': '0'
+      margin: (isPad) ? '0 0 4rem 0': '0'
     }
 
     return (

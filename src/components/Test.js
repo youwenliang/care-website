@@ -10,7 +10,7 @@ class Test extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      results: 0
+      results: 1
     }
     this.elementRef = React.createRef();
   }
@@ -56,6 +56,18 @@ class Test extends Component {
   handleReset(event) {
     this.setState({results:0});
     event.preventDefault();
+
+        
+    const targetSection = document.querySelector('#test');
+
+    // Calculate the distance from the top of the page to the linked section
+    const targetOffsetTop = targetSection.offsetTop - 20;
+
+    // Animate scrolling to the linked section
+    window.scrollTo({
+      top: targetOffsetTop,
+      behavior: 'smooth'
+    });
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -77,6 +89,17 @@ class Test extends Component {
       } else {
         this.setState({results:1});
       }
+
+      const targetSection = document.querySelector('#test');
+
+      // Calculate the distance from the top of the page to the linked section
+      const targetOffsetTop = targetSection.offsetTop - 20;
+
+      // Animate scrolling to the linked section
+      window.scrollTo({
+        top: targetOffsetTop,
+        behavior: 'smooth'
+      });
 
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => console.log('Success!', response))
@@ -282,7 +305,7 @@ class Test extends Component {
     return (
         <section id="test" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
-            <h2 className="title bg-blue-1 lh-copy pre-wrap">你「控」對了嗎 ? 有控糖不等於無風險 ! <br/>糖心腎一起看才完整 !</h2>
+            <h2 className="title bg-blue-1 lh-copy pre-wrap">有控糖不等於無風險！<br/>糖心腎一起看才完整！</h2>
             <div className="mh3rem bg-white center brXL cf pt5-l pt4-ns pt3 ph3 pb0 relative mb3">
               {content}
             </div>

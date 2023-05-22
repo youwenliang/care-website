@@ -898,7 +898,7 @@ nav {
   width: 100%;
   background-color: #DCDCDC;
   box-shadow: rgba(0,0,0,.16) 0 -3px 6px;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav ul {
@@ -1012,6 +1012,12 @@ nav a:hover .hover-text {
 
   nav span {
     display: none;
+  }
+}
+
+@media screen and (max-height: 700px) and (min-width: 960px) {
+  nav img {
+    max-width: 50px;
   }
 }
 

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.dcd36821.chunk.css",
-    "main.js": "/static/js/main.6d762ba9.chunk.js",
-    "main.js.map": "/static/js/main.6d762ba9.chunk.js.map",
+    "main.css": "/static/css/main.91b34971.chunk.css",
+    "main.js": "/static/js/main.9bdddbf1.chunk.js",
+    "main.js.map": "/static/js/main.9bdddbf1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.297665e1.js",
     "runtime-main.js.map": "/static/js/runtime-main.297665e1.js.map",
     "static/css/2.a88d5bf4.chunk.css": "/static/css/2.a88d5bf4.chunk.css",
-    "static/js/2.bbcdf49b.chunk.js": "/static/js/2.bbcdf49b.chunk.js",
-    "static/js/2.bbcdf49b.chunk.js.map": "/static/js/2.bbcdf49b.chunk.js.map",
+    "static/js/2.409439b9.chunk.js": "/static/js/2.409439b9.chunk.js",
+    "static/js/2.409439b9.chunk.js.map": "/static/js/2.409439b9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1bc006fa263339b08de3572c0ce4c935.js": "/precache-manifest.1bc006fa263339b08de3572c0ce4c935.js",
+    "precache-manifest.7fe6f81e4f360d89c546309de6269bf0.js": "/precache-manifest.7fe6f81e4f360d89c546309de6269bf0.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.a88d5bf4.chunk.css.map": "/static/css/2.a88d5bf4.chunk.css.map",
-    "static/css/main.dcd36821.chunk.css.map": "/static/css/main.dcd36821.chunk.css.map",
-    "static/js/2.bbcdf49b.chunk.js.LICENSE.txt": "/static/js/2.bbcdf49b.chunk.js.LICENSE.txt",
+    "static/css/main.91b34971.chunk.css.map": "/static/css/main.91b34971.chunk.css.map",
+    "static/js/2.409439b9.chunk.js.LICENSE.txt": "/static/js/2.409439b9.chunk.js.LICENSE.txt",
     "static/media/candies1.png": "/static/media/candies1.0d5d4a9f.png",
     "static/media/candies5.png": "/static/media/candies5.f1003d91.png",
     "static/media/car1.png": "/static/media/car1.b70c3d0a.png",
@@ -21,6 +21,7 @@
     "static/media/clinics.png": "/static/media/clinics.07792e9d.png",
     "static/media/footerBGL.png": "/static/media/footerBGL.94cdb013.png",
     "static/media/footerBGR.png": "/static/media/footerBGR.deecf55d.png",
+    "static/media/green.png": "/static/media/green.0e970876.png",
     "static/media/headerBGL.png": "/static/media/headerBGL.ac03658a.png",
     "static/media/headerBGR.png": "/static/media/headerBGR.69bda2a4.png",
     "static/media/logo2.png": "/static/media/logo2.ca4f0d62.png",
@@ -28,6 +29,7 @@
     "static/media/man7.png": "/static/media/man7.a1955ee2.png",
     "static/media/man7c.png": "/static/media/man7c.b6bf790a.png",
     "static/media/modal.png": "/static/media/modal.c56a3101.png",
+    "static/media/red.png": "/static/media/red.0b90d2f0.png",
     "static/media/保腎1.png": "/static/media/保腎1.3bd8e723.png",
     "static/media/保腎2.png": "/static/media/保腎2.67e4ab38.png",
     "static/media/保腎3.png": "/static/media/保腎3.c29e349d.png",
@@ -70,8 +72,8 @@
   "entrypoints": [
     "static/js/runtime-main.297665e1.js",
     "static/css/2.a88d5bf4.chunk.css",
-    "static/js/2.bbcdf49b.chunk.js",
-    "static/css/main.dcd36821.chunk.css",
-    "static/js/main.6d762ba9.chunk.js"
+    "static/js/2.409439b9.chunk.js",
+    "static/css/main.91b34971.chunk.css",
+    "static/js/main.9bdddbf1.chunk.js"
   ]
 }
