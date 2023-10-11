@@ -41,7 +41,7 @@ class Header extends Component {
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
-      showModal: true,
+      showModal: false,
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -63,6 +63,12 @@ class Header extends Component {
   }
 
   componentDidMount(){
+    const scrollY = document.body.style.top;
+    document.body.style.overflow = 'scroll';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
     document.getElementById('loading').classList.remove('fade');
@@ -169,6 +175,7 @@ class Header extends Component {
             <img className="ma2" alt="logo" src={logo1} width={isMobile ? "90":"200"}/>
           </div>
         </div>
+
         <ReactModal 
            style={customStyles}
            isOpen={this.state.showModal}

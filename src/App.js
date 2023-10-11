@@ -26,6 +26,7 @@ import cover4m from './images/保腎護心網layout手機物件_09.png';
 
 import bgA from './images/保腎護心網layout物件V3_4.png';
 import beforeC from './images/保腎護心網layout物件V3_4s.png';
+import beforeC2 from './images/保腎護心網layout物件V3_5s.png';
 import bgR from './images/保腎護心網layout物件V3_5.png';
 import bgL from './images/保腎護心網layout物件V3_6.png';
 import car1 from './images/car1.png';
@@ -135,7 +136,7 @@ class App extends Component {
         scrollTop: 0
       }, 800, 'linear');
     });
-    $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
+    // $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
   }
@@ -338,12 +339,23 @@ class App extends Component {
       // display: (isPad) ? 'none':'block'
     }
 
+    var bgC2 = {
+      top: "0",
+      zIndex: '-1',
+      display: (!isPad) ? 'none':'block'
+    }
+    var bgC3 = {
+      top: "0",
+      zIndex: '-1',
+      display: (!isMobile) ? 'none':'block'
+    }
+
     var modalbox = {
        height: '100%'
     }
 
     var videoMV = {
-      margin: (isPad) ? '0 0 4rem 0': '0'
+      margin: 0
     }
 
     return (
@@ -384,15 +396,19 @@ class App extends Component {
           <div className="container brXL overflow-hidden">
             <div className="video-container">
               <iframe
-                title="及時篩腎"
+                title="什麼是保腎護心？醫師告訴你這有多重要！"
                 className="video"
-                src="https://www.youtube.com/embed/63cuImwyaas"
+                src="https://www.youtube.com/embed/jMuiauTF4rk"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                 allowFullScreen></iframe>
             </div>
           </div>
         </section>
+
+        <div className="tc relative" style={bgC2}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
 
         {/* Car */}
         <section id="car" style={carBG}>
@@ -401,7 +417,7 @@ class App extends Component {
             (
               <div className="container tc">
                 <div className="flex flex-column flex-row-l lh-copy">
-                  <div className="pa3 car bg-white brBox mb5 mh3-l mh0">
+                  <div className="pa3 car bg-white brBox mb0 mh3-l mh0">
                     <label className="f32 fw5 br3 dib mt3 bg-blue-1 white pa2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["clue"][0]}}></label>
                     <h3 className="f50 pre-wrap mv2" dangerouslySetInnerHTML={{__html:cData.car["title"][0]}}></h3>
                     <p className="f32 ph4-m ph2 pre-wrap" dangerouslySetInnerHTML={{__html:cData.car["content"][0]}}></p>
@@ -412,6 +428,9 @@ class App extends Component {
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className="tc relative" style={bgC2}>
+                  <img alt="line" className="db center" src={beforeC2} width="52px" />
                 </div>
                 <div className="flex flex-column flex-row-l">
                   <div className="pa3 car bg-white brBox mh3-l mh0 lh-copy">
@@ -459,12 +478,19 @@ class App extends Component {
             )
           }
         </section>
+        <div className="tc relative" style={bgC2}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
 
         {/* Test */}        
         
         <Test/>
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" src={bgR} alt="line" width={isMobile ? "80":"450"}/>
         </div>
 
@@ -527,7 +553,11 @@ class App extends Component {
           </div>
         </section>
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" src={bgR} alt="line" width={isMobile ? "80":"450"}/>
         </div>
 
@@ -593,7 +623,11 @@ class App extends Component {
           </div>
         </section>
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" alt="line" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
@@ -656,7 +690,11 @@ class App extends Component {
           </div>
         </section>
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 
@@ -712,14 +750,22 @@ class App extends Component {
           </div>
         </section>
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" alt="line" src={bgL} width={isMobile ? "80":"450"}/>
         </div>
 
         {/* Map */}
         <Map/>        
 
-        <div className={isMobile ? "divider ma0 pa0 o-0" : "divider ma0 pa0"}>
+        <div className="tc relative" style={bgC3}>
+          <img alt="line" className="db center" src={beforeC2} width="52px" />
+        </div>
+
+        <div className={isMobile ? "divider ma0 pa0 o-0 dn" : "divider ma0 pa0"}>
           <img className="db center" alt="line" src={bgR} width={isMobile ? "80":"450"}/>
         </div>
 

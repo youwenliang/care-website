@@ -10,7 +10,7 @@ class Test extends Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      results: 1
+      results: 0
     }
     this.elementRef = React.createRef();
   }
@@ -301,11 +301,12 @@ class Test extends Component {
             </div>
       )
     }
+    var title = "有控糖不等於無風險！測測風險指數吧！"
 
     return (
         <section id="test" className="pv0">
           <div className="container bg-blue-3 pa4-l pv4 ph3 brBox mh3">
-            <h2 className="title bg-blue-1 lh-copy pre-wrap">有控糖不等於無風險！<br/>糖心腎一起看才完整！</h2>
+            <h2 className="title bg-blue-1 lh-copy pre-wrap">{title}</h2>
             <div className="mh3rem bg-white center brXL cf pt5-l pt4-ns pt3 ph3 pb0 relative mb3">
               {content}
             </div>

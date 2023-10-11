@@ -39,7 +39,8 @@ class Footer extends Component {
       backgroundSize: "auto "+f+"px, auto "+f+"px",
       backgroundPosition: isMobile ? "80vw top, -10vw top": pos+" top, left top",
       fontSize: "12px",
-      lineHeight: "22px"
+      lineHeight: "22px",
+      paddingBottom: isMobile ? "calc(4rem + 100px)" : "4rem"
     }
     return (
       <footer className="bg-blue-1 pv5" style={footerBG}>
