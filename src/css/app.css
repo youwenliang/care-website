@@ -28,6 +28,10 @@ body.ds {
   overflow-y: visible;
 }
 
+.statcounter {
+  display: none;
+}
+
 #loading {
   width: 100%;
   background: white;
@@ -48,6 +52,10 @@ body.ds {
 
 ol {
   line-height: 1.83 !important;
+}
+
+.lh_40 {
+  line-height: 40px !important; 
 }
 
 .bg-white.modal {
@@ -75,6 +83,7 @@ ol {
 .f50 {font-size: 50px;}
 .f32 {font-size: 32px;}
 .f30 {font-size: 30px;}
+.f30_ {font-size: 30px;}
 .f32_ {font-size: 32px;}
 .f16_ {font-size: 16px;}
 .f18_ {font-size: 18px;}
@@ -87,9 +96,11 @@ ol {
 .f40 {font-size: 40px;}
 .f40_ {font-size: 40px;}
 .f16 {font-size: 16px;}
+.f60 {font-size: 60px; line-height: 80px;}
 
 @media only screen and (max-width: 959px) {
   .f80 {font-size: 40px;}
+  .f60 {font-size: 40px; line-height: 50px;}
   .f55 {font-size: 22px;}
   .f50 {font-size: 32px;}
   .f32 {font-size: 26px;}

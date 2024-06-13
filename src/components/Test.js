@@ -3,6 +3,7 @@ import '../App.css';
 import logo from '../images/logo3.png';
 import green from '../images/green.png';
 import red from '../images/red.png';
+import icon from '../images/保腎護心網頁圖素材.png';
 
 
 class Test extends Component {
@@ -168,7 +169,17 @@ class Test extends Component {
     } else {
       content = (
         <div className="ph6-l ph4-ns pb5-l pb4-ns pb3">
-          <h3 className="f32_ ma0 pb4 blue-1">基本資料</h3>
+          <div className="flex flex-row-l items-center flex-column tl-l tc">
+            <div className='blue-1 mr5-l'>
+              <h3 className='blue-1 fw5 f60 mb4'>馬上測驗心腎風險<br/>兼拿實用衛教品</h3>
+              <p className="f24_ lh_40 mv0">即日起至2024/12/31 <br className="dn-l"/><span className="fw5">數量有限 發完為止</span></p>
+              <p className="f24_ lh_40 mv0">憑下方風險檢測結果截圖至</p>
+              <p className="f24_ lh_40 mv0">★註記之「保腎護心卓越機構」</p>
+              <p className="f30_ lh_40 mt0 fw5 mb5 nowrap">即可獲得實用衛教品！！！</p>
+            </div>
+            <img className="pb0-l pb4 mw-300" src={icon} width="auto" height="auto"></img>
+          </div>
+          <h3 className="f32_ ma0 pb4 blue-1 bt3 pt4">基本資料</h3>
                 <form className="f24_" name="submit-to-google-sheet">
                   <label htmlFor="age" className="pr3">年齡</label>
                   <input type="number" id="age" name="age" required/><br/><br/>

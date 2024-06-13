@@ -139,6 +139,17 @@ class App extends Component {
     // $('body').css({'position':'fixed','overflow':'hidden','width':'100vw','top':-1*window.scrollY});
     window.addEventListener('resize', this.checkMobile);
     this.checkMobile();
+
+    window.onload = function () {
+        // Check if the element with class 'statcounter' exists
+        var statcounterElement = document.querySelector('.statcounter');
+        if (statcounterElement) {
+            // Update the text of the element with ID 'visitors'
+            // document.getElementById('visitors').innerText = statcounterElement.innerText;
+        } else {
+            console.error("Element with class 'statcounter' not found");
+        }
+    };
   }
 
   checkMobile = () => {
@@ -379,6 +390,7 @@ class App extends Component {
               </div>
               <div id="start" className="dib ph4-l ph2 pv2 black mt4" style={startBG}>
                 <p className="mt3-l mt1">{cData.start}</p>
+                {/* <span id="visitors">0</span> */}
               </div>
             </div>
           </div>

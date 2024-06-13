@@ -111,7 +111,7 @@ var data = {
 	"map": [
   {
     "id": 1,
-    "name": "明新診所",
+    "name": "★明新診所",
     "city": "new-tp-city",
     "address": "新北市新莊區建安街109號",
     "phone": "(02) 22043466"
