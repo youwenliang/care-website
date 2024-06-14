@@ -133,6 +133,12 @@ ol {
   .f24s {font-size: 12px;}
 }
 
+
+.flex-new {flex-direction: row; gap: 40px;}
+@media only screen and (max-width: 1200px) {
+  .flex-new {flex-direction: column; gap:  0px;}
+}
+
 .mw-300 {
   max-width: 300px;
   margin-left: auto;

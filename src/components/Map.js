@@ -357,6 +357,7 @@ class Map extends Component {
                     </div>
                     <div id="detailInfo" className="o-0 pa2 relative z-1 bg-white brXL" style={box}>
                       <div className="page1 pt5 flex flex-wrap pb4 overflow-y-scroll content-start" style={page1box}>
+                        <p className="note blue-1">「★」註記之診所，為本次衛教品活動診所</p>
                         {this.state.allList}
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
@@ -392,6 +393,7 @@ class Map extends Component {
                     </div>
                     <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute pa2">
                       <div className="page1 flex flex-wrap overflow-y-scroll h-100 ph4 pv5 content-start">
+                        <p className="note blue-1">「★」註記之診所，為本次衛教品活動診所</p>
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img alt="close" src={closeBtn}/></div>
                       </div>

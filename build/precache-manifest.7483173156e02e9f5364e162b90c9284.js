@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d1364d04a93ecbd477e9c6b0265a162",
+    "revision": "481300679704553d9be61a02283d5fcb",
     "url": "/index.html"
   },
   {
-    "revision": "e5b41da48710af184fd0",
+    "revision": "32daa1db8af0c9f4c3e4",
     "url": "/static/css/2.a88d5bf4.chunk.css"
   },
   {
-    "revision": "b06d8651e4ce257aee42",
-    "url": "/static/css/main.aa4dae6f.chunk.css"
+    "revision": "30b1635ba9b9fb30dec8",
+    "url": "/static/css/main.edb1b17a.chunk.css"
   },
   {
-    "revision": "e5b41da48710af184fd0",
-    "url": "/static/js/2.bdc74b03.chunk.js"
+    "revision": "32daa1db8af0c9f4c3e4",
+    "url": "/static/js/2.71834cb8.chunk.js"
   },
   {
     "revision": "83e5ecdd973240e0a4d0c80eed465862",
-    "url": "/static/js/2.bdc74b03.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.71834cb8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b06d8651e4ce257aee42",
-    "url": "/static/js/main.63f94c38.chunk.js"
+    "revision": "30b1635ba9b9fb30dec8",
+    "url": "/static/js/main.5acfffce.chunk.js"
   },
   {
     "revision": "15b3047e2a016f9f494f",
@@ -242,5 +242,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e4954f436388e1b75b1bd6780f49ec52",
     "url": "/static/media/保腎護心網layout物件_55.e4954f43.png"
+  },
+  {
+    "revision": "fd5bcad7c4e10d8105104df33f588f37",
+    "url": "/static/media/保腎護心網頁圖素材.fd5bcad7.png"
   }
 ]);
