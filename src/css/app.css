@@ -134,9 +134,13 @@ ol {
 }
 
 
-.flex-new {flex-direction: row; gap: 40px;}
+.flex-new {flex-direction: row; gap: 10px;}
 @media only screen and (max-width: 1200px) {
   .flex-new {flex-direction: column; gap:  0px;}
+}
+
+.mw-420 {
+  max-width: 420px;
 }
 
 .mw-300 {
