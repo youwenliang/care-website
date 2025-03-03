@@ -174,7 +174,7 @@ class Map extends Component {
       filteredClinics.map((s, i) => {
         var temp = s.address.substring(3, 6);
         if(s.address.indexOf('區') === 4 ) temp = s.address.substring(3, 5);
-        if(s.address.indexOf('嘉義市') > -1 ) temp = s.address.substring(0, 3);
+        // if(s.address.indexOf('嘉義市') > -1 ) temp = s.address.substring(0, 3);
         if(!dis.includes(temp)) {
           dis.push(temp);
           list.push({
@@ -264,6 +264,7 @@ class Map extends Component {
     var form = isMobile ? {
       position: "relative",
       width: "100%",
+      transform: "none",
       borderRadius: "16px",
       fontSize: "1.2rem"
     }:
@@ -273,7 +274,7 @@ class Map extends Component {
       right: "0",
       bottom: "30px",
       width: "235px",
-      transform: "translateX(80%)",
+      transform: "scale(1.3) translateX(80%)",
       borderRadius: "16px",
       backgroundImage: "url("+searchBtn+")",
       backgroundPosition: "10px center",
@@ -314,7 +315,7 @@ class Map extends Component {
     }
 
     var ahref = this.state.detail ? (
-      <a className="flex-shrink" href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib cp ml2-l" width="40" alt="map"/></a>
+      <a className="flex-shrink" href={this.state.currentClinic && filteredClinics ? "http://maps.google.com/?q="+list[this.state.currentClinic[0]]["address"][this.state.currentClinic[1]]+list[this.state.currentClinic[0]]["name"][this.state.currentClinic[1]] : null} target='_blank' rel="noopener noreferrer"><img src={mapBtn} className="dib cp ml2-l" width="40" alt="map"/></a>
     ):null;
 
 
@@ -357,7 +358,7 @@ class Map extends Component {
                     </div>
                     <div id="detailInfo" className="o-0 pa2 relative z-1 bg-white brXL" style={box}>
                       <div className="page1 pt5 flex flex-wrap pb4 overflow-y-scroll content-start" style={page1box}>
-                        <p className="note blue-1">「★」註記之診所，為本次衛教品活動診所</p>
+                        {/*<p className="note f18_ fw5 blue-1">「★」註記之診所，為本次衛教品活動診所</p>*/}
                         {this.state.allList}
                       </div>
                       <div className={"page2 absolute top-0 left-0 w-100 h-100 bg-white ph4 pv5 brXL "+this.state.detail}>
@@ -393,7 +394,7 @@ class Map extends Component {
                     </div>
                     <div id="detailInfo" className="fl brXL bg-blue-3 o-0 absolute pa2">
                       <div className="page1 flex flex-wrap overflow-y-scroll h-100 ph4 pv5 content-start">
-                        <p className="note blue-1">「★」註記之診所，為本次衛教品活動診所</p>
+                        {/*<p className="note f18_ fw5 blue-1">「★」註記之診所，為本次衛教品活動診所</p>*/}
                         {this.state.allList}
                         <div className="close" onClick={() => {this.resetMap()}}><img alt="close" src={closeBtn}/></div>
                       </div>

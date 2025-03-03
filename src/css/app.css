@@ -764,6 +764,10 @@ select::-ms-expand {
   display: none;
 }
 
+#searchInput select option{
+  background-color: #6a7dcb;
+}
+
 .select {
   display: grid;
   grid-template-areas: "select";

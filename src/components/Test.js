@@ -21,6 +21,30 @@ class Test extends Component {
     this.checkMobile();
     this.handleReset = this.handleReset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    // Add a click event listener to each tab link
+    /*
+    const tabLink = document.querySelector('.maplink');
+    tabLink.addEventListener('click', event => {
+      // Prevent default link behavior
+      event.preventDefault();
+
+      // Get the ID of the linked section
+      const targetId = tabLink.getAttribute('href');
+
+      // Get the linked section
+      const targetSection = document.querySelector(targetId);
+
+      // Calculate the distance from the top of the page to the linked section
+      const targetOffsetTop = targetSection.offsetTop - 20;
+
+      // Animate scrolling to the linked section
+      window.scrollTo({
+        top: targetOffsetTop,
+        behavior: 'smooth'
+      });
+    });
+    */
   } 
   componentDidUpdate(){
     if (this.elementRef.current) {
@@ -169,17 +193,19 @@ class Test extends Component {
     } else {
       content = (
         <div className="ph6-l ph4-ns pb5-l pb4-ns pb3">
+          {/*
           <div className="flex flex-new items-center tl-l tc pb4">
             <div className='blue-1 w-100'>
               <h3 className='blue-1 fw5 f60 mb4 mt0'>馬上測驗心腎風險<br/>兼拿實用衛教品</h3>
               <p className="f24_ lh_40 mv0">即日起至2024/12/31 <br className="dn-l"/> <br/><span className="fw5">數量有限 一人限領一份 發完為止</span></p>
               <p className="f24_ lh_40 mv0">憑下方風險檢測結果截圖至</p>
-              <p className="f24_ lh_40 mv0">★註記之「保腎護心卓越機構」</p>
+              <a href="#map" className="maplink"><p className="f24_ lh_40 mv0">★註記之「保腎護心卓越機構」</p></a>
               <p className="f30_ lh_40 mt0 fw5">即可獲得實用衛教品！！！</p>
             </div>
             <img className="mw-420 w-100" src={icon} width="auto" height="auto"></img>
           </div>
-          <h3 className="f32_ ma0 pb4 blue-1 bt3 pt4">基本資料</h3>
+          */}
+          <h3 className="f32_ ma0 pb4 blue-1 pt4">基本資料</h3>
                 <form className="f24_" name="submit-to-google-sheet">
                   <label htmlFor="age" className="pr3">年齡</label>
                   <input type="number" id="age" name="age" required/><br/><br/>
