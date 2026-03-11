@@ -216,7 +216,14 @@ var data = {
   },
   {
     "id": 16,
-    "name": "安禾聯合診所",
+    "name": "安禾診所",
+    "city": "new-tp-city",
+    "address": "新北市三重區中華路89號",
+    "phone": "(02) 29820632"
+  },
+  {
+    "id": 17,
+    "name": "李瑞相診所",
     "city": "new-tp-city",
     "address": "新北市三重區中華路89號",
     "phone": "(02) 29820632"
